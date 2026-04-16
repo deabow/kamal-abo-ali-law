@@ -1,1 +1,153 @@
-@import "../index.css";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --color-primary: #1a2b4b;
+  --color-accent: #c5a059;
+  --color-accent-light: #e6d5b8;
+  --color-bg-soft: #f8f9fa;
+  --color-dark-bg: #0f1419;
+  --color-dark-bg-secondary: #1a1f27;
+  --color-dark-text: #f0f0f0;
+  --color-dark-text-secondary: #b0b0b0;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white font-sans antialiased transition-colors duration-300;
+    color: #1a2b4b;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 20 25 / var(--tw-bg-opacity));
+  }
+
+  html.dark body {
+    @apply bg-[#0f1419] text-[#f0f0f0];
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  .dark section {
+    @apply bg-[#1a1f27];
+  }
+
+  .dark .section-padding {
+    @apply bg-[#1a1f27];
+  }
+
+  .dark .bg-white {
+    @apply bg-[#1a1f27];
+  }
+
+  .dark .bg-bg-soft {
+    @apply bg-[#0f1419];
+  }
+
+  .dark .text-gray-500 {
+    @apply text-gray-400;
+  }
+
+  .dark .text-gray-600 {
+    @apply text-gray-300;
+  }
+
+  .dark .text-white\/80 {
+    @apply text-white/70;
+  }
+
+  .dark .text-white\/70 {
+    @apply text-white/60;
+  }
+
+  .dark .border-gray-100 {
+    @apply border-gray-700;
+  }
+
+  .dark .bg-white\/10 {
+    @apply bg-white/5;
+  }
+
+  .dark .bg-white\/20 {
+    @apply bg-white/10;
+  }
+
+  .dark .shadow-sm {
+    @apply shadow-lg;
+  }
+
+  .dark .hover\:bg-primary\/5 {
+    @apply hover:bg-white/5;
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark select {
+    @apply border-gray-700 bg-[#0f1419] text-white;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    @apply text-gray-500;
+  }
+
+  [lang="ar"],
+  [dir="rtl"] {
+    font-family: "Cairo", sans-serif !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  [lang="en"] h1,
+  [lang="en"] h2,
+  [lang="en"] .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    @apply text-white;
+  }
+
+  .dark .text-primary {
+    @apply text-white;
+  }
+}
+
+.glass-card {
+  @apply border border-white/20 bg-white/80 shadow-lg backdrop-blur-md;
+}
+
+.dark .glass-card {
+  @apply border border-white/10 bg-white/5 shadow-lg backdrop-blur-md;
+}
+
+.section-padding {
+  @apply px-6 py-20 md:px-12 lg:px-24;
+}
+
+* {
+  @apply transition-colors duration-300;
+}
