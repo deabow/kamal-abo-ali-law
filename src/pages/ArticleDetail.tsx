@@ -1,7 +1,10 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { Clock, ChevronLeft, Calendar } from 'lucide-react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { Language } from '../types';
-import { Link, useParams } from 'react-router-dom';
 
 const ARTICLES_DATA: Record<string, any> = {
   '1': {
@@ -541,14 +544,16 @@ It is important to understand the social insurance system and get the most benef
 };
 
 export default function ArticleDetail({ lang }: { lang: Language }) {
-  const { articleId } = useParams<{ articleId: string }>();
+  const params = useParams();
+  const articleIdParam = params?.articleId;
+  const articleId = Array.isArray(articleIdParam) ? articleIdParam[0] : articleIdParam;
   const article = articleId ? ARTICLES_DATA[articleId as keyof typeof ARTICLES_DATA] : null;
 
   if (!article) {
     return (
       <div className="pt-32 pb-20 text-center">
         <h2 className="text-2xl font-bold text-primary">{lang === 'ar' ? 'المقال غير موجود' : 'Article not found'}</h2>
-        <Link to="/articles" className="text-accent mt-4 inline-block">{lang === 'ar' ? 'العودة للمقالات' : 'Back to Articles'}</Link>
+        <Link href="/articles" className="text-accent mt-4 inline-block">{lang === 'ar' ? 'العودة للمقالات' : 'Back to Articles'}</Link>
       </div>
     );
   }
@@ -557,7 +562,7 @@ export default function ArticleDetail({ lang }: { lang: Language }) {
     <div className="pt-32 pb-20">
       {/* Breadcrumb */}
       <div className="max-w-4xl mx-auto px-6 mb-8">
-        <Link to="/articles" className="text-accent font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
+        <Link href="/articles" className="text-accent font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
           {lang === 'ar' ? <ChevronLeft className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
           {lang === 'ar' ? 'العودة للمقالات' : 'Back to Articles'}
         </Link>
@@ -633,7 +638,7 @@ export default function ArticleDetail({ lang }: { lang: Language }) {
               {lang === 'ar' ? 'فريقنا من المحامين المتخصصين جاهزون لمساعدتك. تواصل معنا اليوم.' : 'Our team of specialized lawyers is ready to help you. Contact us today.'}
             </p>
             <Link 
-              to="/contact"
+              href="/contact"
               className="inline-block bg-accent text-white px-8 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all"
             >
               {lang === 'ar' ? 'اطلب استشارة' : 'Request Consultation'}
@@ -651,7 +656,7 @@ export default function ArticleDetail({ lang }: { lang: Language }) {
               {lang === 'ar' ? 'مقالات ذات صلة' : 'Related Articles'}
             </h3>
             <Link 
-              to="/articles"
+              href="/articles"
               className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
             >
               {lang === 'ar' ? 'عرض جميع المقالات' : 'View All Articles'}

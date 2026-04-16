@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { MapPin, Phone, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 import { Language } from '../types';
-import { Link } from 'react-router-dom';
 
 const BRANCHES = [
   {
@@ -51,7 +51,7 @@ export default function Branches({ lang }: { lang: Language }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all group cursor-pointer"
               >
-                <Link to={`/branches/${branch.id}`} className="block h-full">
+                <Link href={`/branches/${branch.id}`} className="block h-full">
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={branch.image} 

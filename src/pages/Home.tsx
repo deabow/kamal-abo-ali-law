@@ -2,7 +2,7 @@ import { Hero } from '../components/Hero';
 import { Language } from '../types';
 import { motion } from 'motion/react';
 import { Award, CheckCircle2, ChevronLeft, ChevronRight, Gavel, Users, Briefcase, Building2, MapPin, Phone, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function Home({ lang }: { lang: Language }) {
   return (
@@ -79,7 +79,7 @@ export default function Home({ lang }: { lang: Language }) {
                 : 'We are a leading legal institution committed to providing innovative and effective solutions to our clients. We combine deep expertise and professional integrity to achieve justice.'}
             </p>
             <Link 
-              to="/about"
+              href="/about"
               className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
             >
               {lang === 'ar' ? 'اقرأ المزيد عنا' : 'Read More About Us'}
@@ -119,13 +119,13 @@ export default function Home({ lang }: { lang: Language }) {
                   {service.icon}
                 </div>
                 <h3 className="font-bold text-primary mb-2">{service.title[lang]}</h3>
-                <Link to="/services" className="text-xs text-accent font-bold">{lang === 'ar' ? 'التفاصيل' : 'Details'}</Link>
+                <Link href="/services" className="text-xs text-accent font-bold">{lang === 'ar' ? 'التفاصيل' : 'Details'}</Link>
               </motion.div>
             ))}
           </div>
           <div className="text-center mt-12">
             <Link 
-              to="/services"
+              href="/services"
               className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all"
             >
               {lang === 'ar' ? 'عرض جميع الخدمات' : 'View All Services'}
@@ -156,7 +156,7 @@ export default function Home({ lang }: { lang: Language }) {
                 </div>
               </div>
               <Link 
-                to="/branches"
+                href="/branches"
                 className="bg-accent text-white px-8 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all"
               >
                 {lang === 'ar' ? 'تفاصيل الفروع' : 'Branch Details'}
@@ -186,7 +186,7 @@ export default function Home({ lang }: { lang: Language }) {
                 {lang === 'ar' ? 'آخر المقالات القانونية' : 'Latest Legal Articles'}
               </h2>
             </div>
-            <Link to="/articles" className="hidden md:block text-accent font-bold hover:underline">
+            <Link href="/articles" className="hidden md:block text-accent font-bold hover:underline">
               {lang === 'ar' ? 'عرض الكل' : 'View All'}
             </Link>
           </div>
@@ -198,7 +198,7 @@ export default function Home({ lang }: { lang: Language }) {
             ].map((article) => (
               <Link 
                 key={article.id}
-                to={`/articles/${article.id}`}
+                href={`/articles/${article.id}`}
                 className="no-underline"
               >
                 <motion.div
@@ -240,7 +240,7 @@ export default function Home({ lang }: { lang: Language }) {
               : 'Our team of legal experts is ready to help you solve all your cases efficiently and professionally.'}
           </p>
           <Link 
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-accent/90 transition-all shadow-xl shadow-accent/20"
           >
             {lang === 'ar' ? 'تواصل معنا الآن' : 'Contact Us Now'}

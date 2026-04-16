@@ -1,8 +1,10 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { Clock } from 'lucide-react';
+import Link from 'next/link';
 import { Language } from '../types';
 import { cn } from '../lib/utils';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const ARTICLES = [
@@ -152,9 +154,9 @@ export default function Articles({ lang }: { lang: Language }) {
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((article) => (
-            <Link
+              <Link
               key={article.id}
-              to={`/articles/${article.id}`}
+                href={`/articles/${article.id}`}
               className="no-underline"
             >
               <motion.article

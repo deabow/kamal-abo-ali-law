@@ -1,7 +1,10 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { MapPin, Phone, ChevronLeft } from 'lucide-react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { Language } from '../types';
-import { Link, useParams } from 'react-router-dom';
 
 const BRANCHES_DATA = {
   'sadat': {
@@ -31,14 +34,16 @@ const BRANCHES_DATA = {
 };
 
 export default function BranchDetail({ lang }: { lang: Language }) {
-  const { branchId } = useParams<{ branchId: string }>();
+  const params = useParams();
+  const branchIdParam = params?.branchId;
+  const branchId = Array.isArray(branchIdParam) ? branchIdParam[0] : branchIdParam;
   const branch = branchId ? BRANCHES_DATA[branchId as keyof typeof BRANCHES_DATA] : null;
 
   if (!branch) {
     return (
       <div className="pt-32 pb-20 text-center">
         <h2 className="text-2xl font-bold text-primary">{lang === 'ar' ? 'الفرع غير موجود' : 'Branch not found'}</h2>
-        <Link to="/branches" className="text-accent mt-4 inline-block">{lang === 'ar' ? 'العودة للفروع' : 'Back to Branches'}</Link>
+        <Link href="/branches" className="text-accent mt-4 inline-block">{lang === 'ar' ? 'العودة للفروع' : 'Back to Branches'}</Link>
       </div>
     );
   }
@@ -47,7 +52,7 @@ export default function BranchDetail({ lang }: { lang: Language }) {
     <div className="pt-32 pb-20">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-6 mb-8">
-        <Link to="/branches" className="text-accent font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
+        <Link href="/branches" className="text-accent font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
           {lang === 'ar' ? <ChevronLeft className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
           {lang === 'ar' ? 'العودة للفروع' : 'Back to Branches'}
         </Link>
@@ -169,7 +174,7 @@ export default function BranchDetail({ lang }: { lang: Language }) {
           >
             <h2 className="text-2xl font-bold text-primary mb-6">{lang === 'ar' ? 'فروعنا الأخرى' : 'Our Other Branches'}</h2>
             <Link 
-              to="/branches"
+              href="/branches"
               className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
             >
               {lang === 'ar' ? 'عرض جميع الفروع' : 'View All Branches'}
