@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 import { Language } from '../types';
-import { Link } from 'react-router-dom';
 
 export const Hero = ({ lang }: { lang: Language }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -123,13 +123,13 @@ export const Hero = ({ lang }: { lang: Language }) => {
             {/* Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-6">
               <Link 
-                to="/contact"
+                href="/contact"
                 className="bg-accent text-white px-10 py-4 rounded-xl font-bold hover:bg-accent/90 transition-all min-w-[200px] text-lg shadow-xl shadow-accent/30 hover:-translate-y-1"
               >
                 {slides[currentSlide].primaryBtn[lang]}
               </Link>
               <Link 
-                to="/services"
+                href="/services"
                 className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition-all min-w-[200px] text-lg hover:-translate-y-1"
               >
                 {slides[currentSlide].secondaryBtn[lang]}
