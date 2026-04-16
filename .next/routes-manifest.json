@@ -1,7 +1,7 @@
 {
   "version": 3,
   "pages404": true,
-  "appType": "hybrid",
+  "appType": "app",
   "caseSensitive": false,
   "basePath": "",
   "redirects": [
@@ -21,7 +21,24 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/articles/[articleId]",
+      "regex": "^/articles/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtParticleId": "nxtParticleId"
+      },
+      "namedRegex": "^/articles/(?<nxtParticleId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/branches/[branchId]",
+      "regex": "^/branches/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPbranchId": "nxtPbranchId"
+      },
+      "namedRegex": "^/branches/(?<nxtPbranchId>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -30,16 +47,22 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
       "page": "/_not-found",
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
-      "page": "/About",
-      "regex": "^/About(?:/)?$",
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/About(?:/)?$"
+      "namedRegex": "^/about(?:/)?$"
     },
     {
       "page": "/api/consultations",
@@ -54,46 +77,34 @@
       "namedRegex": "^/api/docs(?:/)?$"
     },
     {
-      "page": "/ArticleDetail",
-      "regex": "^/ArticleDetail(?:/)?$",
+      "page": "/articles",
+      "regex": "^/articles(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/ArticleDetail(?:/)?$"
+      "namedRegex": "^/articles(?:/)?$"
     },
     {
-      "page": "/Articles",
-      "regex": "^/Articles(?:/)?$",
+      "page": "/branches",
+      "regex": "^/branches(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/Articles(?:/)?$"
+      "namedRegex": "^/branches(?:/)?$"
     },
     {
-      "page": "/BranchDetail",
-      "regex": "^/BranchDetail(?:/)?$",
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/BranchDetail(?:/)?$"
+      "namedRegex": "^/contact(?:/)?$"
     },
     {
-      "page": "/Branches",
-      "regex": "^/Branches(?:/)?$",
+      "page": "/home",
+      "regex": "^/home(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/Branches(?:/)?$"
+      "namedRegex": "^/home(?:/)?$"
     },
     {
-      "page": "/Contact",
-      "regex": "^/Contact(?:/)?$",
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/Contact(?:/)?$"
-    },
-    {
-      "page": "/Home",
-      "regex": "^/Home(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/Home(?:/)?$"
-    },
-    {
-      "page": "/Services",
-      "regex": "^/Services(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/Services(?:/)?$"
+      "namedRegex": "^/services(?:/)?$"
     }
   ],
   "dataRoutes": [],

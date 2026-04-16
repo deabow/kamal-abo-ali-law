@@ -1,6 +1,6 @@
 'use client';
 
-import Home from '../pages/Home';
+import Home from '../legacy-pages/Home';
 import { useLang } from './lang-context';
 
 export default function Page() {
