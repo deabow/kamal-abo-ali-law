@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MapPin, Phone, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, ChevronRight, Play } from 'lucide-react';
 import Link from 'next/link';
 import { Language } from '../types';
 
@@ -14,7 +14,7 @@ const BRANCHES = [
   },
   {
     id: 'sheikh-zayed',
-    name: { ar: 'فرع الشيخ ذايد', en: 'Sheikh Zayed Branch' },
+    name: { ar: 'فرع الشيخ زايد', en: 'Sheikh Zayed Branch' },
     address: { ar: 'XXXX', en: 'XXXX' },
     phone: 'XXXX',
     image: '/22.jpg',
@@ -43,6 +43,30 @@ export default function Branches({ lang }: { lang: Language }) {
             <p className="text-gray-500">{lang === 'ar' ? 'نحن دائماً بالقرب منك لخدمتك في أي وقت.' : 'We are always near you to serve you anytime.'}</p>
           </div>
 
+          {/* Video Section Placeholder */}
+          <div className="mb-20 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white relative group">
+            <div className="p-6 text-center border-b border-gray-50">
+              <h3 className="text-2xl font-bold text-primary">
+                {lang === 'ar' ? 'جولة داخل فروعنا' : 'Our Branches Tour'}
+              </h3>
+              <p className="text-gray-500 text-sm mt-2">
+                {lang === 'ar' ? 'مكان الفيديو بتاع الفروع او نبذه عننا ' : ''}
+              </p>
+            </div>
+            <div className="relative aspect-video bg-gray-50 flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: "url('/22.jpg')" }}
+              />
+
+              <div className="relative z-10 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer">
+                <Play className="w-8 h-8 text-accent ml-1" fill="currentColor" />
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             {BRANCHES.map((branch) => (
               <motion.div
@@ -53,9 +77,9 @@ export default function Branches({ lang }: { lang: Language }) {
               >
                 <Link href={`/branches/${branch.id}`} className="block h-full">
                   <div className="h-48 overflow-hidden">
-                    <img 
-                      src={branch.image} 
-                      alt={branch.name[lang]} 
+                    <img
+                      src={branch.image}
+                      alt={branch.name[lang]}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       referrerPolicy="no-referrer"
                     />
