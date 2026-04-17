@@ -150,7 +150,16 @@ export default function Contact({ lang }: { lang: Language }) {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-gray-400 uppercase">{lang === 'ar' ? 'اتصل بنا' : 'Call Us'}</h4>
-                  <p className="text-sm font-bold text-primary">XXXX</p>
+                  <div className="space-y-1 text-sm font-bold text-primary">
+                    <p>{lang === 'ar' ? 'فرع السادات' : 'Sadat Branch'}</p>
+                    <a href="tel:01119102542" className="block text-accent hover:underline">
+                      01119102542
+                    </a>
+                    <p className="pt-1">{lang === 'ar' ? 'فرع زايد' : 'Zayed Branch'}</p>
+                    <a href="tel:01001234567" className="block text-accent hover:underline">
+                      01001234567
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-4">

@@ -39,17 +39,28 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
-            <Scale className="w-6 h-6" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-lg leading-tight text-primary">
-              {lang === 'ar' ? 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية' : 'Kamal Abu Ali Law Firm for Legal Services and Consultations'}
-            </span>
-            <span className="text-[10px] text-accent uppercase tracking-widest font-semibold">
-              {lang === 'ar' ? 'للمحاماة والاستشارات القانونية' : 'Law & Legal Consultations'}
-            </span>
-          </div>
+        {/* Logo Image */}
+
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img 
+                  src="/logo.png"  
+                  alt="Company Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+             
+              <div className="flex flex-col">
+                
+                <span className="font-bold text-lg leading-tight text-primary">
+                  {lang === 'ar' ? 'مؤسسة كمال أبو علي' : 'Kamal Abu Ali Law Firm'}
+                </span>
+
+                <span className="text-[10px] text-accent uppercase tracking-widest font-semibold">
+                  {lang === 'ar' ? 'للمحاماة و الاستشارات القانونية' : 'Law & Legal Consultations'}
+                </span>
+
+              </div>
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
@@ -59,7 +70,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
               href={item.path}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-accent",
-                pathname === item.path 
+                pathname === item.path
                   ? "text-accent font-bold" 
                   : "text-gray-600"
               )}
@@ -77,12 +88,15 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
             <Globe className="w-4 h-4" />
             {lang === 'ar' ? 'English' : 'العربية'}
           </button>
-          <button 
+          <a
+            href="https://my-office.aboalilawfirm.com/login"
+            target="_blank"
+            rel="noreferrer"
             className="border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all"
           >
             {lang === 'ar' ? 'تسجيل الدخول العملاء ' : 'Login'}
-          </button>
-          <Link 
+          </a>
+          <Link
             href="/contact"
             className="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-accent/90 transition-all shadow-lg hover:shadow-accent/20"
           >
@@ -113,7 +127,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "text-lg font-medium border-b border-gray-100 pb-2",
-                  pathname === item.path 
+                  pathname === item.path
                     ? "text-accent font-bold" 
                     : "text-gray-900"
                 )}
@@ -128,12 +142,15 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
               >
                 {lang === 'ar' ? 'English' : 'العربية'}
               </button>
-              <button 
-                className="border-2 border-primary text-primary px-4 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all w-full"
+              <a
+                href="https://my-office.aboalilawfirm.com/login"
+                target="_blank"
+                rel="noreferrer"
+                className="border-2 border-primary text-primary px-4 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all w-full text-center"
               >
                 {lang === 'ar' ? 'تسجيل الدخول' : 'Login'}
-              </button>
-              <Link 
+              </a>
+              <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-accent/90 transition-all text-center"
