@@ -9,7 +9,7 @@ export class ConsultationService extends BaseService {
 
   async bookConsultation(payload: CreateConsultationInput) {
     const whatsappNumber = process.env.LAWYER_WHATSAPP_NUMBER;
-    console.log("Current WhatsApp Number:", whatsappNumber);
+
 
     if (!whatsappNumber) {
       throw new Error("WhatsApp Number is not configured in environment variables");

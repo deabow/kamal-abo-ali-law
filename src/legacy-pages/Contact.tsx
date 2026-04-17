@@ -41,7 +41,7 @@ export default function Contact({ lang }: { lang: Language }) {
       });
 
       const text = await response.text();
-      console.log('Raw Response:', text);
+
       if (!text.trim()) {
         throw new Error(
           lang === 'ar'
@@ -182,21 +182,6 @@ export default function Contact({ lang }: { lang: Language }) {
                       ? 'مدينه السادات - المنطقه الحاديه عشر السكنيه - حي السبع عمارات - مؤسسه كمال أبوعلي للمحاماه والاستشارات القانونيه' 
                       : 'Sadat City - 11th Residential Area - 7 Buildings District - Kamal Abu Ali Law Firm'}
                   </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-64 rounded-3xl overflow-hidden shadow-sm relative group">
-              <img 
-                src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&q=80&w=600" 
-                alt="Map" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-all" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center animate-bounce shadow-xl">
-                  <MapPin className="w-6 h-6" />
                 </div>
               </div>
             </div>
