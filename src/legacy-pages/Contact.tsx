@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { FormEvent, useState } from 'react';
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
 
 export default function Contact({ lang }: { lang: Language }) {
@@ -177,7 +177,11 @@ export default function Contact({ lang }: { lang: Language }) {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-gray-400 uppercase">{lang === 'ar' ? 'العنوان' : 'Address'}</h4>
-                  <p className="text-sm font-bold text-primary">{lang === 'ar' ? 'XXXX' : 'XXXX'}</p>
+                  <p className="text-sm font-bold text-primary leading-relaxed">
+                    {lang === 'ar' 
+                      ? 'مدينه السادات - المنطقه الحاديه عشر السكنيه - حي السبع عمارات - مؤسسه كمال أبوعلي للمحاماه والاستشارات القانونيه' 
+                      : 'Sadat City - 11th Residential Area - 7 Buildings District - Kamal Abu Ali Law Firm'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -198,7 +202,7 @@ export default function Contact({ lang }: { lang: Language }) {
             </div>
 
             <div className="flex justify-center gap-3">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
+              {[Facebook, Instagram, Linkedin].map((Icon, idx) => (
                 <a key={idx} href="#" className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-accent transition-all">
                   <Icon className="w-5 h-5" />
                 </a>

@@ -1,12 +1,8 @@
 import {
   Facebook,
-  Twitter,
   Instagram,
   Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-  Youtube
+  Phone
 } from "lucide-react";
 
 import { Language } from "../types";
@@ -55,13 +51,14 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
             {/* SOCIAL */}
             <div className="flex gap-3">
-              {[Facebook, Instagram, Youtube, Twitter].map((Icon, i) => (
-                <div
+              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                <a
                   key={i}
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 transition cursor-pointer"
+                  href="#"
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 transition cursor-pointer text-white hover:text-white"
                 >
                   <Icon size={18} />
-                </div>
+                </a>
               ))}
             </div>
 

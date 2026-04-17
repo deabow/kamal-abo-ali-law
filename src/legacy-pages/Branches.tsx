@@ -7,10 +7,10 @@ const BRANCHES = [
   {
     id: 'sadat',
     name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
-    address: { ar: 'XXXX', en: 'XXXX' },
-    phone: 'XXXX',
+    address: { ar: 'مدينة السادات - المنطقة 11 - 7 عمارات', en: 'Sadat City - 11th Area - 7 Buildings' },
+    phone: '01119102542',
     image: '/22.jpg',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8349999999997!2d30.81760!3d30.26270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145834567890abc%3A0x123456789abc!2z2YXZitiv2YjZiCDDiNCQINin2YTZhNmF2K8!5e0!3m2!1sar!2seg!4v1234567890'
+    mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed'
   },
   {
     id: 'sheikh-zayed',

@@ -10,10 +10,10 @@ const BRANCHES_DATA = {
   'sadat': {
     id: 'sadat',
     name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
-    address: { ar: 'XXXX', en: 'XXXX' },
-    phone: 'XXXX',
+    address: { ar: 'مدينة السادات - المنطقة 11 - 7 عمارات', en: 'Sadat City - 11th Area - 7 Buildings' },
+    phone: '01119102542',
     image: '/22.jpg',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8349999999997!2d30.81760!3d30.26270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145834567890abc%3A0x123456789abc!2z2YXZitiv2YjZiCDDiNCQINin2YTZhNmF2K8!5e0!3m2!1sar!2seg!4v1234567890',
+    mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed',
     description: {
       ar: 'فرع مدينة السادات يوفر خدمات قانونية متكاملة للعملاء في المنوفية والمناطق المجاورة. يضم فريق من الخبراء القانونيين المتخصصين في مختلف المجالات.',
       en: 'Sadat City Branch provides comprehensive legal services to clients in Menoufia and surrounding areas. It has a team of legal experts specialized in various fields.'
@@ -110,7 +110,9 @@ export default function BranchDetail({ lang }: { lang: Language }) {
                     {lang === 'ar' ? 'اتصل الآن' : 'Call Now'}
                   </a>
                   <a 
-                    href="https://wa.me/XXXX" 
+                    href={`https://wa.me/2${branch.phone}`} 
+                    target="_blank"
+                    rel="noreferrer"
                     className="bg-accent text-white px-8 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all"
                   >
                     {lang === 'ar' ? 'واتساب' : 'WhatsApp'}
