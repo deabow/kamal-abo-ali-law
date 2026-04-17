@@ -8,7 +8,7 @@ export const openApiSpecification = swaggerJSDoc({
       version: "1.0.0",
       description: "Production-ready API for consultations, admin access, and contact messages."
     },
-    servers: [{ url: process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:3000" }]
+    servers: [{ url: process.env.NEXT_PUBLIC_API_BASE_URL ?? "/" }]
   },
   apis: []
 });

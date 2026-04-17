@@ -30,7 +30,7 @@ export default function Contact({ lang }: { lang: Language }) {
         throw new Error(lang === 'ar' ? 'وصف المشكلة يجب أن يكون أكثر من 10 أحرف.' : 'Problem description must be longer than 10 characters.');
       }
 
-      const response = await fetch('http://192.168.0.101:3001/api/consultations', {
+      const response = await fetch('/api/consultations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
