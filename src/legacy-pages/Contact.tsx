@@ -4,11 +4,13 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react
 import { Language } from '../types';
 
 export default function Contact({ lang }: { lang: Language }) {
+  const isAr = lang === 'ar';
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     category: 'OTHER',
-    problem: ''
+    problem: '',
+    branch: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -17,7 +19,6 @@ export default function Contact({ lang }: { lang: Language }) {
     event.preventDefault();
     setIsSubmitting(true);
     setErrorMessage('');
-
     try {
       const trimmedPhone = formData.phone.trim();
       const trimmedProblem = formData.problem.trim();
@@ -30,43 +31,36 @@ export default function Contact({ lang }: { lang: Language }) {
         throw new Error(lang === 'ar' ? 'وصف المشكلة يجب أن يكون أكثر من 10 أحرف.' : 'Problem description must be longer than 10 characters.');
       }
 
-      const response = await fetch('/api/consultations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          phone: trimmedPhone,
-          problem: trimmedProblem
-        })
-      });
-
-      const text = await response.text();
-
-      if (!text.trim()) {
-        throw new Error(
-          lang === 'ar'
-            ? 'لم يتم استلام رد من الخادم. تأكد من تشغيل Next API عبر npm run dev:next.'
-            : 'No response from server. Make sure Next API is running with npm run dev:next.'
-        );
+      if (!formData.branch) {
+        throw new Error(lang === 'ar' ? 'الرجاء اختيار الفرع.' : 'Please select a branch.');
       }
 
-      let result: any;
+      const branchNameAr = formData.branch === 'SADAT' ? 'فرع مدينة السادات' : 'فرع الشيخ زايد';
+
+      const message = `اسم العميل: ${formData.name}
+رقم الهاتف: ${trimmedPhone}
+الفرع: ${branchNameAr}
+المشكلة: ${trimmedProblem}`;
+
+      const phoneTarget = formData.branch === 'SADAT' ? '201505363697' : '201505363698';
+      const whatsappUrl = `https://wa.me/${phoneTarget}?text=${encodeURIComponent(message)}`;
+
+      // Optional: submit to API just for record-keeping
       try {
-        result = JSON.parse(text);
-      } catch {
-        throw new Error(`Server returned non-JSON response: ${text}`);
+        await fetch('/api/consultations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...formData,
+            phone: trimmedPhone,
+            problem: trimmedProblem
+          })
+        });
+      } catch (e) {
+        console.error("API Logging failed", e);
       }
 
-      if (!response.ok) {
-        throw new Error(result?.error?.message || 'Failed to submit consultation request.');
-      }
-
-      const data: { whatsappLink?: string } | undefined = result?.data;
-      if (!data?.whatsappLink) {
-        throw new Error('Missing WhatsApp redirect link.');
-      }
-
-      window.location.href = data.whatsappLink;
+      window.location.href = whatsappUrl;
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'Unexpected error occurred.');
     } finally {
@@ -106,6 +100,16 @@ export default function Contact({ lang }: { lang: Language }) {
                 className="w-full px-4 py-3 rounded-xl border-none bg-white shadow-sm outline-none focus:ring-2 focus:ring-accent transition-all"
               />
               <select
+                required
+                value={formData.branch}
+                onChange={(event) => setFormData((prev) => ({ ...prev, branch: event.target.value }))}
+                className="w-full px-4 py-3 rounded-xl border-none bg-white shadow-sm outline-none focus:ring-2 focus:ring-accent transition-all"
+              >
+                <option value="" disabled>{lang === 'ar' ? 'اختر الفرع' : 'Choose Branch'}</option>
+                <option value="SADAT">{lang === 'ar' ? 'فرع مدينة السادات' : 'Sadat City Branch'}</option>
+                <option value="ZAYED">{lang === 'ar' ? 'فرع الشيخ زايد' : 'Sheikh Zayed Branch'}</option>
+              </select>
+              <select
                 value={formData.category}
                 onChange={(event) => setFormData((prev) => ({ ...prev, category: event.target.value }))}
                 className="w-full px-4 py-3 rounded-xl border-none bg-white shadow-sm outline-none focus:ring-2 focus:ring-accent transition-all"
@@ -114,9 +118,7 @@ export default function Contact({ lang }: { lang: Language }) {
                 <option value="CRIMINAL">{lang === 'ar' ? 'جنائي' : 'Criminal'}</option>
                 <option value="CORPORATE">{lang === 'ar' ? 'تجاري' : 'Commercial'}</option>
                 <option value="FAMILY">{lang === 'ar' ? 'أسرة' : 'Family'}</option>
-                <option value="CIVIL">{lang === 'ar' ? 'مدني' : 'Civil'}</option>
-                <option value="LABOR">{lang === 'ar' ? 'عمال' : 'Labor'}</option>
-                <option value="REAL_ESTATE">{lang === 'ar' ? 'عقارات' : 'Real Estate'}</option>
+
               </select>
               <textarea
                 required
@@ -144,45 +146,52 @@ export default function Contact({ lang }: { lang: Language }) {
 
           <div className="space-y-6">
             <div className="bg-white border border-gray-100 p-6 rounded-3xl shadow-sm space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-accent/10 text-accent rounded-full flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-400 uppercase">{lang === 'ar' ? 'اتصل بنا' : 'Call Us'}</h4>
-                  <div className="space-y-1 text-sm font-bold text-primary">
-                    <p>{lang === 'ar' ? 'فرع السادات' : 'Sadat Branch'}</p>
-                    <a href="tel:01119102542" className="block text-accent hover:underline">
-                      01119102542
-                    </a>
-                    <p className="pt-1">{lang === 'ar' ? 'فرع زايد' : 'Zayed Branch'}</p>
-                    <a href="tel:01001234567" className="block text-accent hover:underline">
-                      01001234567
-                    </a>
-                  </div>
+              <div className="w-full">
+                <div className="space-y-4">
+                  {/* فرع السادات */}
+                  <a href="tel:01505363697" className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 shadow-sm cursor-pointer hover:shadow-md transition">
+                    <div className="text-right">
+                      <p className="font-semibold text-sm text-primary">
+                        {isAr ? "فرع السادات" : "Sadat Branch"}
+                      </p>
+                      <p className="text-gray-500 text-xs mt-1" dir="ltr">
+                        0150 536 3697
+                      </p>
+                    </div>
+                    <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
+                      <Phone size={18} className="text-accent" />
+                    </div>
+                  </a>
+
+                  {/* WhatsApp Sadat */}
+                  <a href="https://wa.me/201505363697" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-3 font-semibold text-sm hover:bg-accent/90 transition">
+                    {isAr ? "تواصل عبر واتساب - فرع السادات" : "WhatsApp - Sadat Branch"}
+                  </a>
+
+                  {/* فرع زايد */}
+                  <a href="tel:01505363698" className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 shadow-sm cursor-pointer hover:shadow-md transition">
+                    <div className="text-right">
+                      <p className="font-semibold text-sm text-primary">
+                        {isAr ? "فرع زايد" : "Zayed Branch"}
+                      </p>
+                      <p className="text-gray-500 text-xs mt-1" dir="ltr">
+                        0150 536 3698
+                      </p>
+                    </div>
+                    <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
+                      <Phone size={18} className="text-accent" />
+                    </div>
+                  </a>
+
+                  {/* WhatsApp Zayed */}
+                  <a href="https://wa.me/201505363698" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-3 font-semibold text-sm hover:bg-accent/90 transition">
+                    {isAr ? "تواصل عبر واتساب - فرع الشيخ زايد" : "WhatsApp - Sheikh Zayed Branch"}
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-accent/10 text-accent rounded-full flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-400 uppercase">{lang === 'ar' ? 'البريد الإلكتروني' : 'Email'}</h4>
-                  <p className="text-sm font-bold text-primary">info@aboalilawfirm.com</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-accent/10 text-accent rounded-full flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-400 uppercase">{lang === 'ar' ? 'العنوان' : 'Address'}</h4>
-                  <p className="text-sm font-bold text-primary leading-relaxed">
-                    {lang === 'ar' 
-                      ? 'مدينه السادات - المنطقه الحاديه عشر السكنيه - حي السبع عمارات - مؤسسه كمال أبوعلي للمحاماه والاستشارات القانونيه' 
-                      : 'Sadat City - 11th Residential Area - 7 Buildings District - Kamal Abu Ali Law Firm'}
-                  </p>
-                </div>
+
+
               </div>
             </div>
 

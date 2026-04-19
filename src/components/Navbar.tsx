@@ -33,45 +33,45 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-      scrolled 
-        ? "bg-white/90 backdrop-blur-md shadow-md py-2" 
+      scrolled
+        ? "bg-white/90 backdrop-blur-md shadow-md py-2"
         : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-        {/* Logo Image */}
+          {/* Logo Image */}
 
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img 
-                  src="/logo.png"  
-                  alt="Company Logo"
-                  className="w-full h-full object-contain"
-                />
-              </div>
+          <div className="w-12 h-12 flex items-center justify-center">
+            <img
+              src="/logo.png"
+              alt="Company Logo"
+              className="w-full h-full object-contain"
+            />
+          </div>
 
-             
-              <div className="flex flex-col">
-                
-                <span className="font-bold text-lg leading-tight text-primary">
-                  {lang === 'ar' ? 'مؤسسة كمال أبو علي' : 'Kamal Abu Ali Law Firm'}
-                </span>
 
-                <span className="text-[10px] text-accent uppercase tracking-widest font-semibold">
-                  {lang === 'ar' ? 'للمحاماة و الاستشارات القانونية' : 'Law & Legal Consultations'}
-                </span>
+          <div className="flex flex-col">
 
-              </div>
+            <span className="font-bold text-lg leading-tight text-primary">
+              {lang === 'ar' ? 'مؤسسة كمال أبو علي' : 'Kamal Abu Ali Law Firm'}
+            </span>
+
+            <span className="text-[10px] text-accent uppercase tracking-widest font-semibold">
+              {lang === 'ar' ? 'للمحاماة و الاستشارات القانونية' : 'Law & Legal Consultations'}
+            </span>
+
+          </div>
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
-            <Link 
-              key={item.id} 
+            <Link
+              key={item.id}
               href={item.path}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-accent",
                 pathname === item.path
-                  ? "text-accent font-bold" 
+                  ? "text-accent font-bold"
                   : "text-gray-600"
               )}
             >
@@ -81,7 +81,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <button 
+          <button
             onClick={toggleLang}
             className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1 text-gray-700"
           >
@@ -94,7 +94,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
             rel="noreferrer"
             className="border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all"
           >
-            {lang === 'ar' ? 'تسجيل الدخول العملاء ' : 'Login'}
+            {lang === 'ar' ? 'تسجيل الدخول العملاء ' : 'Customer Login'}
           </a>
           <Link
             href="/contact"
@@ -104,7 +104,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
           </Link>
         </div>
 
-        <button 
+        <button
           className="lg:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -114,21 +114,21 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-white shadow-xl p-6 flex flex-col gap-4 lg:hidden"
           >
             {NAV_ITEMS.map((item) => (
-              <Link 
-                key={item.id} 
+              <Link
+                key={item.id}
                 href={item.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "text-lg font-medium border-b border-gray-100 pb-2",
                   pathname === item.path
-                    ? "text-accent font-bold" 
+                    ? "text-accent font-bold"
                     : "text-gray-900"
                 )}
               >
@@ -136,8 +136,8 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
               </Link>
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-gray-100">
-              <button 
-                onClick={toggleLang} 
+              <button
+                onClick={toggleLang}
                 className="font-bold text-accent transition-colors text-left"
               >
                 {lang === 'ar' ? 'English' : 'العربية'}

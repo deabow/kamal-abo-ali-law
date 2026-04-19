@@ -116,14 +116,14 @@ export const Footer = ({ lang }: { lang: Language }) => {
             <div className="space-y-5">
 
               {/* فرع السادات */}
-              <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/5">
+              <a href="tel:01505363697" className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
 
                 <div className="text-right">
                   <p className="text-white font-semibold text-sm">
                     {isAr ? "فرع السادات" : "Sadat Branch"}
                   </p>
                   <p className="text-white/60 text-xs mt-1" dir="ltr">
-                    0111 910 2542
+                    0150 536 3697
                   </p>
                 </div>
 
@@ -131,17 +131,17 @@ export const Footer = ({ lang }: { lang: Language }) => {
                   <Phone size={18} className="text-accent" />
                 </div>
 
-              </div>
+              </a>
 
               {/* فرع زايد */}
-              <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/5">
+              <a href="tel:01505363698" className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
 
                 <div className="text-right">
                   <p className="text-white font-semibold text-sm">
                     {isAr ? "فرع زايد" : "Zayed Branch"}
                   </p>
                   <p className="text-white/60 text-xs mt-1" dir="ltr">
-                    0100 123 4567
+                    0150 536 3698
                   </p>
                 </div>
 
@@ -149,7 +149,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
                   <Phone size={18} className="text-accent" />
                 </div>
 
-              </div>
+              </a>
 
             </div>
 
