@@ -149,44 +149,50 @@ export default function Contact({ lang }: { lang: Language }) {
               <div className="w-full">
                 <div className="space-y-4">
                   {/* فرع السادات */}
-                  <a href="tel:01505363697" className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 shadow-sm cursor-pointer hover:shadow-md transition">
-                    <div className="text-right">
-                      <p className="font-semibold text-sm text-primary">
-                        {isAr ? "فرع السادات" : "Sadat Branch"}
-                      </p>
-                      <p className="text-gray-500 text-xs mt-1" dir="ltr">
-                        0150 536 3697
-                      </p>
+                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="text-right flex-1">
+                        <p className="font-semibold text-sm text-primary mb-1">
+                          {isAr ? "فرع مدينة السادات" : "Sadat City Branch"}
+                        </p>
+                        <p className="text-gray-500 text-xs leading-5">
+                          {isAr ? 'المنطقة الحادية عشر - حي ال 7 عمارات - مدينة السادات - المنوفية' : '11th District - 7 Buildings Neighborhood - Sadat City - Menoufia'}
+                        </p>
+                        <a href="tel:01505363697" className="text-accent font-semibold text-xs mt-2 inline-block" dir="ltr">
+                          0150 536 3697
+                        </a>
+                      </div>
+                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mr-3 ml-3">
+                        <MapPin size={18} className="text-accent" />
+                      </div>
                     </div>
-                    <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
-                      <Phone size={18} className="text-accent" />
-                    </div>
-                  </a>
-
-                  {/* WhatsApp Sadat */}
-                  <a href="https://wa.me/201505363697" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-3 font-semibold text-sm hover:bg-accent/90 transition">
-                    {isAr ? "تواصل عبر واتساب - فرع السادات" : "WhatsApp - Sadat Branch"}
-                  </a>
+                    <a href="https://wa.me/201505363697" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-2 font-semibold text-xs hover:bg-accent/90 transition">
+                      {isAr ? "واتساب - فرع السادات" : "WhatsApp - Sadat Branch"}
+                    </a>
+                  </div>
 
                   {/* فرع زايد */}
-                  <a href="tel:01505363698" className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 shadow-sm cursor-pointer hover:shadow-md transition">
-                    <div className="text-right">
-                      <p className="font-semibold text-sm text-primary">
-                        {isAr ? "فرع زايد" : "Zayed Branch"}
-                      </p>
-                      <p className="text-gray-500 text-xs mt-1" dir="ltr">
-                        0150 536 3698
-                      </p>
+                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="text-right flex-1">
+                        <p className="font-semibold text-sm text-primary mb-1">
+                          {isAr ? "فرع الشيخ زايد" : "Sheikh Zayed Branch"}
+                        </p>
+                        <p className="text-gray-500 text-xs leading-5">
+                          {isAr ? 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة' : '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza'}
+                        </p>
+                        <a href="tel:01505363698" className="text-accent font-semibold text-xs mt-2 inline-block" dir="ltr">
+                          0150 536 3698
+                        </a>
+                      </div>
+                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mr-3 ml-3">
+                        <MapPin size={18} className="text-accent" />
+                      </div>
                     </div>
-                    <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
-                      <Phone size={18} className="text-accent" />
-                    </div>
-                  </a>
-
-                  {/* WhatsApp Zayed */}
-                  <a href="https://wa.me/201505363698" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-3 font-semibold text-sm hover:bg-accent/90 transition">
-                    {isAr ? "تواصل عبر واتساب - فرع الشيخ زايد" : "WhatsApp - Sheikh Zayed Branch"}
-                  </a>
+                    <a href="https://wa.me/201505363698" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-2 font-semibold text-xs hover:bg-accent/90 transition">
+                      {isAr ? "واتساب - فرع الشيخ زايد" : "WhatsApp - Sheikh Zayed Branch"}
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -201,6 +207,36 @@ export default function Contact({ lang }: { lang: Language }) {
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto mt-16">
+          <h3 className="text-2xl font-bold text-primary mb-8 text-center">
+            {lang === 'ar' ? 'مواقع فروعنا' : 'Our Branch Locations'}
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 h-80">
+              <iframe 
+                src="https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 h-80">
+              <iframe 
+                src="https://maps.app.goo.gl/3ZwWDuuCa1muHipS9"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

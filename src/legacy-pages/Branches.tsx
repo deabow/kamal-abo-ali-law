@@ -7,18 +7,18 @@ const BRANCHES = [
   {
     id: 'sadat',
     name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
-    address: { ar: 'مدينة السادات - المنطقة 11 - 7 عمارات', en: 'Sadat City - 11th Area - 7 Buildings' },
-    phone: '01119102542',
+    address: { ar: 'المنطقة الحادية عشر - حي ال 7 عمارات - مدينة السادات - المنوفية', en: '11th District - 7 Buildings Neighborhood - Sadat City - Menoufia' },
+    phone: '01505363697',
     image: '/22.jpg',
     mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed'
   },
   {
     id: 'sheikh-zayed',
     name: { ar: 'فرع الشيخ زايد', en: 'Sheikh Zayed Branch' },
-    address: { ar: 'XXXX', en: 'XXXX' },
-    phone: 'XXXX',
+    address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
+    phone: '01505363698',
     image: '/22.jpg',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.567!2d31.15470!3d30.01560!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583c2f123456%3A0x789abcdef!2z2YXZitiv2YjZiCDYqNmI2YrZhCDYo9mH2YrYsQ!5e0!3m2!1sar!2seg!4v1234567890'
+    mapUrl: 'https://maps.app.goo.gl/3ZwWDuuCa1muHipS9'
   }
 ];
 

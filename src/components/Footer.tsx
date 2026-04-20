@@ -120,7 +120,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
                 <div className="text-right">
                   <p className="text-white font-semibold text-sm">
-                    {isAr ? "فرع السادات" : "Sadat Branch"}
+                    {isAr ? "فرع مدينة السادات" : "Sadat City Branch"}
                   </p>
                   <p className="text-white/60 text-xs mt-1" dir="ltr">
                     0150 536 3697
@@ -138,7 +138,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
                 <div className="text-right">
                   <p className="text-white font-semibold text-sm">
-                    {isAr ? "فرع زايد" : "Zayed Branch"}
+                    {isAr ? "فرع الشيخ زايد" : "Sheikh Zayed Branch"}
                   </p>
                   <p className="text-white/60 text-xs mt-1" dir="ltr">
                     0150 536 3698
