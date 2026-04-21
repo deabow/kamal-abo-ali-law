@@ -11,7 +11,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
   const isAr = lang === "ar";
 
   return (
-    <footer className="bg-primary text-white/70 pt-20 pb-10 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-primary text-white/70 pt-20 pb-10 relative overflow-hidden border-t border-white/5 w-full max-w-full">
 
       {/* Background Glow */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />

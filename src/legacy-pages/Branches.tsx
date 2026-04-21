@@ -25,7 +25,7 @@ const BRANCHES = [
 export default function Branches({ lang }: { lang: Language }) {
   return (
     <div className="pt-32 pb-20">
-      <section className="section-padding bg-bg-soft overflow-hidden relative">
+      <section className="section-padding bg-bg-soft overflow-hidden relative w-full max-w-full">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
             <path d="M100,100 L900,100 L900,900 L100,900 Z" fill="none" stroke="currentColor" strokeWidth="2" />

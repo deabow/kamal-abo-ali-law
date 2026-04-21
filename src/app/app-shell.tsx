@@ -18,7 +18,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <LangProvider value={{ lang, setLang }}>
-      <div className="min-h-screen font-sans selection:bg-accent selection:text-white transition-colors duration-300">
+      <div className="min-h-screen font-sans selection:bg-accent selection:text-white transition-colors duration-300 overflow-x-hidden w-full max-w-full">
         <Navbar lang={lang} setLang={setLang} />
         <main>{children}</main>
         <Footer lang={lang} />

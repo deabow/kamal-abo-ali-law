@@ -5,7 +5,7 @@ import { Language } from '../types';
 export default function About({ lang }: { lang: Language }) {
   return (
     <div className="pt-32 pb-20">
-      <section className="section-padding">
+      <section className="section-padding overflow-hidden w-full max-w-full">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -15,7 +15,7 @@ export default function About({ lang }: { lang: Language }) {
             <img 
               src="/2.png" 
               alt="About Us"
-              className="rounded-3xl shadow-xl"
+              className="w-full max-w-full h-auto rounded-3xl shadow-xl"
               referrerPolicy="no-referrer"
             />
           </motion.div>

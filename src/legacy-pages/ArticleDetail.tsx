@@ -568,7 +568,7 @@ export default function ArticleDetail({ lang }: { lang: Language }) {
         </Link>
       </div>
 
-      <section className="section-padding">
+      <section className="section-padding w-full max-w-full overflow-hidden">
         <div className="max-w-4xl mx-auto">
           {/* Header Image */}
           <motion.div

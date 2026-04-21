@@ -127,7 +127,7 @@ export default function Articles({ lang }: { lang: Language }) {
 
   return (
     <div className="pt-32 pb-20">
-      <section className="section-padding">
+      <section className="section-padding w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">
             {lang === 'ar' ? 'المقالات القانونية' : 'Legal Articles'}

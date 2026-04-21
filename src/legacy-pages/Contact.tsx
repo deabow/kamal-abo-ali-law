@@ -70,7 +70,7 @@ export default function Contact({ lang }: { lang: Language }) {
 
   return (
     <div className="pt-32 pb-20">
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold text-primary mb-4">
             {lang === 'ar' ? 'تواصل معنا' : 'Contact Us'}

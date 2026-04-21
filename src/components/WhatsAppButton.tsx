@@ -39,7 +39,7 @@ export const WhatsAppButton = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <a 
-                  href="https://wa.me/201119102542" 
+                  href="https://wa.me/201505363697" 
                   target="_blank" 
                   rel="noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 text-gray-700 hover:text-green-600 transition-all group"
@@ -50,11 +50,11 @@ export const WhatsAppButton = () => {
                   </div>
                   <div className="text-right w-full">
                     <p className="font-bold text-sm">فرع السادات</p>
-                    <p className="text-xs text-gray-400 font-sans" dir="ltr">+20 111 910 2542</p>
+                    <p className="text-xs text-gray-400 font-sans" dir="ltr">+20 150 536 3697</p>
                   </div>
                 </a>
                 <a 
-                  href="https://wa.me/201001234567" 
+                  href="https://wa.me/201505363698" 
                   target="_blank" 
                   rel="noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 text-gray-700 hover:text-green-600 transition-all group"
@@ -65,7 +65,7 @@ export const WhatsAppButton = () => {
                   </div>
                   <div className="text-right w-full">
                     <p className="font-bold text-sm">فرع زايد</p>
-                    <p className="text-xs text-gray-400 font-sans" dir="ltr">+20 100 123 4567</p>
+                    <p className="text-xs text-gray-400 font-sans" dir="ltr">+20 150 536 3698</p>
                   </div>
                 </a>
               </div>

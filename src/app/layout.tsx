@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl">
-      <body>
+      <body className="overflow-x-hidden max-w-full">
         <AppShell>{children}</AppShell>
       </body>
     </html>

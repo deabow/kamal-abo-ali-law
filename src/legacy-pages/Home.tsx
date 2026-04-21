@@ -48,7 +48,7 @@ export default function Home({ lang }: { lang: Language }) {
       </section>
 
       {/* About Teaser */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden w-full max-w-full">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: lang === 'ar' ? 50 : -50 }}
@@ -58,7 +58,7 @@ export default function Home({ lang }: { lang: Language }) {
             <img 
               src="/2.png" 
               alt="About Us"
-              className="rounded-3xl shadow-2xl"
+              className="w-full max-w-full h-auto rounded-3xl shadow-2xl"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -135,7 +135,7 @@ export default function Home({ lang }: { lang: Language }) {
       </section>
 
       {/* Branches Teaser */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden w-full max-w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -152,7 +152,7 @@ export default function Home({ lang }: { lang: Language }) {
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="text-accent" />
-                  <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ ذايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
+                  <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ زايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
                 </div>
               </div>
               <Link 
@@ -166,7 +166,7 @@ export default function Home({ lang }: { lang: Language }) {
               <img 
                 src="/3.jpg" 
                 alt="Branches"
-                className="rounded-3xl shadow-xl"
+                className="w-full max-w-full h-auto rounded-3xl shadow-xl"
                 referrerPolicy="no-referrer"
               />
             </div>
