@@ -8,64 +8,35 @@ import { cn } from '../lib/utils';
 import { useState } from 'react';
 
 const ARTICLES = [
-  // جنائي
+  // تجاري
   {
     id: 1,
-    title: { ar: 'أهم حقوق المتهم أمام النيابة العامة', en: 'Rights of the Accused Before Public Prosecution' },
-    category: { ar: 'قانون جنائي', en: 'Criminal Law' },
-    categoryId: 'criminal',
+    title: { ar: 'أهمية الاستشارات القانونية في تأسيس الشركات الناشئة', en: 'The Importance of Legal Consultations in Establishing Startups' },
+    summary: { ar: 'تعرف على الخطوات القانونية الصحيحة لتأسيس شركتك وضمان حقوق الشركاء وفقاً للقانون المصري الجديد.', en: 'Learn about the correct legal steps to establish your company and ensure partners\' rights according to the new Egyptian law.' },
+    category: { ar: 'قانون تجاري', en: 'Commercial Law' },
+    categoryId: 'commercial',
     date: '2024-03-15',
     image: '/10.jpg'
   },
+  // جنائي
   {
-    id: 4,
-    title: { ar: 'الأحكام الجنائية والطعن فيها', en: 'Criminal Judgments and Appeals' },
-    category: { ar: 'قانون جنائي', en: 'Criminal Law' },
+    id: 2,
+    title: { ar: 'حقوق الموكل والتزامات المحامي: دليل شامل', en: 'Client Rights and Lawyer Obligations: A Comprehensive Guide' },
+    summary: { ar: 'كل ما تحتاج معرفته عن العلاقة القانونية بين المحامي وموكله وضمانات السرية والاحترافية.', en: 'Everything you need to know about the legal relationship between a lawyer and their client, and guarantees of confidentiality and professionalism.' },
+    category: { ar: 'قانون عام', en: 'General Law' },
     categoryId: 'criminal',
     date: '2024-03-20',
     image: '/12.jpg'
   },
-  {
-    id: 5,
-    title: { ar: 'الجرائم الإلكترونية وعقوباتها', en: 'Cybercrime and Penalties' },
-    category: { ar: 'قانون جنائي', en: 'Criminal Law' },
-    categoryId: 'criminal',
-    date: '2024-03-18',
-    image: '/13.png'
-  },
-  // تجاري
-  {
-    id: 2,
-    title: { ar: 'كيفية صياغة عقد تجاري يحمي مصالحك', en: 'How to Draft a Commercial Contract' },
-    category: { ar: 'قانون تجاري', en: 'Commercial Law' },
-    categoryId: 'commercial',
-    date: '2024-03-10',
-    image: '/11.png'
-  },
-  {
-    id: 6,
-    title: { ar: 'حقوق المستهلك في العقود التجارية', en: 'Consumer Rights in Commercial Contracts' },
-    category: { ar: 'قانون تجاري', en: 'Commercial Law' },
-    categoryId: 'commercial',
-    date: '2024-03-12',
-    image: '/15.jpg'
-  },
-  {
-    id: 7,
-    title: { ar: 'الضمانات والشروط في البيع والشراء', en: 'Warranties and Terms in Sales' },
-    category: { ar: 'قانون تجاري', en: 'Commercial Law' },
-    categoryId: 'commercial',
-    date: '2024-03-08',
-    image: '/14.jpg'
-  },
-  // أسرة
+  // عمل
   {
     id: 3,
-    title: { ar: 'إجراءات الطلاق في القانون المصري', en: 'Divorce Procedures in Egyptian Law' },
-    category: { ar: 'قانون الأسرة', en: 'Family Law' },
-    categoryId: 'family',
-    date: '2024-03-05',
-    image: '/16.jpg'
+    title: { ar: 'كيفية التعامل مع النزاعات العمالية وتجنب المخاطر القانونية', en: 'How to Handle Labor Disputes and Avoid Legal Risks' },
+    summary: { ar: 'نظرة عامة على قانون العمل وكيفية حماية حقوق أصحاب العمل والموظفين في بيئة العمل.', en: 'An overview of labor law and how to protect the rights of employers and employees in the workplace.' },
+    category: { ar: 'قانون العمل', en: 'Labor Law' },
+    categoryId: 'labor',
+    date: '2024-03-18',
+    image: '/13.png'
   },
   {
     id: 8,
@@ -162,9 +133,9 @@ export default function Articles({ lang }: { lang: Language }) {
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group h-full cursor-pointer"
+                className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group h-full cursor-pointer flex flex-col"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 overflow-hidden shrink-0">
                   <img 
                     src={article.image} 
                     alt={article.title[lang]} 
@@ -172,14 +143,19 @@ export default function Articles({ lang }: { lang: Language }) {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-[10px] font-bold mb-4">
                     {article.category[lang]}
                   </div>
-                  <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors leading-tight mb-4">
+                  <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors leading-tight mb-2">
                     {article.title[lang]}
                   </h3>
-                  <div className="flex items-center justify-between text-[10px] text-gray-400 border-t border-gray-50 pt-4">
+                  {article.summary && (
+                    <p className="text-sm text-gray-500 line-clamp-2 mb-4">
+                      {article.summary[lang]}
+                    </p>
+                  )}
+                  <div className="flex items-center justify-between text-[10px] text-gray-400 border-t border-gray-50 pt-4 mt-auto">
                     <div className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       <span>{lang === 'ar' ? '5 دقائق قراءة' : '5 min read'}</span>

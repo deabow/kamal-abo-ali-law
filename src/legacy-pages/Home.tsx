@@ -16,12 +16,12 @@ export default function Home({ lang }: { lang: Language }) {
             {
               icon: <Award className="w-8 h-8 text-accent" />,
               title: { ar: 'خبرة واسعة', en: 'Wide Experience' },
-              desc: { ar: 'أكثر من 15 عاماً في المحاماة والاستشارات القانونية.', en: 'Over 15 years in law practice and legal consultations.' }
+              desc: { ar: 'أكثر من 20 عاماً في المحاماة والاستشارات القانونية.', en: 'Over 20 years in law practice and legal consultations.' }
             },
             {
               icon: <CheckCircle2 className="w-8 h-8 text-accent" />,
-              title: { ar: 'نتائج مضمونة', en: 'Guaranteed Results' },
-              desc: { ar: 'نسبة نجاح عالية في القضايا المعقدة.', en: 'High success rate in complex legal cases.' }
+              title: { ar: 'الدقة', en: 'Accuracy' },
+              desc: { ar: 'دراسة وافية وشاملة لكل قضية لضمان نتائج ترقى لتطلعاتكم.', en: 'Comprehensive and meticulous analysis of every case to ensure results that meet your expectations.' }
             },
             {
               icon: <Award className="w-8 h-8 text-accent" />,
@@ -70,10 +70,10 @@ export default function Home({ lang }: { lang: Language }) {
             <span className="text-accent font-bold uppercase tracking-widest mb-4 block">
               {lang === 'ar' ? 'من نحن' : 'About Us'}
             </span>
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              {lang === 'ar' ? 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية' : 'Kamal Abu Ali Law Firm for Legal Services and Consultations'}
+            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 text-start">
+              {lang === 'ar' ? 'مؤسسة كمال أبو علي للمحاماة' : 'Kamal Abu Ali Law Firm'}
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-600 mb-8 leading-relaxed max-w-2xl text-start">
               {lang === 'ar' 
                 ? 'نحن مؤسسة قانونية رائدة تلتزم بتقديم حلول مبتكرة وفعالة لعملائنا. نجمع بين الخبرة العميقة والنزاهة المهنية لتحقيق العدالة.'
                 : 'We are a leading legal institution committed to providing innovative and effective solutions to our clients. We combine deep expertise and professional integrity to achieve justice.'}
@@ -152,7 +152,7 @@ export default function Home({ lang }: { lang: Language }) {
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="text-accent" />
-                  <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ زايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
+                  <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ ذايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
                 </div>
               </div>
               <Link 
@@ -192,9 +192,9 @@ export default function Home({ lang }: { lang: Language }) {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { id: 2, title: { ar: 'كيفية صياغة عقد تجاري يحمي مصالحك', en: 'How to Draft a Commercial Contract' }, image: '/11.png' },
-              { id: 1, title: { ar: 'أهم حقوق المتهم أمام النيابة العامة', en: 'Rights of the Accused Before Public Prosecution' }, image: '/10.jpg' },
-              { id: 3, title: { ar: 'إجراءات الطلاق في القانون المصري', en: 'Divorce Procedures in Egyptian Law' }, image: '/22.jpg' }
+              { id: 2, title: { ar: 'كيفية صياغة عقد تجاري يحمي مصالحك', en: 'How to Draft a Commercial Contract' }, summary: { ar: 'تعرف على الخطوات القانونية الصحيحة لتأسيس شركتك وضمان حقوق الشركاء وفقاً للقانون المصري الجديد.', en: 'Learn about the correct legal steps to establish your company and ensure partners\' rights according to the new Egyptian law.' }, image: '/11.png' },
+              { id: 1, title: { ar: 'أهم حقوق المتهم أمام النيابة العامة', en: 'Rights of the Accused Before Public Prosecution' }, summary: { ar: 'كل ما تحتاج معرفته عن العلاقة القانونية بين المحامي وموكله وضمانات السرية والاحترافية.', en: 'Everything you need to know about the legal relationship between a lawyer and their client, and guarantees of confidentiality and professionalism.' }, image: '/10.jpg' },
+              { id: 3, title: { ar: 'إجراءات الطلاق في القانون المصري', en: 'Divorce Procedures in Egyptian Law' }, summary: { ar: 'نظرة عامة على قانون العمل وكيفية حماية حقوق أصحاب العمل والموظفين في بيئة العمل.', en: 'An overview of labor law and how to protect the rights of employers and employees in the workplace.' }, image: '/22.jpg' }
             ].map((article) => (
               <Link 
                 key={article.id}
@@ -206,14 +206,17 @@ export default function Home({ lang }: { lang: Language }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: article.id * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer h-full"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer h-full flex flex-col"
                 >
-                  <img src={article.image} alt={article.title[lang]} className="w-full h-48 object-cover" referrerPolicy="no-referrer" />
-                  <div className="p-6">
-                    <h3 className="font-bold text-primary mb-4 line-clamp-2">
+                  <img src={article.image} alt={article.title[lang]} className="w-full h-48 object-cover shrink-0" referrerPolicy="no-referrer" />
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="font-bold text-primary mb-2 line-clamp-2">
                       {article.title[lang]}
                     </h3>
-                    <div className="flex items-center justify-between text-xs text-gray-400">
+                    <p className="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">
+                      {article.summary[lang]}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-gray-400 mt-auto">
                       <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3" />
                         <span>{lang === 'ar' ? 'منذ يومين' : '2 days ago'}</span>

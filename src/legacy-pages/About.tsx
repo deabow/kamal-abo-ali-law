@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Award, CheckCircle2 } from 'lucide-react';
+import { Target, Lock } from 'lucide-react';
 import { Language } from '../types';
 
 export default function About({ lang }: { lang: Language }) {
@@ -29,38 +29,65 @@ export default function About({ lang }: { lang: Language }) {
               {lang === 'ar' ? 'من نحن' : 'About Us'}
             </span>
             <h2 className="text-4xl font-bold text-primary mb-6">
-              {lang === 'ar' ? 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية' : 'Kamal Abu Ali Law Firm for Legal Services and Consultations'}
+              {lang === 'ar' ? 'مؤسسة كمال أبو علي للمحاماة' : 'Kamal Abu Ali Law Firm'}
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-              {lang === 'ar' 
-                ? 'نلتزم بتقديم أفضل الخدمات القانونية للأفراد والشركات بكفاءة عالية وسرية تامة. خبرتنا تمتد لأكثر من 15 عاماً في مختلف المجالات القانونية، مما يجعلنا الخيار الأول لمن يبحث عن العدالة والاحترافية.'
-                : 'We are committed to providing the best legal services to individuals and companies with high efficiency and complete confidentiality. Our experience spans over 15 years in various legal fields, making us the first choice for those seeking justice and professionalism.'}
-            </p>
+            <div className="text-gray-600 mb-8 leading-relaxed text-lg space-y-4">
+              {lang === 'ar' ? (
+                <>
+                  <p>
+                    نحن مؤسسة قانونية متكاملة تأسست على يد المستشار كمال أبو علي، المحامي أمام محكمة النقض والمحكمة الدستورية العليا، وخبير في حوكمة الشركات والامتثال وإدارة العقود، بالإضافة إلى القضايا الجنائية والعسكرية والمنازعات المدنية والتجارية.
+                  </p>
+                  <p>
+                    تضم مؤسستنا نخبة من المتخصصين في تقديم كافة الخدمات والاستشارات القانونية، مما يجعلنا شريكًا موثوقًا لكل من الأفراد والشركات على حد سواء.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    We are a full-service law firm founded by Counselor Kamal Abu Ali, a lawyer admitted before the Court of Cassation and the Supreme Constitutional Court, and an expert in corporate governance, compliance, contract management, as well as criminal, military, and civil and commercial disputes.
+                  </p>
+                  <p>
+                    Our firm brings together an elite team of specialists dedicated to providing comprehensive legal services and consultations, making us a trusted partner for both individuals and businesses.
+                  </p>
+                </>
+              )}
+            </div>
             
             <div className="grid grid-cols-2 gap-6 mb-10">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent shrink-0 border border-gray-100">
-                  <Award className="w-6 h-6" />
+                  <Target className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary">{lang === 'ar' ? 'التميز' : 'Excellence'}</h4>
-                  <p className="text-sm text-gray-500">{lang === 'ar' ? 'نسعى دائماً للأفضل' : 'Always striving for the best'}</p>
+                  <h4 className="font-bold text-primary">{lang === 'ar' ? 'الدقة' : 'Precision'}</h4>
+                  <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                    {lang === 'ar'
+                      ? 'دراسة وافية وشاملة لكل قضية لضمان نتائج ترقى لتطلعاتكم.'
+                      : 'Comprehensive and meticulous analysis of every case to ensure optimal results.'}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent shrink-0 border border-gray-100">
-                  <CheckCircle2 className="w-6 h-6" />
+                  <Lock className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary">{lang === 'ar' ? 'النزاهة' : 'Integrity'}</h4>
-                  <p className="text-sm text-gray-500">{lang === 'ar' ? 'الصدق هو أساسنا' : 'Honesty is our foundation'}</p>
+                  <h4 className="font-bold text-primary">{lang === 'ar' ? 'السرية' : 'Confidentiality'}</h4>
+                  <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                    {lang === 'ar'
+                      ? 'بيئة آمنة تماماً تضمن حماية أسراركم والتعامل معها بمنتهى المهنية.'
+                      : 'A fully secure environment ensuring the highest level of confidentiality and professionalism.'}
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4 text-gray-600">
-              <p>{lang === 'ar' ? 'تأسست المؤسسة على يد الأستاذ كمال أبو علي، المحامي بالنقض والدستورية العليا، لتكون منارة للحق والعدل.' : 'The firm was founded by Mr. Kamal Abu Ali, Lawyer at the Court of Cassation and Supreme Constitutional Court, to be a beacon of truth and justice.'}</p>
-              <p>{lang === 'ar' ? 'نحن نؤمن بأن كل قضية هي أمانة، ونسعى جاهدين لتحقيق أفضل النتائج لعملائنا.' : 'We believe that every case is a trust, and we strive to achieve the best results for our clients.'}</p>
+              <p>
+                {lang === 'ar'
+                  ? 'وقد تأسست مؤسستنا على مبادئ الشفافية والدقة والسرية، بما يضمن تحقيق نتائج سليمة وموثوقة لجميع عملائنا. كما نعمل من خلال فريق من المحامين والمستشارين المتخصصين في مختلف فروع القانون، لتقديم حلول قانونية دقيقة وناجحة.'
+                  : 'Our firm is built on the principles of transparency, precision, and confidentiality, ensuring sound and reliable outcomes for all clients. We operate through a team of highly qualified lawyers and legal advisors across various fields of law to deliver precise and effective legal solutions.'}
+              </p>
             </div>
           </motion.div>
         </div>

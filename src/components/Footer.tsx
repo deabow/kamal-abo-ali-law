@@ -35,10 +35,10 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
               <div className="flex flex-col leading-tight">
                 <span className="text-xl font-black text-white">
-                  {isAr ? "مؤسسة كمال" : "Kamal Abu Ali"}
+                  {isAr ? "مؤسسة كمال أبو علي" : "Kamal Abu Ali"}
                 </span>
                 <span className="text-sm text-accent uppercase mt-1">
-                  {isAr ? "أبو علي للمحاماة" : "Law Firm"}
+                  {isAr ? "للمحاماة والاستشارة القانونية" : "Law Firm"}
                 </span>
               </div>
             </div>

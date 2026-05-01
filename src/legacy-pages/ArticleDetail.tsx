@@ -9,121 +9,101 @@ import { Language } from '../types';
 const ARTICLES_DATA: Record<string, any> = {
   '1': {
     id: 1,
-    title: { ar: 'أهم حقوق المتهم أمام النيابة العامة', en: 'Rights of the Accused Before Public Prosecution' },
-    category: { ar: 'قانون جنائي', en: 'Criminal Law' },
+    title: { ar: 'أهمية الاستشارات القانونية في تأسيس الشركات الناشئة', en: 'The Importance of Legal Consultations in Establishing Startups' },
+    category: { ar: 'قانون تجاري', en: 'Commercial Law' },
     date: '2024-03-15',
     image: '/10.jpg',
     readTime: { ar: '5 دقائق', en: '5 min' },
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
-      ar: `يتمتع المتهم أمام النيابة العامة بمجموعة من الحقوق الأساسية التي تكفلها القوانين المصرية والمواثيق الدولية. من أهم هذه الحقوق:
+      ar: `تعرف على الخطوات القانونية الصحيحة لتأسيس شركتك وضمان حقوق الشركاء وفقاً للقانون المصري الجديد.
 
-1. حق الصمت والدفاع: يحق للمتهم عدم الإدلاء بأي اعترافات ويحق له التمثيل القانوني أثناء التحقيق.
+تعتبر مرحلة التأسيس من أهم المراحل في حياة أي شركة ناشئة، حيث تعتمد عليها قوة ومناعة الشركة ضد أي نزاعات مستقبلية. توفر الاستشارات القانونية الحماية اللازمة لرواد الأعمال، سواء من خلال اختيار الشكل القانوني الأمثل للشركة، أو صياغة عقود الشراكة بشكل يضمن حقوق جميع الأطراف.
 
-2. حق الاستئناف: للمتهم الحق في الاستئناف قرارات النيابة العامة والطعن فيها أمام المحكمة.
+أهمية الاستشارة المبكرة:
+1. تجنب المخاطر القانونية والمالية.
+2. حماية الملكية الفكرية والأفكار المبتكرة.
+3. الامتثال للوائح الحكومية والضريبية.
+4. صياغة عقود توظيف تضمن سرية المعلومات.
 
-3. حق الاطلاع على الأدلة: يجب أن يكون المتهم على علم بالأدلة والمستندات المقدمة ضده.
+ننصح دائماً بالتواصل مع مستشار قانوني قبل اتخاذ أي خطوة تنفيذية لضمان بداية صحيحة وآمنة لشركتك.`,
+      en: `Learn about the correct legal steps to establish your company and ensure partners' rights according to the new Egyptian law.
 
-4. حق الحصول على نسخة من الاتهام: يجب تسليم المتهم نسخة من الاتهام الموجه إليه.
+The establishment phase is one of the most important stages in the life of any startup, as the company's strength and immunity against future disputes depend on it. Legal consultations provide necessary protection for entrepreneurs, whether by choosing the optimal legal form for the company or drafting partnership contracts to ensure all parties' rights.
 
-5. حق الحماية من التعذيب والمعاملة السيئة: لا يجوز تعريض المتهم للتعذيب أو المعاملة المهينة.
+Importance of early consultation:
+1. Avoiding legal and financial risks.
+2. Protecting intellectual property and innovative ideas.
+3. Compliance with government and tax regulations.
+4. Drafting employment contracts ensuring confidentiality.
 
-من المهم جداً معرفة هذه الحقوق والتمسك بها أثناء أي إجراء قانوني. ننصحك باستشارة محامٍ متخصص في القانون الجنائي للحصول على أفضل الحماية القانونية.`,
-      en: `The accused has a number of fundamental rights before the Public Prosecution that are guaranteed by Egyptian laws and international treaties. Key rights include:
-
-1. Right to silence and defense: The accused has the right not to make any confessions and the right to legal representation during investigation.
-
-2. Right to appeal: The accused has the right to appeal decisions of the Public Prosecution and challenge them before the court.
-
-3. Right to access evidence: The accused must be aware of the evidence and documents presented against them.
-
-4. Right to receive a copy of the charge: The accused must receive a copy of the charges against them.
-
-5. Right to protection from torture and ill-treatment: The accused cannot be subjected to torture or degrading treatment.
-
-It is very important to know these rights and maintain them during any legal proceeding. We recommend consulting a lawyer specializing in criminal law for the best legal protection.`
+We always advise contacting a legal consultant before taking any executive step to ensure a safe and correct start for your company.`
     }
   },
   '2': {
     id: 2,
-    title: { ar: 'كيفية صياغة عقد تجاري يحمي مصالحك', en: 'How to Draft a Commercial Contract' },
-    category: { ar: 'قانون تجاري', en: 'Commercial Law' },
+    title: { ar: 'حقوق الموكل والتزامات المحامي: دليل شامل', en: 'Client Rights and Lawyer Obligations: A Comprehensive Guide' },
+    category: { ar: 'قانون عام', en: 'General Law' },
     date: '2024-03-10',
     image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
     readTime: { ar: '7 دقائق', en: '7 min' },
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
-      ar: `صياغة عقد تجاري قوي وقانوني هي خطوة أساسية لحماية مصالحك التجارية. إليك الخطوات الأساسية:
+      ar: `كل ما تحتاج معرفته عن العلاقة القانونية بين المحامي وموكله وضمانات السرية والاحترافية.
 
-1. تحديد الأطراف والبيانات: يجب أن يحتوي العقد على بيانات واضحة لجميع الأطراف المعنية.
+تعتبر العلاقة بين المحامي والموكل من أقدس العلاقات المهنية، فهي مبنية على الثقة المتبادلة والشفافية. يلتزم المحامي قانونياً وأخلاقياً بالدفاع عن مصالح موكله وبذل العناية الواجبة وليس مجرد تحقيق نتيجة.
 
-2. تحديد الالتزامات: كل طرف يجب أن يعرف بالضبط ما هي التزاماته وحقوقه.
+أهم حقوق الموكل:
+1. الحفاظ على سرية المعلومات والمستندات الخاصة به.
+2. إطلاعه بشكل دوري على مجريات القضية والقرارات المتخذة.
+3. تقديم النصح والإرشاد القانوني بصدق وأمانة.
+4. الالتزام بالشفافية في تحديد الأتعاب والمصروفات.
 
-3. تحديد المقابل: يجب أن يكون السعر والشروط المالية واضحة تماماً.
+إن وعي الموكل بحقوقه يعزز من فرص نجاح قضيته، ويضمن بناء علاقة استراتيجية طويلة الأمد مع مستشاره القانوني.`,
+      en: `Everything you need to know about the legal relationship between a lawyer and their client, and guarantees of confidentiality and professionalism.
 
-4. شروط السداد: حدد واضحة لكيفية ومتى سيتم السداد.
+The relationship between a lawyer and a client is one of the most sacred professional relationships, built on mutual trust and transparency. The lawyer is legally and ethically obligated to defend the client's interests and exercise due care, not just achieve a result.
 
-5. شروط فك التعاقد: يجب أن تغطي العقد حالات إنهاء العقد والعواقب.
+Key client rights:
+1. Maintaining the confidentiality of their information and documents.
+2. Keeping them regularly informed of case developments and decisions made.
+3. Providing honest and faithful legal advice.
+4. Transparency in determining fees and expenses.
 
-6. القانون الواجب التطبيق: حدد أي قانون سيحكم العقد في حالة النزاع.
-
-نحن ننصح بشدة باستشارة محامٍ متخصص قبل توقيع أي عقد تجاري مهم.`,
-      en: `Drafting a strong and legally compliant commercial contract is a critical step to protect your business interests. Here are the basic steps:
-
-1. Identifying parties and information: The contract must contain clear information about all parties involved.
-
-2. Determining obligations: Each party must know exactly what their obligations and rights are.
-
-3. Determining the consideration: The price and financial terms must be absolutely clear.
-
-4. Payment terms: Set clear terms for how and when payment will be made.
-
-5. Contract termination clauses: The contract must cover cases of contract termination and consequences.
-
-6. Applicable law: Specify which law will govern the contract in case of dispute.
-
-We strongly recommend consulting a specialized lawyer before signing any important commercial contract.`
+The client's awareness of their rights enhances the chances of case success and ensures building a long-term strategic relationship with their legal consultant.`
     }
   },
   '3': {
     id: 3,
-    title: { ar: 'إجراءات الطلاق في القانون المصري', en: 'Divorce Procedures in Egyptian Law' },
-    category: { ar: 'قانون الأسرة', en: 'Family Law' },
+    title: { ar: 'كيفية التعامل مع النزاعات العمالية وتجنب المخاطر القانونية', en: 'How to Handle Labor Disputes and Avoid Legal Risks' },
+    category: { ar: 'قانون العمل', en: 'Labor Law' },
     date: '2024-03-05',
     image: 'https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&q=80&w=800',
     readTime: { ar: '8 دقائق', en: '8 min' },
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
-      ar: `الطلاق هو أحد الموضوعات الحساسة في القانون الأسري. يتم تنظيمه بموجب القانون المصري رقم 1 لسنة 2000. إليك الإجراءات الأساسية:
+      ar: `نظرة عامة على قانون العمل وكيفية حماية حقوق أصحاب العمل والموظفين في بيئة العمل.
 
-1. طلب رفع الدعوى: يقدم الطالب طلباً للمحكمة المختصة لرفع دعوى الطلاق.
+تمثل النزاعات العمالية تحدياً كبيراً لأصحاب الأعمال وقد تؤدي إلى خسائر مالية فادحة وتأثير سلبي على سمعة الشركة إذا لم يتم التعامل معها بشكل قانوني وسليم. ينظم قانون العمل ضوابط دقيقة لحماية طرفي المعادلة (العامل وصاحب العمل).
 
-2. محاولة الصلح: تحاول المحكمة الصلح بين الزوجين قبل نظر الدعوى.
+خطوات تجنب النزاعات العمالية:
+1. صياغة عقود عمل واضحة تتضمن كافة الحقوق والالتزامات والمهام.
+2. إعداد لائحة داخلية للعمل توافق أحكام قانون العمل وتعرض وتعتمد من الجهات المختصة.
+3. التوثيق السليم لكافة الإنذارات والجزاءات في حال إخلال الموظف بواجباته.
+4. الالتزام بسداد التأمينات الاجتماعية والمستحقات المالية في مواعيدها.
 
-3. سماع البينات: تستمع المحكمة إلى أدلة الطرفين وشهاداتهما.
+الالتزام بهذه الإجراءات يخلق بيئة عمل صحية ومستقرة ويوفر حماية قانونية شاملة للمؤسسة ضد أي مطالبات كيدية.`,
+      en: `An overview of labor law and how to protect the rights of employers and employees in the workplace.
 
-4. صدور الحكم: تصدر المحكمة قرارها بالموافقة أو الرفض.
+Labor disputes represent a major challenge for employers and can lead to severe financial losses and a negative impact on the company's reputation if not handled legally and properly. The labor law regulates strict controls to protect both sides of the equation (the employee and the employer).
 
-5. المراجعة والاستئناف: يحق لأي طرف الطعن في الحكم أمام محكمة الاستئناف.
+Steps to avoid labor disputes:
+1. Drafting clear employment contracts covering all rights, obligations, and tasks.
+2. Preparing internal work regulations that comply with labor law provisions and are approved by competent authorities.
+3. Proper documentation of all warnings and penalties in case the employee breaches their duties.
+4. Commitment to paying social insurance and financial dues on time.
 
-6. مسائل الحضانة والنفقة: يتم تحديد الترتيبات المالية والحضانة في الحكم.
-
-من المهم جداً الحصول على استشارة قانونية متخصصة في قانون الأسرة لحماية حقوقك.`,
-      en: `Divorce is one of the sensitive topics in family law. It is regulated under Egyptian Law No. 1 of 2000. Here are the basic procedures:
-
-1. Filing a petition: The applicant files a petition with the competent court to file a divorce case.
-
-2. Reconciliation attempt: The court attempts reconciliation between the spouses before hearing the case.
-
-3. Hearing evidence: The court listens to the evidence and testimony of both parties.
-
-4. Issuance of judgment: The court issues its decision to approve or reject the case.
-
-5. Review and appeal: Either party has the right to appeal the judgment before the Court of Appeal.
-
-6. Custody and maintenance issues: Financial arrangements and custody are determined in the judgment.
-
-It is very important to obtain specialized legal advice in family law to protect your rights.`
+Adherence to these procedures creates a healthy and stable work environment and provides comprehensive legal protection for the institution against any malicious claims.`
     }
   },
   '4': {

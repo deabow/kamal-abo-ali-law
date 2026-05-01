@@ -12,12 +12,12 @@ export const Hero = ({ lang }: { lang: Language }) => {
       image: '/1.jpg', // Local image of Dar Al-Qada Al-Ali
       badge: { ar: 'دار القضاء العالي', en: 'High Court of Justice' },
       title: { 
-        ar: <>نحمي <span className="text-accent">حقوقك</span> في قلب القاهرة</>, 
-        en: <>Protecting Your <span className="text-accent italic">Rights</span> in Cairo</> 
+        ar: <> الدقة والشفافية و  <span className="text-accent"> سرية البيانات </span> ليست شعارات</>, 
+        en: <>Precision, transparency, and <span className="text-accent italic"> data confidentiality </span> are not just slogans.</> 
       },
-      desc: { 
-        ar: 'نقدم استشارات قانونية متخصصة وحلولاً فعالة وفقاً لأحدث التشريعات المصرية مع الالتزام التام بالسرية والنزاهة.', 
-        en: 'We provide specialized legal consultations and effective solutions according to the latest Egyptian legislation with full commitment to confidentiality.' 
+      desc: {
+        ar: 'نقدم استشارات قانونية متخصصة ومُحكمة بسريه تامه ، مستندين إلى معرفة عميقة بالقوانين و بالتشريعات المصرية.',
+        en: `We provide specialized and well-structured legal consultations with complete confidentiality, grounded in deep knowledge of Egyptian laws and legislation.`
       },
       primaryBtn: { ar: 'احجز استشارة الآن', en: 'Book Consultation Now' },
       secondaryBtn: { ar: 'خدماتنا القانونية', en: 'Our Legal Services' }
@@ -26,8 +26,8 @@ export const Hero = ({ lang }: { lang: Language }) => {
       image: '/1.jpg', // Local image for slide two
       badge: { ar: 'المحكمة الدستورية العليا', en: 'Supreme Constitutional Court' },
       title: { 
-        ar: <>دفاع <span className="text-accent">قوي</span> أمام المحاكم المصرية</>, 
-        en: <>Strong <span className="text-accent italic">Defense</span> in Egyptian Courts</> 
+        ar: <> فريق عمل <span className="text-accent">  قانوني </span> متعدد الخبرات </>, 
+        en: <>A Multidisciplinary <span className="text-accent italic"> Legal </span> Team </> 
       },
       desc: { 
         ar: 'فريقنا يجمع بين الخبرة العميقة في القانون المصري والاحترافية الدولية لضمان أفضل تمثيل قانوني لقضاياكم.', 
@@ -40,8 +40,8 @@ export const Hero = ({ lang }: { lang: Language }) => {
       image: '/1.jpg', // Local image for slide three
       badge: { ar: 'عراقة القانون المصري', en: 'Egyptian Legal Heritage' },
       title: { 
-        ar: <>شريكك <span className="text-accent">القانوني</span> الموثوق بمصر</>, 
-        en: <>Your Trusted <span className="text-accent italic">Legal</span> Partner in Egypt</> 
+        ar: <> مؤسسه قانونية  <span className="text-accent"> متكاملة </span>  تدعم الامتثال وحوكمة الشركات </>, 
+        en: <>A <span className="text-accent italic"> Comprehensive </span> Legal Institution Supporting Compliance & Corporate Governance</> 
       },
       desc: { 
         ar: 'نواكب التطورات التشريعية المصرية لنقدم لعملائنا حلولاً تتناسب مع احتياجاتهم المتغيرة في عالم الأعمال والاستثمار.', 
