@@ -146,12 +146,15 @@ export default function Contact({ lang }: { lang: Language }) {
 
           <div className="space-y-6">
             <div className="bg-white border border-gray-100 p-6 rounded-3xl shadow-sm space-y-6">
-              <div className="w-full">
+              <div className="w-full" dir="rtl">
                 <div className="space-y-4">
                   {/* فرع السادات */}
-                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="text-right flex-1">
+                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition w-full">
+                    <div className="flex flex-row-reverse items-start justify-end gap-3 mb-3">
+                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10">
+                        <MapPin size={18} className="text-accent" />
+                      </div>
+                      <div className="flex-1 text-right">
                         <p className="font-semibold text-sm text-primary mb-1">
                           {isAr ? "فرع مدينة السادات" : "Sadat City Branch"}
                         </p>
@@ -162,9 +165,6 @@ export default function Contact({ lang }: { lang: Language }) {
                           0150 536 3697
                         </a>
                       </div>
-                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mr-3 ml-3">
-                        <MapPin size={18} className="text-accent" />
-                      </div>
                     </div>
                     <a href="https://wa.me/201505363697" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-2 font-semibold text-xs hover:bg-accent/90 transition">
                       {isAr ? "واتساب - فرع السادات" : "WhatsApp - Sadat Branch"}
@@ -172,9 +172,12 @@ export default function Contact({ lang }: { lang: Language }) {
                   </div>
 
                   {/* فرع زايد */}
-                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="text-right flex-1">
+                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition w-full">
+                    <div className="flex flex-row-reverse items-start justify-end gap-3 mb-3">
+                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10">
+                        <MapPin size={18} className="text-accent" />
+                      </div>
+                      <div className="flex-1 text-right">
                         <p className="font-semibold text-sm text-primary mb-1">
                           {isAr ? "فرع الشيخ زايد" : "Sheikh Zayed Branch"}
                         </p>
@@ -184,9 +187,6 @@ export default function Contact({ lang }: { lang: Language }) {
                         <a href="tel:01505363698" className="text-accent font-semibold text-xs mt-2 inline-block" dir="ltr">
                           0150 536 3698
                         </a>
-                      </div>
-                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mr-3 ml-3">
-                        <MapPin size={18} className="text-accent" />
                       </div>
                     </div>
                     <a href="https://wa.me/201505363698" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-accent text-white rounded-xl p-2 font-semibold text-xs hover:bg-accent/90 transition">
@@ -215,6 +215,7 @@ export default function Contact({ lang }: { lang: Language }) {
           <h3 className="text-2xl font-bold text-primary mb-8 text-center">
             {lang === 'ar' ? 'مواقع فروعنا' : 'Our Branch Locations'}
           </h3>
+          
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 h-80">
               <iframe 
@@ -229,13 +230,14 @@ export default function Contact({ lang }: { lang: Language }) {
             </div>
             <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 h-80">
               <iframe 
-                src="https://maps.app.goo.gl/3ZwWDuuCa1muHipS9"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.5!2d30.978201!3d30.029134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2090f85913898a73%3A0x56606c39555aa86e!2z2KfZhNix2KfYsSDYp9mE2LPYp9ixINin2YTYs9ix2KfYqCDZhdit2LPZhtin2K0g2KfZhNmF2YXYp9i52KfYsSDZgdin2LTYs9mE2Kkg2KfZhNmF2LnYp9mE2YrYp9mEINin2YTYsdmE2KfYsNmK2KfYrNivINin2YTYsdmE2YrYp9it2KfYrNiv!5e0!3m2!1sar!2seg!4v1234567890"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen={true} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Sheikh Zayed Branch Location"
               ></iframe>
             </div>
           </div>

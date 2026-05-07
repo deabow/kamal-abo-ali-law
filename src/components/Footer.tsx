@@ -119,12 +119,16 @@ export const Footer = ({ lang }: { lang: Language }) => {
               {isAr ? "تواصل معنا" : "Contact Us"}
             </h4>
 
-            <div className="space-y-5">
+            <div className="space-y-5" dir="rtl">
 
               {/* فرع السادات */}
-              <a href="tel:01505363697" className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+              <a href="tel:01505363697" className="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
 
-                <div className="text-right">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mt-1">
+                  <Phone size={18} className="text-accent" />
+                </div>
+
+                <div className="text-right flex-1">
                   <p className="text-white font-semibold text-sm">
                     {isAr ? "فرع مدينة السادات" : "Sadat City Branch"}
                   </p>
@@ -133,26 +137,22 @@ export const Footer = ({ lang }: { lang: Language }) => {
                   </p>
                 </div>
 
-                <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
-                  <Phone size={18} className="text-accent" />
-                </div>
-
               </a>
 
               {/* فرع زايد */}
-              <a href="tel:01505363698" className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+              <a href="tel:01505363698" className="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
 
-                <div className="text-right">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mt-1">
+                  <Phone size={18} className="text-accent" />
+                </div>
+
+                <div className="text-right flex-1">
                   <p className="text-white font-semibold text-sm">
                     {isAr ? "فرع الشيخ زايد" : "Sheikh Zayed Branch"}
                   </p>
                   <p className="text-white/60 text-xs mt-1" dir="ltr">
                     0150 536 3698
                   </p>
-                </div>
-
-                <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10">
-                  <Phone size={18} className="text-accent" />
                 </div>
 
               </a>
