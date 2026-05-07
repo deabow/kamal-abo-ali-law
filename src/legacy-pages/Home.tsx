@@ -174,63 +174,6 @@ export default function Home({ lang }: { lang: Language }) {
         </div>
       </section>
 
-      {/* Articles Teaser */}
-      <section className="py-20 bg-bg-soft">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <span className="text-accent font-bold uppercase tracking-widest mb-4 block">
-                {lang === 'ar' ? 'المدونة' : 'Blog'}
-              </span>
-              <h2 className="text-4xl font-bold text-primary">
-                {lang === 'ar' ? 'آخر المقالات القانونية' : 'Latest Legal Articles'}
-              </h2>
-            </div>
-            <Link href="/articles" className="hidden md:block text-accent font-bold hover:underline">
-              {lang === 'ar' ? 'عرض الكل' : 'View All'}
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { id: 2, title: { ar: 'كيفية صياغة عقد تجاري يحمي مصالحك', en: 'How to Draft a Commercial Contract' }, summary: { ar: 'تعرف على الخطوات القانونية الصحيحة لتأسيس شركتك وضمان حقوق الشركاء وفقاً للقانون المصري الجديد.', en: 'Learn about the correct legal steps to establish your company and ensure partners\' rights according to the new Egyptian law.' }, image: '/11.png' },
-              { id: 1, title: { ar: 'أهم حقوق المتهم أمام النيابة العامة', en: 'Rights of the Accused Before Public Prosecution' }, summary: { ar: 'كل ما تحتاج معرفته عن العلاقة القانونية بين المحامي وموكله وضمانات السرية والاحترافية.', en: 'Everything you need to know about the legal relationship between a lawyer and their client, and guarantees of confidentiality and professionalism.' }, image: '/10.jpg' },
-              { id: 3, title: { ar: 'إجراءات الطلاق في القانون المصري', en: 'Divorce Procedures in Egyptian Law' }, summary: { ar: 'نظرة عامة على قانون العمل وكيفية حماية حقوق أصحاب العمل والموظفين في بيئة العمل.', en: 'An overview of labor law and how to protect the rights of employers and employees in the workplace.' }, image: '/22.jpg' }
-            ].map((article) => (
-              <Link 
-                key={article.id}
-                href={`/articles/${article.id}`}
-                className="no-underline"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: article.id * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer h-full flex flex-col"
-                >
-                  <img src={article.image} alt={article.title[lang]} className="w-full h-48 object-cover shrink-0" referrerPolicy="no-referrer" />
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-bold text-primary mb-2 line-clamp-2">
-                      {article.title[lang]}
-                    </h3>
-                    <p className="text-gray-500 text-sm mb-4 line-clamp-2 flex-1">
-                      {article.summary[lang]}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-400 mt-auto">
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        <span>{lang === 'ar' ? 'منذ يومين' : '2 days ago'}</span>
-                      </div>
-                      <span className="text-accent font-bold">{lang === 'ar' ? 'اقرأ المزيد' : 'Read More'}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">

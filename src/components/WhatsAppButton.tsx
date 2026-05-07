@@ -9,7 +9,7 @@ export const WhatsAppButton = () => {
     <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4 items-center">
       {/* Facebook Button */}
       <a 
-        href="#" 
+        href="https://www.facebook.com/kamal.aboali.law.firm" 
         target="_blank" 
         rel="noreferrer"
         className="relative w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all group"

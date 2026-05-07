@@ -51,10 +51,16 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
             {/* SOCIAL */}
             <div className="flex gap-3">
-              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/kamal.aboali.law.firm" },
+                { Icon: Instagram, href: "#" },
+                { Icon: Linkedin, href: "#" }
+              ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 transition cursor-pointer text-white hover:text-white"
                 >
                   <Icon size={18} />
