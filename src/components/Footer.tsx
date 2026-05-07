@@ -4,6 +4,7 @@ import {
   Linkedin,
   Phone
 } from "lucide-react";
+import Link from "next/link";
 
 import { Language } from "../types";
 
@@ -77,16 +78,26 @@ export const Footer = ({ lang }: { lang: Language }) => {
             </h4>
 
             <ul className="space-y-4 text-sm">
-              {[
-                isAr ? "من نحن" : "About Us",
-                isAr ? "تخصصاتنا القانونية" : "Legal Specialties",
-                isAr ? "فروعنا" : "Branches",
-                isAr ? "تواصل معنا" : "Contact"
-              ].map((item, i) => (
-                <li key={i} className="hover:text-white transition cursor-pointer">
-                  • {item}
-                </li>
-              ))}
+              <li className="hover:text-white transition">
+                <Link href="/about">
+                  {isAr ? "من نحن" : "About Us"}
+                </Link>
+              </li>
+              <li className="hover:text-white transition">
+                <Link href="/services">
+                  {isAr ? "تخصصاتنا القانونية" : "Legal Specialties"}
+                </Link>
+              </li>
+              <li className="hover:text-white transition">
+                <Link href="/branches">
+                  {isAr ? "فروعنا" : "Branches"}
+                </Link>
+              </li>
+              <li className="hover:text-white transition">
+                <Link href="/contact">
+                  {isAr ? "تواصل معنا" : "Contact"}
+                </Link>
+              </li>
             </ul>
           </div>
 
