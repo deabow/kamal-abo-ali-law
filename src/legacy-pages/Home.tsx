@@ -152,7 +152,7 @@ export default function Home({ lang }: { lang: Language }) {
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="text-accent" />
-                  <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ ذايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
+                  <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ زايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
                 </div>
               </div>
               <Link 
