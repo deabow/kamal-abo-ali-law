@@ -12,7 +12,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
   const isAr = lang === "ar";
 
   return (
-    <footer className="bg-primary text-white/70 pt-20 pb-10 relative overflow-hidden border-t border-white/5 w-full max-w-full">
+    <footer className="bg-primary dark:bg-slate-950 text-white/70 pt-20 pb-10 relative overflow-hidden border-t border-white/5 w-full max-w-full">
 
       {/* Background Glow */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
@@ -35,7 +35,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
               </div>
 
               <div className="flex flex-col leading-tight">
-                <span className="text-xl font-black text-white">
+                <span className="text-xl font-black text-white dark:text-slate-100">
                   {isAr ? "مؤسسة كمال أبو علي" : "Kamal Abu Ali"}
                 </span>
                 <span className="text-sm text-accent uppercase mt-1">
@@ -44,7 +44,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed max-w-sm">
+            <p className="text-sm leading-relaxed max-w-sm text-slate-300 dark:text-slate-400">
               {isAr
                 ? "نحن وجهتك الموثوقة للحماية القانونية والدفاع عن حقوقك بخبرة واحترافية عالية."
                 : "Your trusted destination for legal protection and advocacy with professional excellence."}
@@ -73,28 +73,28 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
           {/* QUICK LINKS */}
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">
+            <h4 className="text-white dark:text-slate-100 font-bold mb-6 text-lg">
               {isAr ? "روابط سريعة" : "Quick Links"}
             </h4>
 
             <ul className="space-y-4 text-sm">
               <li className="hover:text-white transition">
-                <Link href="/about">
+                <Link href="/about" className="text-slate-300 dark:text-slate-400 hover:text-accent">
                   {isAr ? "من نحن" : "About Us"}
                 </Link>
               </li>
               <li className="hover:text-white transition">
-                <Link href="/services">
+                <Link href="/services" className="text-slate-300 dark:text-slate-400 hover:text-accent">
                   {isAr ? "تخصصاتنا القانونية" : "Legal Specialties"}
                 </Link>
               </li>
               <li className="hover:text-white transition">
-                <Link href="/branches">
+                <Link href="/branches" className="text-slate-300 dark:text-slate-400 hover:text-accent">
                   {isAr ? "فروعنا" : "Branches"}
                 </Link>
               </li>
               <li className="hover:text-white transition">
-                <Link href="/contact">
+                <Link href="/contact" className="text-slate-300 dark:text-slate-400 hover:text-accent">
                   {isAr ? "تواصل معنا" : "Contact"}
                 </Link>
               </li>
@@ -103,30 +103,30 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
           {/* SERVICES */}
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">
+            <h4 className="text-white dark:text-slate-100 font-bold mb-6 text-lg">
               {isAr ? "خدماتنا" : "Services"}
             </h4>
 
             <ul className="space-y-4 text-sm">
-              <li className="hover:text-white transition cursor-pointer">
+              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
                 {isAr ? "القانون الجنائي" : "Criminal Law"}
               </li>
-              <li className="hover:text-white transition cursor-pointer">
+              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
                 {isAr ? "قانون الأسرة" : "Family Law"}
               </li>
-              <li className="hover:text-white transition cursor-pointer">
+              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
                 {isAr ? "قانون العمل" : "Labor Law"}
               </li>
-              <li className="hover:text-white transition cursor-pointer">
+              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
                 {isAr ? "القانون التجاري" : "Commercial Law"}
               </li>
             </ul>
           </div>
 
           {/* CONTACT CARD */}
-          <div className="bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-sm max-w-sm">
+          <div className="bg-white/5 dark:bg-slate-900/50 p-6 rounded-3xl border border-white/10 backdrop-blur-sm max-w-sm">
 
-            <h4 className="text-white font-bold text-lg mb-6 text-center">
+            <h4 className="text-white dark:text-slate-100 font-bold text-lg mb-6 text-center">
               {isAr ? "تواصل معنا" : "Contact Us"}
             </h4>
 
@@ -179,15 +179,15 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
           <div className="flex items-center justify-center gap-3 text-sm">
 
-            <span className="text-white font-semibold">
+            <span className="text-white dark:text-slate-100 font-semibold">
               {isAr
                 ? "مؤسسة كمال أبو علي للمحاماة"
                 : "Kamal Abu Ali Law Firm"}
             </span>
 
-            <span className="w-1.5 h-1.5 bg-white/40 rounded-full"></span>
+            <span className="w-1.5 h-1.5 bg-white/40 dark:bg-slate-500 rounded-full"></span>
 
-            <span className="text-white/60">
+            <span className="text-white/60 dark:text-slate-400">
               © {new Date().getFullYear()}{" "}
               {isAr ? "جميع الحقوق محفوظة" : "All rights reserved"}
             </span>

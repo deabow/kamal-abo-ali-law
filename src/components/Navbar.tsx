@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Scale, Globe, X, Menu } from 'lucide-react';
+import { Scale, Globe, X, Menu, Sun, Moon } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Language, NavItem } from '../types';
+import { useTheme } from 'next-themes';
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'home', path: '/', label: { ar: 'الرئيسية', en: 'Home' } },
@@ -20,7 +21,13 @@ const NAV_ITEMS: NavItem[] = [
 export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Language) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -29,12 +36,13 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
   }, []);
 
   const toggleLang = () => setLang(lang === 'ar' ? 'en' : 'ar');
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
       scrolled
-        ? "bg-white/90 backdrop-blur-md shadow-md py-2"
+        ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-md py-2"
         : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -52,7 +60,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
 
           <div className="flex flex-col">
 
-            <span className="font-bold text-lg leading-tight text-primary">
+            <span className="font-bold text-lg leading-tight text-primary dark:text-slate-100">
               {lang === 'ar' ? 'مؤسسة كمال أبو علي' : 'Kamal Abu Ali Law Firm'}
             </span>
 
@@ -72,7 +80,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
                 "text-sm font-medium transition-colors hover:text-accent",
                 pathname === item.path
                   ? "text-accent font-bold"
-                  : "text-gray-600"
+                  : "text-gray-600 dark:text-slate-400"
               )}
             >
               {item.label[lang]}
@@ -83,16 +91,27 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={toggleLang}
-            className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1 text-gray-700"
+            className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1 text-gray-700 dark:text-slate-300"
           >
             <Globe className="w-4 h-4" />
             {lang === 'ar' ? 'English' : 'العربية'}
           </button>
+          
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-700 dark:text-slate-300"
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+          )}
+          
           <a
             href="https://my-office.aboalilawfirm.com/login"
             target="_blank"
             rel="noreferrer"
-            className="border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all"
+            className="border-2 border-primary text-primary dark:border-slate-100 dark:text-slate-100 px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-white transition-all"
           >
             {lang === 'ar' ? 'تسجيل الدخول العملاء ' : 'Customer Login'}
           </a>
@@ -118,7 +137,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white shadow-xl p-6 flex flex-col gap-4 lg:hidden"
+            className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-xl p-6 flex flex-col gap-4 lg:hidden"
           >
             {NAV_ITEMS.map((item) => (
               <Link
@@ -126,27 +145,38 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
                 href={item.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "text-lg font-medium border-b border-gray-100 pb-2",
+                  "text-lg font-medium border-b border-gray-100 dark:border-slate-800 pb-2",
                   pathname === item.path
                     ? "text-accent font-bold"
-                    : "text-gray-900"
+                    : "text-gray-900 dark:text-slate-100"
                 )}
               >
                 {item.label[lang]}
               </Link>
             ))}
-            <div className="flex flex-col gap-3 pt-4 border-t border-gray-100">
+            <div className="flex flex-col gap-3 pt-4 border-t border-gray-100 dark:border-slate-800">
               <button
                 onClick={toggleLang}
                 className="font-bold text-accent transition-colors text-left"
               >
                 {lang === 'ar' ? 'English' : 'العربية'}
               </button>
+              
+              {mounted && (
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center gap-2 font-bold text-gray-700 dark:text-slate-300 transition-colors text-left"
+                >
+                  {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {lang === 'ar' ? 'الوضع الداكن' : 'Dark Mode'}
+                </button>
+              )}
+              
               <a
                 href="https://my-office.aboalilawfirm.com/login"
                 target="_blank"
                 rel="noreferrer"
-                className="border-2 border-primary text-primary px-4 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all w-full text-center"
+                className="border-2 border-primary dark:border-slate-100 text-primary dark:text-slate-100 px-4 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-white transition-all w-full text-center"
               >
                 {lang === 'ar' ? 'تسجيل الدخول' : 'Login'}
               </a>
