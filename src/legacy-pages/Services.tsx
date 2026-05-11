@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Gavel, Users, Briefcase, Building2, Scale, FileText, BookOpen, TrendingUp, Shield, Handshake, DollarSign, Lock } from 'lucide-react';
+import { Gavel, Users, Briefcase, Building2, Scale, FileText, BookOpen, TrendingUp, Shield, Handshake, DollarSign, Lock, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';
 import { cn } from '../lib/utils';
 
@@ -97,6 +97,13 @@ const SERVICES = [
     icon: <Lock className="w-8 h-8" />,
     title: { ar: 'قانون البيانات والخصوصية', en: 'Data & Privacy Law' },
     desc: { ar: 'حماية البيانات الشخصية والامتثال لقوانين الخصوصية والأمان السيبراني.', en: 'Personal data protection, privacy law compliance, and cybersecurity.' }
+  },
+  {
+    id: 16,
+    type: 'companies',
+    icon: <ShieldCheck className="w-8 h-8" />,
+    title: { ar: 'الامتثال وحوكمة الشركات', en: 'Corporate Governance & Compliance' },
+    desc: { ar: 'نقدم حلولاً متكاملة لضمان توافق أعمالكم مع القوانين واللوائح، مع صياغة أطر الحوكمة التي تضمن استدامة الشركات وحمايتها من المخاطر القانونية.', en: 'We provide integrated solutions to ensure your business complies with laws and regulations, while drafting governance frameworks that guarantee corporate sustainability and protection from legal risks.' }
   }
 ];
 
