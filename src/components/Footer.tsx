@@ -4,8 +4,10 @@ import {
   Linkedin,
   Phone
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
+import { BLUR_IMAGE_PLACEHOLDER } from "../lib/blur-placeholder";
 import { Language } from "../types";
 
 export const Footer = ({ lang }: { lang: Language }) => {
@@ -26,11 +28,16 @@ export const Footer = ({ lang }: { lang: Language }) => {
           <div className="space-y-6">
 
             <div className="flex items-center gap-3 group">
-              <div className="p-2 rounded-xl bg-white/5 border border-white/10">
-                <img
+              <div className="relative p-2 rounded-xl bg-white/5 border border-white/10 w-[72px] h-[72px] flex items-center justify-center shrink-0">
+                <Image
                   src="/logo.png"
                   alt="Logo"
-                  className="w-14 h-14 object-contain"
+                  width={56}
+                  height={56}
+                  sizes="56px"
+                  className="object-contain"
+                  placeholder="blur"
+                  blurDataURL={BLUR_IMAGE_PLACEHOLDER}
                 />
               </div>
 

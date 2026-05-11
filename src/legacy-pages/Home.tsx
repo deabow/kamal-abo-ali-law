@@ -2,7 +2,9 @@ import { Hero } from '../components/Hero';
 import { Language } from '../types';
 import { motion } from 'motion/react';
 import { Award, CheckCircle2, ChevronLeft, ChevronRight, Gavel, Users, Briefcase, Building2, MapPin, Phone, Clock } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
 export default function Home({ lang }: { lang: Language }) {
   return (
@@ -55,10 +57,16 @@ export default function Home({ lang }: { lang: Language }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <img 
-              src="/2.png" 
+            <Image
+              src="/2.png"
               alt="About Us"
+              width={1280}
+              height={853}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-full max-w-full h-auto rounded-3xl shadow-2xl"
+              style={{ width: '100%', height: 'auto' }}
+              placeholder="blur"
+              blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -163,10 +171,16 @@ export default function Home({ lang }: { lang: Language }) {
               </Link>
             </div>
             <div className="relative">
-              <img 
-                src="/3.jpg" 
+              <Image
+                src="/3.jpg"
                 alt="Branches"
+                width={1280}
+                height={853}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full max-w-full h-auto rounded-3xl shadow-xl"
+                style={{ width: '100%', height: 'auto' }}
+                placeholder="blur"
+                blurDataURL={BLUR_IMAGE_PLACEHOLDER}
                 referrerPolicy="no-referrer"
               />
             </div>

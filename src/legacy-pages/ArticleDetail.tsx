@@ -2,7 +2,9 @@
 
 import { motion } from 'motion/react';
 import { ChevronLeft } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 import { useParams } from 'next/navigation';
 import { Language } from '../types';
 import { ARTICLES_MAP } from '../data/articles';
@@ -38,12 +40,17 @@ export default function ArticleDetail({ lang }: { lang: Language }) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-3xl overflow-hidden shadow-xl mb-12 aspect-video"
+            className="relative rounded-3xl overflow-hidden shadow-xl mb-12 aspect-video w-full"
           >
-            <img
+            <Image
               src={article.image}
               alt={article.title[lang]}
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover"
+              placeholder="blur"
+              blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"
             />
           </motion.div>

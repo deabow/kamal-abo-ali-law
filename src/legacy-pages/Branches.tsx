@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { MapPin, Phone, ChevronRight, Play } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Language } from '../types';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
 const BRANCHES = [
   {
@@ -56,9 +58,15 @@ export default function Branches({ lang }: { lang: Language }) {
             <div className="relative aspect-video bg-gray-50 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
 
-              <div
-                className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('/22.jpg')" }}
+              <Image
+                src="/22.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 896px) 100vw, 896px"
+                className="object-cover opacity-30 mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
+                placeholder="blur"
+                blurDataURL={BLUR_IMAGE_PLACEHOLDER}
+                aria-hidden
               />
 
               <div className="relative z-10 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer">
@@ -68,7 +76,7 @@ export default function Branches({ lang }: { lang: Language }) {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {BRANCHES.map((branch) => (
+            {BRANCHES.map((branch, index) => (
               <motion.div
                 key={branch.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -76,11 +84,16 @@ export default function Branches({ lang }: { lang: Language }) {
                 className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all group cursor-pointer"
               >
                 <Link href={`/branches/${branch.id}`} className="block h-full">
-                  <div className="h-48 overflow-hidden">
-                    <img
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
                       src={branch.image}
                       alt={branch.name[lang]}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                      priority={index === 0}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      placeholder="blur"
+                      blurDataURL={BLUR_IMAGE_PLACEHOLDER}
                       referrerPolicy="no-referrer"
                     />
                   </div>

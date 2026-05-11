@@ -2,7 +2,9 @@
 
 import { motion } from 'motion/react';
 import { MapPin, Phone, ChevronLeft } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 import { useParams } from 'next/navigation';
 import { Language } from '../types';
 
@@ -64,12 +66,17 @@ export default function BranchDetail({ lang }: { lang: Language }) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-3xl overflow-hidden shadow-xl mb-12 h-96"
+            className="relative rounded-3xl overflow-hidden shadow-xl mb-12 h-96 w-full"
           >
-            <img 
-              src={branch.image} 
-              alt={branch.name[lang]} 
-              className="w-full h-full object-cover"
+            <Image
+              src={branch.image}
+              alt={branch.name[lang]}
+              fill
+              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
+              placeholder="blur"
+              blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"
             />
           </motion.div>

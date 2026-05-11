@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -8,6 +9,7 @@ import { Scale, Globe, X, Menu, Sun, Moon } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Language, NavItem } from '../types';
 import { useTheme } from 'next-themes';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'home', path: '/', label: { ar: 'الرئيسية', en: 'Home' } },
@@ -49,11 +51,17 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
         <Link href="/" className="flex items-center gap-2">
           {/* Logo Image */}
 
-          <div className="w-12 h-12 flex items-center justify-center">
-            <img
+          <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
+            <Image
               src="/logo.png"
               alt="Company Logo"
-              className="w-full h-full object-contain"
+              width={48}
+              height={48}
+              priority
+              sizes="48px"
+              className="object-contain"
+              placeholder="blur"
+              blurDataURL={BLUR_IMAGE_PLACEHOLDER}
             />
           </div>
 

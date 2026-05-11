@@ -1,8 +1,12 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Language } from '../types';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
 export const Hero = ({ lang }: { lang: Language }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -72,18 +76,27 @@ export const Hero = ({ lang }: { lang: Language }) => {
           className="absolute inset-0"
         >
           {/* Background Image with Zoom Animation */}
-          <motion.img 
-            src={slides[currentSlide].image} 
-            alt="Hero Background" 
+          <motion.div
+            className="absolute inset-0"
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
-            transition={{ 
-              duration: 8, 
-              ease: "easeOut"
+            transition={{
+              duration: 8,
+              ease: 'easeOut',
             }}
-            className="h-full w-full opacity-60 object-cover"
-            referrerPolicy="no-referrer"
-          />
+          >
+            <Image
+              src={slides[currentSlide].image}
+              alt="Hero Background"
+              fill
+              priority={currentSlide === 0}
+              sizes="100vw"
+              className="object-cover opacity-60"
+              placeholder="blur"
+              blurDataURL={BLUR_IMAGE_PLACEHOLDER}
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/20 to-primary/70" />
         </motion.div>

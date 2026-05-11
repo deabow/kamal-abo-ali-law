@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Language } from '../types';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 import { cn } from '../lib/utils';
 import { useState } from 'react';
 import { ARTICLES, CATEGORIES } from '../data/articles';
@@ -42,7 +44,7 @@ export default function Articles({ lang }: { lang: Language }) {
         </div>
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.map((article) => (
+          {filteredArticles.map((article, index) => (
             <Link
               key={article.id}
               href={`/articles/${article.id}`}
@@ -54,10 +56,16 @@ export default function Articles({ lang }: { lang: Language }) {
                 className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group h-full cursor-pointer flex flex-col"
               >
                 <div className="relative aspect-video w-full overflow-hidden shrink-0">
-                  <img
+                  <Image
                     src={article.image}
                     alt={article.title[lang]}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? undefined : 'lazy'}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    placeholder="blur"
+                    blurDataURL={BLUR_IMAGE_PLACEHOLDER}
                     referrerPolicy="no-referrer"
                   />
                 </div>

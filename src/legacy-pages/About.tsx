@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { Target, Lock } from 'lucide-react';
+import Image from 'next/image';
 import { Language } from '../types';
+import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
 export default function About({ lang }: { lang: Language }) {
   return (
@@ -13,10 +15,17 @@ export default function About({ lang }: { lang: Language }) {
             transition={{ duration: 0.6 }}
             className="order-2 lg:order-1"
           >
-            <img
+            <Image
               src="/2.png"
               alt="About Us"
+              width={1280}
+              height={853}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-full max-w-full h-auto rounded-3xl shadow-xl"
+              style={{ width: '100%', height: 'auto' }}
+              placeholder="blur"
+              blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"
             />
           </motion.div>
