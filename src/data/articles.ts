@@ -298,6 +298,66 @@ Our corporate department provides an integrated system that includes:
 
 Maintaining your legal entity is an investment in your future, and we are here to ensure safe and stable management for your company.`
     }
+  },
+  {
+    id: 8,
+    title: {
+      ar: 'دور حوكمة الشركات في حماية المستثمرين وضمان استدامة الأعمال',
+      en: 'The Role of Corporate Governance in Protecting Investors and Ensuring Business Sustainability'
+    },
+    summary: {
+      ar: 'تعرف على كيف تمثل حوكمة الشركات الدرع الواقي لحماية استثماراتك وضمان استقرار الكيانات التجارية في السوق.',
+      en: 'Learn how corporate governance acts as a protective shield for your investments and ensures the stability of commercial entities in the market.'
+    },
+    category: { ar: 'حوكمة الشركات', en: 'Corporate Governance' },
+    categoryId: 'corporate-governance',
+    date: '2026-05-15',
+    image: '/حوكمه الشركات.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'تعتبر حوكمة الشركات من أهم الركائز التي تعتمد عليها الكيانات الاقتصادية الحديثة لضمان الشفافية والمساءلة. في مؤسسة كمال أبو علي، نؤكد دائماً أن إرساء قواعد الحوكمة ليس مجرد إجراء روتيني، بل هو استثمار استراتيجي يحمي الشركة من التخبط الإداري والمخاطر القانونية. تشمل الحوكمة تنظيم العلاقة بين مجلس الإدارة والمساهمين وأصحاب المصلحة، مما يعزز الثقة ويجذب المزيد من الاستثمارات. نحن نقدم استشارات دقيقة لهيكلة الشركات بما يتوافق مع أحدث التشريعات لضمان استدامتها ونموها.',
+      en: 'Corporate governance is considered one of the most important pillars upon which modern economic entities rely to ensure transparency and accountability. At Kamal Abu Ali Law Firm, we always emphasize that establishing governance rules is not merely a routine procedure, but a strategic investment that protects the company from administrative confusion and legal risks. Governance includes regulating the relationship between the board of directors, shareholders, and stakeholders, which enhances trust and attracts more investments. We provide precise consultations for restructuring companies in accordance with the latest legislation to ensure their sustainability and growth.'
+    }
+  },
+  {
+    id: 9,
+    title: {
+      ar: 'الامتثال القانوني: خط الدفاع الأول للشركات ضد المخاطر والغرامات',
+      en: 'Legal Compliance: The First Line of Defense for Companies Against Risks and Fines'
+    },
+    summary: {
+      ar: 'دليلك الشامل لفهم أهمية الامتثال للوائح والقوانين لتجنب النزاعات القضائية التي قد تعصف بالشركات.',
+      en: 'Your comprehensive guide to understanding the importance of compliance with regulations and laws to avoid judicial disputes that could devastate companies.'
+    },
+    category: { ar: 'الامتثال القانوني', en: 'Legal Compliance' },
+    categoryId: 'legal-compliance',
+    date: '2026-05-15',
+    image: '/شركات.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'الامتثال القانوني (Compliance) هو التزام الشركة بكافة الأنظمة واللوائح الصادرة عن الجهات الرقابية. إن غياب إدارة فاعلة للامتثال يعرض الشركات لغرامات طائلة ومنازعات قد تصل إلى إيقاف النشاط. من خلال خبرتنا في مؤسسة كمال أبو علي، نعمل على المراجعة الدورية للعقود، وسياسات العمل، واللوائح الداخلية للشركات للتأكد من مطابقتها التامة للقانون، مما يوفر بيئة عمل آمنة ويجنب الإدارة العليا أي مساءلة قانونية مفاجئة.',
+      en: 'Legal Compliance is the company’s adherence to all regulations and laws issued by regulatory authorities. The absence of effective compliance management exposes companies to heavy fines and disputes that may reach the suspension of activities. Through our expertise at Kamal Abu Ali Law Firm, we conduct periodic reviews of contracts, work policies, and internal company regulations to ensure their full compliance with the law, providing a safe work environment and avoiding any sudden legal accountability for senior management.'
+    }
+  },
+  {
+    id: 10,
+    title: {
+      ar: 'الأخطاء الشائعة في صياغة العقود التجارية وكيفية تجنبها',
+      en: 'Common Mistakes in Drafting Commercial Contracts and How to Avoid Them'
+    },
+    summary: {
+      ar: 'كيف تحمي حقوق شركتك من خلال صياغة عقود تجارية محكمة خالية من الثغرات القانونية.',
+      en: 'How to protect your company\'s rights by drafting tight commercial contracts free of legal loopholes.'
+    },
+    category: { ar: 'إدارة العقود', en: 'Contract Management' },
+    categoryId: 'contract-management',
+    date: '2026-05-15',
+    image: '/شركات 2.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'العقد هو شريعة المتعاقدين، وأي ثغرة بسيطة في صياغته قد تؤدي إلى خسائر فادحة ونزاعات تجارية معقدة. الكثير من الشركات تقع في فخ استخدام النماذج الجاهزة للعقود دون تكييفها مع طبيعة الصفقة. نحن في مؤسستنا نولي اهتماماً بالغاً بصياغة ومراجعة العقود التجارية والمدنية بدقة متناهية، مع وضع شروط جزائية واضحة وآليات حاسمة لفض المنازعات، لضمان سير الأعمال بسلاسة وحفظ حقوق موكلينا بشكل قاطع.',
+      en: 'The contract is the law of the contracting parties, and any minor loophole in its drafting can lead to heavy losses and complex commercial disputes. Many companies fall into the trap of using ready-made contract templates without adapting them to the nature of the transaction. At our firm, we pay great attention to drafting and reviewing commercial and civil contracts with utmost precision, setting clear penal clauses and decisive dispute resolution mechanisms, to ensure smooth business operations and conclusively preserve our clients\' rights.'
+    }
   }
   // ✏️ ADD NEW ARTICLES HERE — they will appear automatically on both the listing and detail pages.
 ];
