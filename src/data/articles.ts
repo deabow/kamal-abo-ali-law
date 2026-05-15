@@ -309,10 +309,10 @@ Maintaining your legal entity is an investment in your future, and we are here t
       ar: 'تعرف على كيف تمثل حوكمة الشركات الدرع الواقي لحماية استثماراتك وضمان استقرار الكيانات التجارية في السوق.',
       en: 'Learn how corporate governance acts as a protective shield for your investments and ensures the stability of commercial entities in the market.'
     },
-    category: { ar: 'حوكمة الشركات', en: 'Corporate Governance' },
-    categoryId: 'corporate-governance',
+    category: { ar: 'شركات', en: 'Companies' },
+    categoryId: 'companies',
     date: '2026-05-15',
-    image: '/حوكمه الشركات.jpg',
+    image: '/articles/حوكمه الشركات.jpg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'تعتبر حوكمة الشركات من أهم الركائز التي تعتمد عليها الكيانات الاقتصادية الحديثة لضمان الشفافية والمساءلة. في مؤسسة كمال أبو علي، نؤكد دائماً أن إرساء قواعد الحوكمة ليس مجرد إجراء روتيني، بل هو استثمار استراتيجي يحمي الشركة من التخبط الإداري والمخاطر القانونية. تشمل الحوكمة تنظيم العلاقة بين مجلس الإدارة والمساهمين وأصحاب المصلحة، مما يعزز الثقة ويجذب المزيد من الاستثمارات. نحن نقدم استشارات دقيقة لهيكلة الشركات بما يتوافق مع أحدث التشريعات لضمان استدامتها ونموها.',
@@ -329,10 +329,10 @@ Maintaining your legal entity is an investment in your future, and we are here t
       ar: 'دليلك الشامل لفهم أهمية الامتثال للوائح والقوانين لتجنب النزاعات القضائية التي قد تعصف بالشركات.',
       en: 'Your comprehensive guide to understanding the importance of compliance with regulations and laws to avoid judicial disputes that could devastate companies.'
     },
-    category: { ar: 'الامتثال القانوني', en: 'Legal Compliance' },
-    categoryId: 'legal-compliance',
+    category: { ar: 'شركات', en: 'Companies' },
+    categoryId: 'companies',
     date: '2026-05-15',
-    image: '/شركات.jpg',
+    image: '/articles/شركات.jpg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'الامتثال القانوني (Compliance) هو التزام الشركة بكافة الأنظمة واللوائح الصادرة عن الجهات الرقابية. إن غياب إدارة فاعلة للامتثال يعرض الشركات لغرامات طائلة ومنازعات قد تصل إلى إيقاف النشاط. من خلال خبرتنا في مؤسسة كمال أبو علي، نعمل على المراجعة الدورية للعقود، وسياسات العمل، واللوائح الداخلية للشركات للتأكد من مطابقتها التامة للقانون، مما يوفر بيئة عمل آمنة ويجنب الإدارة العليا أي مساءلة قانونية مفاجئة.',
@@ -349,10 +349,10 @@ Maintaining your legal entity is an investment in your future, and we are here t
       ar: 'كيف تحمي حقوق شركتك من خلال صياغة عقود تجارية محكمة خالية من الثغرات القانونية.',
       en: 'How to protect your company\'s rights by drafting tight commercial contracts free of legal loopholes.'
     },
-    category: { ar: 'إدارة العقود', en: 'Contract Management' },
-    categoryId: 'contract-management',
+    category: { ar: 'شركات', en: 'Companies' },
+    categoryId: 'companies',
     date: '2026-05-15',
-    image: '/شركات 2.jpg',
+    image: '/articles/شركات2.jpg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'العقد هو شريعة المتعاقدين، وأي ثغرة بسيطة في صياغته قد تؤدي إلى خسائر فادحة ونزاعات تجارية معقدة. الكثير من الشركات تقع في فخ استخدام النماذج الجاهزة للعقود دون تكييفها مع طبيعة الصفقة. نحن في مؤسستنا نولي اهتماماً بالغاً بصياغة ومراجعة العقود التجارية والمدنية بدقة متناهية، مع وضع شروط جزائية واضحة وآليات حاسمة لفض المنازعات، لضمان سير الأعمال بسلاسة وحفظ حقوق موكلينا بشكل قاطع.',
