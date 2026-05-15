@@ -146,3 +146,30 @@
 * {
   @apply transition-colors duration-300;
 }
+
+/* ---- Orbit Gallery Animations ---- */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbit-spin linear infinite;
+}
+
+.orbit-counter-spin {
+  animation: orbit-counter-spin linear infinite;
+}
