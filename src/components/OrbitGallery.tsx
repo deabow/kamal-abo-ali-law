@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
-const SUN_SRC = '/certificate/the sun.png';
+const SUN_SRC = '/certificate/the-sun.png';
 
 const certs = [
   { id: 1, src: '/certificate/1.png' },
