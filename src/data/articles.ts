@@ -105,8 +105,8 @@ If you aspire to make your company a powerful brand in the market, the secret li
       ar: 'الجرائم الإلكترونية لم تعد مجرد مشاكل عابرة على السوشيال ميديا. تعرف على عقوبات الاختراق، النصب الإلكتروني، وانتهاك الخصوصية وفقاً لأحدث القوانين.',
       en: 'Cybercrimes are no longer minor social media issues. Learn about the penalties for hacking, electronic fraud, and privacy violations under the latest Egyptian laws.'
     },
-    category: { ar: 'قوانين التكنولوجيا', en: 'Technology Law' },
-    categoryId: 'technology',
+    category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
+    categoryId: 'technology-and-cybersecurity',
     date: '2026-05-07',
     image: '/articles/hack.png?v=1', // ✏️ Update image path here — file: public/articles/hack.png
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
@@ -357,6 +357,126 @@ Maintaining your legal entity is an investment in your future, and we are here t
     content: {
       ar: 'العقد هو شريعة المتعاقدين، وأي ثغرة بسيطة في صياغته قد تؤدي إلى خسائر فادحة ونزاعات تجارية معقدة. الكثير من الشركات تقع في فخ استخدام النماذج الجاهزة للعقود دون تكييفها مع طبيعة الصفقة. نحن في مؤسستنا نولي اهتماماً بالغاً بصياغة ومراجعة العقود التجارية والمدنية بدقة متناهية، مع وضع شروط جزائية واضحة وآليات حاسمة لفض المنازعات، لضمان سير الأعمال بسلاسة وحفظ حقوق موكلينا بشكل قاطع.',
       en: 'The contract is the law of the contracting parties, and any minor loophole in its drafting can lead to heavy losses and complex commercial disputes. Many companies fall into the trap of using ready-made contract templates without adapting them to the nature of the transaction. At our firm, we pay great attention to drafting and reviewing commercial and civil contracts with utmost precision, setting clear penal clauses and decisive dispute resolution mechanisms, to ensure smooth business operations and conclusively preserve our clients\' rights.'
+    }
+  },
+  {
+    id: 11,
+    title: {
+      ar: 'المسؤولية القانونية للشركات في حماية البيانات ومواجهة الاختراقات السيبرانية',
+      en: 'Corporate Legal Responsibility in Data Protection and Facing Cyber Breaches'
+    },
+    summary: {
+      ar: 'كيف يفرض القانون عقوبات صارمة على الشركات التي تهمل حماية بيانات عملائها، وكيف تحمي مؤسستك قانونياً.',
+      en: 'How the law imposes strict penalties on companies that neglect to protect their clients\' data, and how to legally protect your organization.'
+    },
+    category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
+    categoryId: 'technology-and-cybersecurity',
+    date: '2026-05-16',
+    image: '/cyber1.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'مع التحول الرقمي الشامل، أصبحت بيانات العملاء هي الأصول الأكثر قيمة والأكثر استهدافاً. إن وقوع أي اختراق سيبراني أو تسريب للبيانات لا يمثل مجرد أزمة تقنية، بل هو كارثة قانونية قد تعرض الشركة لملاحقات قضائية وغرامات مالية ضخمة بموجب قوانين حماية البيانات الشخصية. في مؤسسة كمال أبو علي، نساعد الشركات على بناء أطر قانونية متكاملة وإعداد سياسات خصوصية صارمة تتوافق مع التشريعات المحلية والدولية، لضمان حماية الإدارة من المسؤولية الجنائية والمدنية في حال حدوث أي هجوم سيبراني.',
+      en: 'With comprehensive digital transformation, customer data has become the most valuable and targeted asset. A cyber breach or data leak is not just a technical crisis; it is a legal disaster that can expose a company to prosecution and massive financial fines under personal data protection laws. At Kamal Abu Ali Law Firm, we help companies build integrated legal frameworks and draft strict privacy policies that comply with local and international legislation, ensuring the protection of management from criminal and civil liability in the event of any cyber attack.'
+    }
+  },
+  {
+    id: 12,
+    title: {
+      ar: 'مكافحة الجرائم الإلكترونية: كيف يحميك القانون من الابتزاز والاحتيال الرقمي؟',
+      en: 'Combating Cybercrime: How the Law Protects You from Digital Extortion and Fraud?'
+    },
+    summary: {
+      ar: 'دليلك القانوني للتعامل مع التهديدات الرقمية، والخطوات الصحيحة لإثبات الجريمة الإلكترونية أمام جهات التحقيق.',
+      en: 'Your legal guide to dealing with digital threats, and the correct steps to prove cybercrimes before investigating authorities.'
+    },
+    category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
+    categoryId: 'technology-and-cybersecurity',
+    date: '2026-05-16',
+    image: '/cyber2.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'تتطور الجرائم الإلكترونية بشكل متسارع، لتشمل الابتزاز الرقمي، اختراق الحسابات، النصب الإلكتروني، وسرقة الهوية الرقمية. الكثير من الضحايا يقعون في فخ عدم معرفة التصرف القانوني الصحيح، مما يضيع حقوقهم. نحن في مؤسستنا نمتلك فريقاً متخصصاً في تكييف الجرائم المعلوماتية قانونياً، وندعم موكلينا في جمع الأدلة الرقمية المعتمدة وتجهيز المحاضر أمام مباحث الإنترنت والجهات القضائية لضمان الملاحقة السريعة للجناة واسترداد الحقوق كاملة وبسرية تامة.',
+      en: 'Cybercrimes are evolving rapidly, encompassing digital extortion, account hacking, electronic fraud, and digital identity theft. Many victims fall into the trap of not knowing the correct legal action, which loses their rights. At our firm, we have a specialized team in legally qualifying information crimes, and we support our clients in collecting certified digital evidence and preparing official reports before the internet police and judicial authorities to ensure the swift prosecution of perpetrators and the full recovery of rights in complete confidentiality.'
+    }
+  },
+  {
+    id: 13,
+    title: {
+      ar: 'الأدلة الرقمية أمام القضاء: حجيتها وكيفية التعامل معها في المحاكم',
+      en: 'Digital Evidence Before the Judiciary: Its Authority and How to Handle It in Courts'
+    },
+    summary: {
+      ar: 'هل تكفي رسالة "واتساب" أو بريد إلكتروني لإدانة أو تبرئة متهم؟ تعرف على الشروط القانونية لاعتماد الدليل الرقمي.',
+      en: 'Is a "WhatsApp" message or an email enough to convict or acquit a defendant? Learn the legal conditions for adopting digital evidence.'
+    },
+    category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
+    categoryId: 'technology-and-cybersecurity',
+    date: '2026-05-16',
+    image: '/cyber3.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'لم يعد الدليل الجنائي مقتصراً على الأوراق والشهود، بل أصبحت الأدلة الرقمية المستخرجة من الهواتف، الحواسيب، والشبكات تلعب دوراً حاسماً في الفصل في القضايا الجنائية والتجارية. ومع ذلك، فإن القانون يفرض شروطاً صارمة لاعتبار الدليل الرقمي حجة قانونية، مثل مشروعية الحصول عليه وعدم العبث بمحتواه (Chain of Custody). نحن نعمل على فحص الأدلة الرقمية بدقة، وتقديم الدفوع القانونية اللازمة سواء لإثبات حجية الدليل لموكلينا أو الطعن بالتزوير والعبث في الأدلة المقدمة ضدهم.',
+      en: 'Criminal evidence is no longer limited to papers and witnesses; digital evidence extracted from phones, computers, and networks now plays a decisive role in adjudicating criminal and commercial cases. However, the law imposes strict conditions for considering digital evidence as legal proof, such as the legality of obtaining it and not tampering with its content (Chain of Custody). We work to meticulously examine digital evidence and present the necessary legal defenses, whether to prove the authority of the evidence for our clients or to challenge the forgery and tampering of evidence presented against them.'
+    }
+  },
+  {
+    id: 14,
+    title: {
+      ar: 'بطلان إجراءات القبض والتفتيش: كيف تبرئ الثغرات القانونية المتهمين؟',
+      en: 'Invalidation of Arrest and Search Procedures: How Legal Loopholes Acquit Defendants?'
+    },
+    summary: {
+      ar: 'الدقائق الأولى من القبض هي الأهم. تعرف على كيف يمكن لخطأ إجرائي واحد أن ينسف القضية الجنائية من جذورها.',
+      en: 'The first minutes of an arrest are the most important. Learn how a single procedural error can uproot a criminal case from its roots.'
+    },
+    category: { ar: 'القضايا الجنائية', en: 'Criminal Cases' },
+    categoryId: 'criminal-cases',
+    date: '2026-05-16',
+    image: '/جنائي 1.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'في القضايا الجنائية، العبرة ليست فقط بالاتهام، بل بمدى مشروعية الدليل. الكثير من القضايا الكبرى تنتهي بالبراءة ليس لعدم ارتكاب الفعل، بل لبطلان إجراءات القبض والتفتيش أو استجواب المتهم دون محامٍ. في مؤسسة كمال أبو علي، نتبنى استراتيجية "التشريح القانوني" لأوراق القضية، حيث نبحث عن أدق الثغرات في محاضر الاستدلال وتحقيقات النيابة لإبطال الأدلة غير المشروعة وضمان محاكمة عادلة لموكلينا، لأن خطأ إجرائياً واحداً كفيل بتغيير مسار القضية تماماً.',
+      en: 'In criminal cases, what matters is not just the accusation, but the legality of the evidence. Many major cases end in acquittal not because the act wasn\'t committed, but due to the invalidation of arrest and search procedures or interrogating the defendant without a lawyer. At Kamal Abu Ali Law Firm, we adopt a "legal anatomy" strategy for case files, searching for the minutest loopholes in police reports and prosecution investigations to invalidate illegal evidence and ensure a fair trial for our clients, because a single procedural error is enough to completely change the course of a case.'
+    }
+  },
+  {
+    id: 15,
+    title: {
+      ar: 'جرائم الأموال والاختلاس في الشركات: الخط الفاصل بين الخطأ الإداري والجناية',
+      en: 'Financial Crimes and Embezzlement in Companies: The Dividing Line Between Administrative Error and Felony'
+    },
+    summary: {
+      ar: 'متى يتحول التقصير الإداري إلى تهمة إهدار مال عام أو اختلاس؟ دليلك القانوني لحماية موقفك المالي.',
+      en: 'When does administrative negligence turn into a charge of squandering public funds or embezzlement? Your legal guide to protecting your financial position.'
+    },
+    category: { ar: 'الجرائم المالية', en: 'Financial Crimes' },
+    categoryId: 'financial-crimes',
+    date: '2026-05-16',
+    image: '/جنائي 2.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'قضايا الأموال، مثل الاختلاس، الرشوة، والتزوير، تعتبر من أعقد القضايا الجنائية لارتباطها بتعاملات مالية ومستندات متشابكة. غالباً ما يختلط الأمر بين الإهمال الإداري والقصد الجنائي، مما يعرض مسؤولين أبرياء لخطر السجن. نحن نمتلك خبرة واسعة في تفكيك هذه الاتهامات من خلال الاستعانة بخبراء ومطابقة الدفاتر المالية، وتقديم دفوع قاطعة تنفي الركن المعنوي للجريمة وتحمي السمعة المهنية لموكلينا وتجنبهم المساءلة الجنائية الظالمة.',
+      en: 'Financial cases, such as embezzlement, bribery, and forgery, are considered among the most complex criminal cases due to their connection with intricate financial transactions and documents. Administrative negligence is often confused with criminal intent, exposing innocent officials to the risk of imprisonment. We have extensive experience in dismantling these accusations by consulting experts, matching financial records, and presenting conclusive defenses that negate the moral element of the crime, protecting our clients\' professional reputations and sparing them unjust criminal accountability.'
+    }
+  },
+  {
+    id: 16,
+    title: {
+      ar: 'حدود الدفاع الشرعي عن النفس والمال: متى يعفيك القانون من العقاب؟',
+      en: 'Limits of Legitimate Self-Defense and Property Defense: When Does the Law Exempt You from Punishment?'
+    },
+    summary: {
+      ar: 'أين ينتهي حقك في الدفاع عن نفسك وتبدأ مسؤوليتك الجنائية؟ تفاصيل قانونية دقيقة تفصل بين البراءة والإدانة.',
+      en: 'Where does your right to defend yourself end and your criminal responsibility begin? Precise legal details that separate innocence and conviction.'
+    },
+    category: { ar: 'القضايا الجنائية', en: 'Criminal Cases' },
+    categoryId: 'criminal-cases',
+    date: '2026-05-16',
+    image: '/جنائي 3.jpg',
+    author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
+    content: {
+      ar: 'القانون يكفل حق الدفاع الشرعي عن النفس والمال والعرض، لكن هذا الحق ليس مطلقاً بل تحكمه شروط صارمة مثل "التناسب" و"الخطر المحدق". المبالغة في رد الاعتداء قد تحول المجني عليه إلى متهم في جناية. دورنا كمحامين جنائيين هو إثبات توافر شروط الدفاع الشرعي من خلال فحص مسرح الجريمة، تقارير الطب الشرعي، وشهادة الشهود، لضمان تكييف القضية بشكل يعفي الموكل من العقوبة ويؤكد حقه الأصيل في الدفاع عن نفسه وممتلكاته.',
+      en: 'The law guarantees the right to legitimate self-defense of person, property, and honor, but this right is not absolute; it is governed by strict conditions such as "proportionality" and "imminent danger." Exaggerating the response to an attack may turn the victim into a felony suspect. Our role as criminal lawyers is to prove the fulfillment of the conditions of legitimate defense by examining the crime scene, forensic reports, and witness testimonies, to ensure the case is qualified in a way that exempts the client from punishment and affirms their inherent right to defend themselves and their property.'
     }
   }
   // ✏️ ADD NEW ARTICLES HERE — they will appear automatically on both the listing and detail pages.
