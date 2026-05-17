@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
-const SUN_SRC = '/certificate/the-sun.png';
+const SUN_SRC = '/certificate/new-sun.png';
 
 const certs = [
   { id: 1, src: '/certificate/1.png' },
@@ -72,7 +72,6 @@ export default function OrbitGallery() {
         <span className="mb-3 block text-sm font-bold uppercase tracking-widest text-accent">
           الشهادات والاعتمادات
         </span>
-        <h2 className="text-3xl font-bold text-primary md:text-4xl">شهاداتنا المعتمدة</h2>
         <p className="mx-auto mt-4 max-w-xl text-sm text-gray-500 md:text-base">
           اعتمادات وشهادات تؤكد التزامنا بأعلى معايير الجودة والكفاءة المهنية
         </p>
