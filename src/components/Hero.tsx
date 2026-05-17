@@ -14,7 +14,7 @@ export const Hero = ({ lang }: { lang: Language }) => {
   const slides = [
     {
       image: '/1.jpg', // Local image of Dar Al-Qada Al-Ali
-      badge: { ar: 'دار القضاء العالي', en: 'High Court of Justice' },
+      badge: { ar: 'معاييرنا المهنية', en: 'Our Professional Standards' },
       title: { 
         ar: <> الدقة والشفافية و  <span className="text-accent"> سرية البيانات </span> ليست شعارات</>, 
         en: <>Precision, transparency, and <span className="text-accent italic"> data confidentiality </span> are not just slogans.</> 
@@ -28,7 +28,7 @@ export const Hero = ({ lang }: { lang: Language }) => {
     },
     {
       image: '/1.jpg', // Local image for slide two
-      badge: { ar: 'المحكمة الدستورية العليا', en: 'Supreme Constitutional Court' },
+      badge: { ar: 'نخبة من المستشارين', en: 'Elite Counselors' },
       title: { 
         ar: <> فريق عمل <span className="text-accent">  قانوني </span> متعدد الخبرات </>, 
         en: <>A Multidisciplinary <span className="text-accent italic"> Legal </span> Team </> 
@@ -42,7 +42,7 @@ export const Hero = ({ lang }: { lang: Language }) => {
     },
     {
       image: '/1.jpg', // Local image for slide three
-      badge: { ar: 'عراقة القانون المصري', en: 'Egyptian Legal Heritage' },
+      badge: { ar: 'قطاع الأعمال والشركات', en: 'Corporate & Business Sector' },
       title: { 
         ar: <> مؤسسه قانونية  <span className="text-accent"> متكاملة </span>  تدعم الامتثال وحوكمة الشركات </>, 
         en: <>A <span className="text-accent italic"> Comprehensive </span> Legal Institution Supporting Compliance & Corporate Governance</> 
@@ -51,8 +51,8 @@ export const Hero = ({ lang }: { lang: Language }) => {
         ar: 'نواكب التطورات التشريعية المصرية لنقدم لعملائنا حلولاً تتناسب مع احتياجاتهم المتغيرة في عالم الأعمال والاستثمار.', 
         en: 'We keep pace with Egyptian legislative developments to provide our clients with solutions that suit their changing needs.' 
       },
-      primaryBtn: { ar: 'ابدأ استشارتك', en: 'Start Your Consultation' },
-      secondaryBtn: { ar: 'المدونة القانونية', en: 'Legal Blog' }
+      primaryBtn: { ar: 'اقرأ المزيد', en: 'Read More' },
+      secondaryBtn: { ar: 'الاستشارات التجارية', en: 'Commercial Consultations' }
     }
   ];
 
