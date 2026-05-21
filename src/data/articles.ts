@@ -312,7 +312,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'شركات', en: 'Companies' },
     categoryId: 'companies',
     date: '2026-05-15',
-    image: '/articles/common-mistakes.jpeg',
+    image: '/articles/حوكمه الشركات.jpg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'تعتبر حوكمة الشركات من أهم الركائز التي تعتمد عليها الكيانات الاقتصادية الحديثة لضمان الشفافية والمساءلة. في مؤسسة كمال أبو علي، نؤكد دائماً أن إرساء قواعد الحوكمة ليس مجرد إجراء روتيني، بل هو استثمار استراتيجي يحمي الشركة من التخبط الإداري والمخاطر القانونية. تشمل الحوكمة تنظيم العلاقة بين مجلس الإدارة والمساهمين وأصحاب المصلحة، مما يعزز الثقة ويجذب المزيد من الاستثمارات. نحن نقدم استشارات دقيقة لهيكلة الشركات بما يتوافق مع أحدث التشريعات لضمان استدامتها ونموها.',
@@ -352,7 +352,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'شركات', en: 'Companies' },
     categoryId: 'companies',
     date: '2026-05-15',
-    image: '/articles/شركات2.jpg',
+    image: '/articles/common.jpg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'العقد هو شريعة المتعاقدين، وأي ثغرة بسيطة في صياغته قد تؤدي إلى خسائر فادحة ونزاعات تجارية معقدة. الكثير من الشركات تقع في فخ استخدام النماذج الجاهزة للعقود دون تكييفها مع طبيعة الصفقة. نحن في مؤسستنا نولي اهتماماً بالغاً بصياغة ومراجعة العقود التجارية والمدنية بدقة متناهية، مع وضع شروط جزائية واضحة وآليات حاسمة لفض المنازعات، لضمان سير الأعمال بسلاسة وحفظ حقوق موكلينا بشكل قاطع.',
@@ -372,7 +372,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
     categoryId: 'technology-and-cybersecurity',
     date: '2026-05-16',
-    image: '/cyber1.jpg',
+    image: '/articles/المسؤولية القانونية.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'مع التحول الرقمي الشامل، أصبحت بيانات العملاء هي الأصول الأكثر قيمة والأكثر استهدافاً. إن وقوع أي اختراق سيبراني أو تسريب للبيانات لا يمثل مجرد أزمة تقنية، بل هو كارثة قانونية قد تعرض الشركة لملاحقات قضائية وغرامات مالية ضخمة بموجب قوانين حماية البيانات الشخصية. في مؤسسة كمال أبو علي، نساعد الشركات على بناء أطر قانونية متكاملة وإعداد سياسات خصوصية صارمة تتوافق مع التشريعات المحلية والدولية، لضمان حماية الإدارة من المسؤولية الجنائية والمدنية في حال حدوث أي هجوم سيبراني.',
@@ -392,7 +392,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
     categoryId: 'technology-and-cybersecurity',
     date: '2026-05-16',
-    image: '/cyber2.jpg',
+    image: '/articles/مكافحة الجرائم.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'تتطور الجرائم الإلكترونية بشكل متسارع، لتشمل الابتزاز الرقمي، اختراق الحسابات، النصب الإلكتروني، وسرقة الهوية الرقمية. الكثير من الضحايا يقعون في فخ عدم معرفة التصرف القانوني الصحيح، مما يضيع حقوقهم. نحن في مؤسستنا نمتلك فريقاً متخصصاً في تكييف الجرائم المعلوماتية قانونياً، وندعم موكلينا في جمع الأدلة الرقمية المعتمدة وتجهيز المحاضر أمام مباحث الإنترنت والجهات القضائية لضمان الملاحقة السريعة للجناة واسترداد الحقوق كاملة وبسرية تامة.',
@@ -412,7 +412,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
     categoryId: 'technology-and-cybersecurity',
     date: '2026-05-16',
-    image: '/articles/d',
+    image: '/articles/الأدلة الرقمية.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'لم يعد الدليل الجنائي مقتصراً على الأوراق والشهود، بل أصبحت الأدلة الرقمية المستخرجة من الهواتف، الحواسيب، والشبكات تلعب دوراً حاسماً في الفصل في القضايا الجنائية والتجارية. ومع ذلك، فإن القانون يفرض شروطاً صارمة لاعتبار الدليل الرقمي حجة قانونية، مثل مشروعية الحصول عليه وعدم العبث بمحتواه (Chain of Custody). نحن نعمل على فحص الأدلة الرقمية بدقة، وتقديم الدفوع القانونية اللازمة سواء لإثبات حجية الدليل لموكلينا أو الطعن بالتزوير والعبث في الأدلة المقدمة ضدهم.',
@@ -432,7 +432,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'القضايا الجنائية', en: 'Criminal Cases' },
     categoryId: 'criminal-cases',
     date: '2026-05-16',
-    image: '/جنائي 1.jpg',
+    image: '/articles/بطلان.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'في القضايا الجنائية، العبرة ليست فقط بالاتهام، بل بمدى مشروعية الدليل. الكثير من القضايا الكبرى تنتهي بالبراءة ليس لعدم ارتكاب الفعل، بل لبطلان إجراءات القبض والتفتيش أو استجواب المتهم دون محامٍ. في مؤسسة كمال أبو علي، نتبنى استراتيجية "التشريح القانوني" لأوراق القضية، حيث نبحث عن أدق الثغرات في محاضر الاستدلال وتحقيقات النيابة لإبطال الأدلة غير المشروعة وضمان محاكمة عادلة لموكلينا، لأن خطأ إجرائياً واحداً كفيل بتغيير مسار القضية تماماً.',
@@ -452,7 +452,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'الجرائم المالية', en: 'Financial Crimes' },
     categoryId: 'financial-crimes',
     date: '2026-05-16',
-    image: '/جنائي 2.jpg',
+    image: '/articles/جرائم.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'قضايا الأموال، مثل الاختلاس، الرشوة، والتزوير، تعتبر من أعقد القضايا الجنائية لارتباطها بتعاملات مالية ومستندات متشابكة. غالباً ما يختلط الأمر بين الإهمال الإداري والقصد الجنائي، مما يعرض مسؤولين أبرياء لخطر السجن. نحن نمتلك خبرة واسعة في تفكيك هذه الاتهامات من خلال الاستعانة بخبراء ومطابقة الدفاتر المالية، وتقديم دفوع قاطعة تنفي الركن المعنوي للجريمة وتحمي السمعة المهنية لموكلينا وتجنبهم المساءلة الجنائية الظالمة.',
@@ -472,7 +472,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'القضايا الجنائية', en: 'Criminal Cases' },
     categoryId: 'criminal-cases',
     date: '2026-05-16',
-    image: '/جنائي 3.jpg',
+    image: '/articles/حدود الدفاع.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'القانون يكفل حق الدفاع الشرعي عن النفس والمال والعرض، لكن هذا الحق ليس مطلقاً بل تحكمه شروط صارمة مثل "التناسب" و"الخطر المحدق". المبالغة في رد الاعتداء قد تحول المجني عليه إلى متهم في جناية. دورنا كمحامين جنائيين هو إثبات توافر شروط الدفاع الشرعي من خلال فحص مسرح الجريمة، تقارير الطب الشرعي، وشهادة الشهود، لضمان تكييف القضية بشكل يعفي الموكل من العقوبة ويؤكد حقه الأصيل في الدفاع عن نفسه وممتلكاته.',
