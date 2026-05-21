@@ -194,7 +194,7 @@ export default function Home({ lang }: { lang: Language }) {
           <h2 className="text-4xl font-bold mb-8">
             {lang === 'ar' ? 'هل تحتاج إلى استشارة قانونية؟' : 'Do You Need Legal Consultation?'}
           </h2>
-          <p className="text-white/70 mb-10 max-w-2xl mx-auto">
+          <p className="text-white/90 mb-10 max-w-2xl mx-auto">
             {lang === 'ar' 
               ? 'فريقنا من الخبراء القانونيين جاهز لمساعدتك في حل جميع قضاياك بكفاءة واحترافية.'
               : 'Our team of legal experts is ready to help you solve all your cases efficiently and professionally.'}

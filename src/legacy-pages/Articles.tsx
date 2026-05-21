@@ -23,7 +23,7 @@ export default function Articles({ lang }: { lang: Language }) {
           <h2 className="text-4xl font-bold text-primary mb-4">
             {lang === 'ar' ? 'المقالات القانونية' : 'Legal Articles'}
           </h2>
-          <p className="text-gray-500 mb-8">
+          <p className="text-gray-600 mb-8">
             {lang === 'ar' ? 'نشارككم أحدث المستجدات والنصائح القانونية لتوعيتكم بحقوقكم.' : 'We share the latest legal updates and tips to raise awareness of your rights.'}
           </p>
 
@@ -77,7 +77,7 @@ export default function Articles({ lang }: { lang: Language }) {
                     {article.title[lang]}
                   </h3>
                   {article.summary && (
-                    <p className="text-sm text-gray-500 line-clamp-2 mb-6">
+                    <p className="text-sm text-gray-800 leading-relaxed line-clamp-2 mb-6">
                       {article.summary[lang]}
                     </p>
                   )}

@@ -312,7 +312,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'شركات', en: 'Companies' },
     categoryId: 'companies',
     date: '2026-05-15',
-    image: '/articles/حوكمه الشركات.jpg',
+    image: '/articles/common-mistakes.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'تعتبر حوكمة الشركات من أهم الركائز التي تعتمد عليها الكيانات الاقتصادية الحديثة لضمان الشفافية والمساءلة. في مؤسسة كمال أبو علي، نؤكد دائماً أن إرساء قواعد الحوكمة ليس مجرد إجراء روتيني، بل هو استثمار استراتيجي يحمي الشركة من التخبط الإداري والمخاطر القانونية. تشمل الحوكمة تنظيم العلاقة بين مجلس الإدارة والمساهمين وأصحاب المصلحة، مما يعزز الثقة ويجذب المزيد من الاستثمارات. نحن نقدم استشارات دقيقة لهيكلة الشركات بما يتوافق مع أحدث التشريعات لضمان استدامتها ونموها.',
@@ -412,7 +412,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
     category: { ar: 'التكنولوجيا والأمن السيبراني', en: 'Technology & Cybersecurity' },
     categoryId: 'technology-and-cybersecurity',
     date: '2026-05-16',
-    image: '/cyber3.jpg',
+    image: '/articles/d',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: 'لم يعد الدليل الجنائي مقتصراً على الأوراق والشهود، بل أصبحت الأدلة الرقمية المستخرجة من الهواتف، الحواسيب، والشبكات تلعب دوراً حاسماً في الفصل في القضايا الجنائية والتجارية. ومع ذلك، فإن القانون يفرض شروطاً صارمة لاعتبار الدليل الرقمي حجة قانونية، مثل مشروعية الحصول عليه وعدم العبث بمحتواه (Chain of Custody). نحن نعمل على فحص الأدلة الرقمية بدقة، وتقديم الدفوع القانونية اللازمة سواء لإثبات حجية الدليل لموكلينا أو الطعن بالتزوير والعبث في الأدلة المقدمة ضدهم.',

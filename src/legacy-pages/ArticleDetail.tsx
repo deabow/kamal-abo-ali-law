@@ -93,7 +93,7 @@ export default function ArticleDetail({ lang }: { lang: Language }) {
             <h3 className="text-2xl font-bold text-primary mb-4">
               {lang === 'ar' ? 'هل تحتاج إلى استشارة قانونية؟' : 'Need Legal Advice?'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-200 mb-6">
               {lang === 'ar' ? 'فريقنا من المحامين المتخصصين جاهزون لمساعدتك. تواصل معنا اليوم.' : 'Our team of specialized lawyers is ready to help you. Contact us today.'}
             </p>
             <Link

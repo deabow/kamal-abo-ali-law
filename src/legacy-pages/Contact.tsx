@@ -1,6 +1,5 @@
-import { motion } from 'motion/react';
 import { FormEvent, useState } from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
 
 export default function Contact({ lang }: { lang: Language }) {
@@ -9,6 +8,7 @@ export default function Contact({ lang }: { lang: Language }) {
     name: '',
     phone: '',
     category: 'OTHER',
+    serviceType: '',
     problem: '',
     branch: ''
   });
@@ -35,11 +35,24 @@ export default function Contact({ lang }: { lang: Language }) {
         throw new Error(lang === 'ar' ? 'الرجاء اختيار الفرع.' : 'Please select a branch.');
       }
 
+      if (!formData.serviceType) {
+        throw new Error(lang === 'ar' ? 'الرجاء اختيار نوع الخدمة.' : 'Please select a service type.');
+      }
+
       const branchNameAr = formData.branch === 'SADAT' ? 'فرع مدينة السادات' : 'فرع الشيخ زايد';
+
+      const serviceTypeNameAr = 
+        formData.serviceType === 'CIVIL' ? 'مدني' :
+        formData.serviceType === 'CRIMINAL' ? 'جنائي' :
+        formData.serviceType === 'CORPORATE' ? 'شركات' :
+        formData.serviceType === 'FAMILY' ? 'أسرة' :
+        formData.serviceType === 'COMMERCIAL' ? 'تجاري' :
+        'أخرى';
 
       const message = `اسم العميل: ${formData.name}
 رقم الهاتف: ${trimmedPhone}
 الفرع: ${branchNameAr}
+نوع الخدمة: ${serviceTypeNameAr}
 المشكلة: ${trimmedProblem}`;
 
       const phoneTarget = formData.branch === 'SADAT' ? '201505363697' : '201505363698';
@@ -110,15 +123,43 @@ export default function Contact({ lang }: { lang: Language }) {
                 <option value="ZAYED">{lang === 'ar' ? 'فرع الشيخ زايد' : 'Sheikh Zayed Branch'}</option>
               </select>
               <select
-                value={formData.category}
-                onChange={(event) => setFormData((prev) => ({ ...prev, category: event.target.value }))}
-                className="w-full px-4 py-3 rounded-xl border-none bg-white shadow-sm outline-none focus:ring-2 focus:ring-accent transition-all"
+                required
+                value={formData.serviceType}
+                onChange={(event) => {
+                  const val = event.target.value;
+                  let catVal = 'OTHER';
+                  if (val === 'CIVIL') catVal = 'CIVIL';
+                  else if (val === 'CRIMINAL') catVal = 'CRIMINAL';
+                  else if (val === 'CORPORATE') catVal = 'CORPORATE';
+                  else if (val === 'FAMILY') catVal = 'FAMILY';
+                  else if (val === 'COMMERCIAL') catVal = 'CORPORATE';
+                  
+                  setFormData((prev) => ({
+                    ...prev,
+                    serviceType: val,
+                    category: catVal
+                  }));
+                }}
+                className="w-full px-4 py-3 rounded-xl border border-transparent dark:border-white/20 bg-white dark:bg-primary text-primary dark:text-white shadow-sm outline-none focus:ring-2 focus:ring-accent transition-all"
               >
-                <option value="OTHER">{lang === 'ar' ? 'أخرى' : 'Other'}</option>
-                <option value="CRIMINAL">{lang === 'ar' ? 'جنائي' : 'Criminal'}</option>
-                <option value="CORPORATE">{lang === 'ar' ? 'تجاري' : 'Commercial'}</option>
-                <option value="FAMILY">{lang === 'ar' ? 'أسرة' : 'Family'}</option>
-
+                <option value="" disabled className="text-gray-400 bg-white dark:bg-primary dark:text-gray-400">
+                  {lang === 'ar' ? 'اختر نوع الخدمة' : 'Select Service Type'}
+                </option>
+                <option value="CIVIL" className="text-primary dark:text-white bg-white dark:bg-primary">
+                  {lang === 'ar' ? 'مدني' : 'Civil Law'}
+                </option>
+                <option value="CRIMINAL" className="text-primary dark:text-white bg-white dark:bg-primary">
+                  {lang === 'ar' ? 'جنائي' : 'Criminal Law'}
+                </option>
+                <option value="CORPORATE" className="text-primary dark:text-white bg-white dark:bg-primary">
+                  {lang === 'ar' ? 'شركات' : 'Corporate Law'}
+                </option>
+                <option value="FAMILY" className="text-primary dark:text-white bg-white dark:bg-primary">
+                  {lang === 'ar' ? 'أسرة' : 'Family Law'}
+                </option>
+                <option value="COMMERCIAL" className="text-primary dark:text-white bg-white dark:bg-primary">
+                  {lang === 'ar' ? 'تجاري' : 'Commercial Law'}
+                </option>
               </select>
               <textarea
                 required
