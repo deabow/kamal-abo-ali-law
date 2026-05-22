@@ -1,9 +1,10 @@
+import { MapPin, Phone, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, ChevronRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Language } from '../types';
+
 import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
+import { Language } from '../types';
 
 const BRANCHES = [
   {
@@ -45,26 +46,15 @@ export default function Branches({ lang }: { lang: Language }) {
             <p className="text-gray-500">{lang === 'ar' ? 'نحن دائماً بالقرب منك لخدمتك في أي وقت.' : 'We are always near you to serve you anytime.'}</p>
           </div>
 
-          {/* Video Section Placeholder */}
-          <div className="mb-20 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white relative group">
-            <div className="relative aspect-video bg-gray-50 flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
-
-              <Image
-                src="/22.jpg"
-                alt=""
-                fill
-                sizes="(max-width: 896px) 100vw, 896px"
-                className="object-cover opacity-30 mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
-                placeholder="blur"
-                blurDataURL={BLUR_IMAGE_PLACEHOLDER}
-                aria-hidden
-              />
-
-              <div className="relative z-10 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer">
-                <Play className="w-8 h-8 text-accent ml-1" fill="currentColor" />
-              </div>
-            </div>
+          {/* Video Section */}
+          <div className="my-8 max-w-4xl mx-auto w-full h-[250px] md:h-[500px] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden relative">
+            <iframe
+              src="https://drive.google.com/file/d/1KBvzYQSNAgkfFPPEUm4ctZ0bd-KluqBd/preview"
+              className="w-full h-full border-none"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+              title="Promotional Video"
+            />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
