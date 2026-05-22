@@ -479,6 +479,7 @@ Maintaining your legal entity is an investment in your future, and we are here t
       en: 'The law guarantees the right to legitimate self-defense of person, property, and honor, but this right is not absolute; it is governed by strict conditions such as "proportionality" and "imminent danger." Exaggerating the response to an attack may turn the victim into a felony suspect. Our role as criminal lawyers is to prove the fulfillment of the conditions of legitimate defense by examining the crime scene, forensic reports, and witness testimonies, to ensure the case is qualified in a way that exempts the client from punishment and affirms their inherent right to defend themselves and their property.'
     }
   }
+
   // ✏️ ADD NEW ARTICLES HERE — they will appear automatically on both the listing and detail pages.
 ];
 

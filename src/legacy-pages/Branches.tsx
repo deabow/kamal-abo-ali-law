@@ -47,14 +47,6 @@ export default function Branches({ lang }: { lang: Language }) {
 
           {/* Video Section Placeholder */}
           <div className="mb-20 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white relative group">
-            <div className="p-6 text-center border-b border-gray-50">
-              <h3 className="text-2xl font-bold text-primary">
-                {lang === 'ar' ? 'جولة داخل فروعنا' : 'Our Branches Tour'}
-              </h3>
-              <p className="text-gray-500 text-sm mt-2">
-                {lang === 'ar' ? 'مكان الفيديو بتاع الفروع او نبذه عننا ' : ''}
-              </p>
-            </div>
             <div className="relative aspect-video bg-gray-50 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
 
