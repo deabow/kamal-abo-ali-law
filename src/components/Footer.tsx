@@ -46,7 +46,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
                   {isAr ? "مؤسسة كمال أبو علي" : "Kamal Abu Ali"}
                 </span>
                 <span className="text-sm text-accent uppercase mt-1">
-                  {isAr ? "للمحاماة والاستشارة القانونية" : "Law Firm"}
+                  {isAr ? "للمحاماة والاستشارات القانونية" : "Law Firm"}
                 </span>
               </div>
             </div>

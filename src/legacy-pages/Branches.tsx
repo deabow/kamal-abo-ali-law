@@ -21,7 +21,7 @@ const BRANCHES = [
     address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
     phone: '01505363698',
     image: '/zayed-office.jpeg',
-    mapUrl: 'https://maps.app.goo.gl/3ZwWDuuCa1muHipS9'
+    mapUrl: 'https://www.google.com/maps?q=30.027071,30.9740143&z=17&hl=en&output=embed'
   }
 ];
 

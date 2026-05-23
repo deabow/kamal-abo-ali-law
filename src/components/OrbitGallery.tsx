@@ -72,9 +72,7 @@ export default function OrbitGallery() {
         <span className="mb-3 block text-sm font-bold uppercase tracking-widest text-accent">
           الشهادات والاعتمادات
         </span>
-        <p className="mx-auto mt-4 max-w-xl text-sm text-gray-500 md:text-base">
-          اعتمادات وشهادات تؤكد التزامنا بأعلى معايير الجودة والكفاءة المهنية
-        </p>
+
       </div>
 
       <div className="mx-auto hidden max-w-7xl px-6 lg:block">

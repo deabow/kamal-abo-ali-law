@@ -226,41 +226,41 @@ Advice from Kamal Abu Ali Law Firm: Both carry penalties of imprisonment, but a 
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
       ar: `الفرق بين الخلع والطلاق للضرر ؟
-كتير من الزوجات مش عارفين الفرق بين الخلع والطلاق للضرر 👇
+كتير من الزوجات مش عارفين الفرق بين الخلع والطلاق للضرر 
 
-💡 الفرق بينهم ببساطة:
+ الفرق بينهم ببساطة:
 
-✅ الخلع:
+ الخلع:
 - الزوجة بتتنازل عن حقوقها المالية (المؤخر، المتعة، العدة).
 - لازم ترد المهر اللي استلمته.
 - مش محتاج إثبات ضرر.
 - المحكمة بتحكم حتى لو الزوج رافض.
 
-✅ الطلاق للضرر:
+ الطلاق للضرر:
 - الزوجة بتحافظ على حقوقها المالية.
 - لازم تثبت إن فيه ضرر (زي ضرب، إهانة، خيانة، عدم إنفاق…).
 - ممكن القاضي يرفض الطلب لو مفيش إثباتات قوية.
 - القضايا بتاخد وقت أطول.
 
-🎯 يعني لو الحياة فعلاً ما بقتش ممكنة، ومش قادرة تثبتي الضرر… الخلع بيكون أسرع وأسهل.`,
+ يعني لو الحياة فعلاً ما بقتش ممكنة، ومش قادرة تثبتي الضرر… الخلع بيكون أسرع وأسهل.`,
       en: `The Difference Between Khula and Divorce for Harm?
 Many wives are unaware of the difference between Khula and divorce for harm 👇
 
-💡 Here is the difference simply:
+ Here is the difference simply:
 
-✅ Khula:
+ Khula:
 - The wife waives her financial rights (deferred dowry, alimony, waiting period alimony).
 - She must return the dowry she received.
 - Does not require proving harm.
 - The court rules even if the husband refuses.
 
-✅ Divorce for Harm:
+ Divorce for Harm:
 - The wife maintains her financial rights.
 - She must prove that there is harm (such as beating, insult, betrayal, non-payment of maintenance...).
 - The judge may reject the request if there is no strong evidence.
 - Cases take longer.
 
-🎯 Meaning, if life really is no longer possible, and you cannot prove the harm... Khula is faster and easier.`
+Meaning, if life really is no longer possible, and you cannot prove the harm... Khula is faster and easier.`
     }
   },
   {
@@ -285,7 +285,7 @@ Many wives are unaware of the difference between Khula and divorce for harm 👇
 
 - المراجعة القانونية الدورية لكافة عقود وتصرفات الشركة.
 - تحديث وتسجيل كافة التعديلات في السجل التجاري والجهات المختصة.
-- تقديم استشارات استباقية لمعالجة أي مخالفات قبل تحولها لنيزاعات قضائية مكلفة.
+- تقديم استشارات استباقية لمعالجة أي مخالفات قبل تحولها لمنازعات قضائية مكلفة.
 
 الحفاظ على كيانك القانوني هو استثمار في مستقبلك، ونحن هنا لنضمن لك إدارة آمنة ومستقرة لشركتك.`,
       en: `Many companies face major legal challenges as a result of simple loopholes in partnership contracts or delays in updating commercial records and complying with tax and insurance regulations. At Kamal Abu Ali Law Firm, we believe that legal prevention is the foundation of business sustainability.
@@ -415,8 +415,8 @@ Maintaining your legal entity is an investment in your future, and we are here t
     image: '/articles/الأدلة الرقمية.jpeg',
     author: { ar: 'مؤسسة كمال أبو علي للمحاماة والاستشارات القانونية', en: 'Kamal Abu Ali Law Firm for Legal Services and Consultations' },
     content: {
-      ar: 'لم يعد الدليل الجنائي مقتصراً على الأوراق والشهود، بل أصبحت الأدلة الرقمية المستخرجة من الهواتف، الحواسيب، والشبكات تلعب دوراً حاسماً في الفصل في القضايا الجنائية والتجارية. ومع ذلك، فإن القانون يفرض شروطاً صارمة لاعتبار الدليل الرقمي حجة قانونية، مثل مشروعية الحصول عليه وعدم العبث بمحتواه (Chain of Custody). نحن نعمل على فحص الأدلة الرقمية بدقة، وتقديم الدفوع القانونية اللازمة سواء لإثبات حجية الدليل لموكلينا أو الطعن بالتزوير والعبث في الأدلة المقدمة ضدهم.',
-      en: 'Criminal evidence is no longer limited to papers and witnesses; digital evidence extracted from phones, computers, and networks now plays a decisive role in adjudicating criminal and commercial cases. However, the law imposes strict conditions for considering digital evidence as legal proof, such as the legality of obtaining it and not tampering with its content (Chain of Custody). We work to meticulously examine digital evidence and present the necessary legal defenses, whether to prove the authority of the evidence for our clients or to challenge the forgery and tampering of evidence presented against them.'
+      ar: 'لم يعد الدليل الجنائي مقتصراً على الأوراق والشهود، بل أصبحت الأدلة الرقمية المستخرجة من الهواتف، الحواسيب، والشبكات تلعب دوراً حاسماً في الفصل في القضايا الجنائية والتجارية. ومع ذلك، فإن القانون يفرض شروطاً صارمة لاعتبار الدليل الرقمي حجة قانونية، مثل مشروعية الحصول عليه وعدم العبث بمحتواه نحن نعمل على فحص الأدلة الرقمية بدقة، وتقديم الدفوع القانونية اللازمة سواء لإثبات حجية الدليل لموكلينا أو الطعن بالتزوير والعبث في الأدلة المقدمة ضدهم.',
+      en: 'Criminal evidence is no longer limited to papers and witnesses; digital evidence extracted from phones, computers, and networks now plays a decisive role in adjudicating criminal and commercial cases. However, the law imposes strict conditions for considering digital evidence as legal proof, such as the legality of obtaining it and not tampering with its content We work to meticulously examine digital evidence and present the necessary legal defenses, whether to prove the authority of the evidence for our clients or to challenge the forgery and tampering of evidence presented against them.'
     }
   },
   {

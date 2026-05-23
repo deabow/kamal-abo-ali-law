@@ -46,7 +46,7 @@ const SERVICES = [
     type: 'individuals',
     icon: <Scale className="w-8 h-8" />,
     title: { ar: 'المطالبات المدنية', en: 'Civil Claims' },
-    desc: { ar: 'رفع دعاوى التعويضات والمطالبات المالية والقضايا العقارية الشخصية.', en: 'Filing compensation claims, financial disputes, and personal property cases.' }
+    desc: { ar: ' دعاوى التعويضات والمطالبات المالية والقضايا العقارية والشخصية.', en: 'Filing compensation claims, financial disputes, and personal property cases.' }
   },
   // خدمات الشركات
   {
@@ -74,15 +74,15 @@ const SERVICES = [
     id: 12,
     type: 'companies',
     icon: <Briefcase className="w-8 h-8" />,
-    title: { ar: 'قانون العمل للشركات', en: 'Corporate Labor Law' },
+    title: { ar: 'قانون العمل المصري', en: 'Egyptian Labor Law' },
     desc: { ar: 'الاستشارات القانونية للعاملين والنزاعات الجماعية والسياسات الإدارية.', en: 'Legal advice for employees, collective disputes, and HR policies.' }
   },
   {
     id: 13,
     type: 'companies',
     icon: <Handshake className="w-8 h-8" />,
-    title: { ar: 'قانون المقاولات', en: 'Construction Law' },
-    desc: { ar: 'عقود المقاولات والنزاعات بين المقاول والعميل والتسليم والمواد.', en: 'Construction contracts, contractor-client disputes, delivery, and material issues.' }
+    title: { ar: 'اعمال المقاولات والتشييد', en: 'Construction Law' },
+    desc: { ar: 'عقود المقاولات والنزاعات بين المقاول والعميل والتسليم و عقود التشييد والهدم.', en: 'Construction contracts, disputes between contractor and client, delivery, and construction and demolition contracts.' }
   },
   {
     id: 14,
@@ -95,8 +95,8 @@ const SERVICES = [
     id: 15,
     type: 'companies',
     icon: <Lock className="w-8 h-8" />,
-    title: { ar: 'قانون البيانات والخصوصية', en: 'Data & Privacy Law' },
-    desc: { ar: 'حماية البيانات الشخصية والامتثال لقوانين الخصوصية والأمان السيبراني.', en: 'Personal data protection, privacy law compliance, and cybersecurity.' }
+    title: { ar: ' مجال الاتصالات وتكنولوجيا المعلومات', en: 'Communications and Information Technology' },
+    desc: { ar: 'حماية البيانات الشخصية والامتثال لقوانين الخصوصية والأمن السيبراني.', en: 'Personal data protection, privacy law compliance, and cybersecurity.' }
   },
   {
     id: 16,
@@ -104,14 +104,21 @@ const SERVICES = [
     icon: <ShieldCheck className="w-8 h-8" />,
     title: { ar: 'الامتثال وحوكمة الشركات', en: 'Corporate Governance & Compliance' },
     desc: { ar: 'نقدم حلولاً متكاملة لضمان توافق أعمالكم مع القوانين واللوائح، مع صياغة أطر الحوكمة التي تضمن استدامة الشركات وحمايتها من المخاطر القانونية.', en: 'We provide integrated solutions to ensure your business complies with laws and regulations, while drafting governance frameworks that guarantee corporate sustainability and protection from legal risks.' }
+  },
+  {
+    id: 17,
+    type: 'individuals',
+    icon: <ShieldCheck className="w-8 h-8" />,
+    title: { ar: 'الجرائم الاقتصادية و غسل الاموال', en: 'Money Laundering Crimes' },
+    desc: { ar: 'نقدم حلولاً متكاملة في القضايا الماليه والمعقدة مثل منازعات الشركات وقضايا الافلاس وجرائم البنوك وغسل الاموال والاحتيال الالكتروني والاستثماري .', en: 'We provide integrated solutions to ensure your business complies with laws and regulations, while drafting governance frameworks that guarantee corporate sustainability and protection from legal risks.' }
   }
 ];
 
 export default function Services({ lang }: { lang: Language }) {
   const [activeTab, setActiveTab] = useState<'all' | 'individuals' | 'companies'>('all');
 
-  const filteredServices = activeTab === 'all' 
-    ? SERVICES 
+  const filteredServices = activeTab === 'all'
+    ? SERVICES
     : SERVICES.filter(service => service.type === activeTab);
 
   return (
@@ -129,7 +136,7 @@ export default function Services({ lang }: { lang: Language }) {
           </p>
 
           <div className="inline-flex p-1 bg-gray-100 rounded-xl mb-12">
-            <button 
+            <button
               onClick={() => setActiveTab('all')}
               className={cn(
                 "px-8 py-2 rounded-lg text-sm font-bold transition-all",
@@ -138,7 +145,7 @@ export default function Services({ lang }: { lang: Language }) {
             >
               {lang === 'ar' ? 'الكل' : 'All'}
             </button>
-            <button 
+            <button
               onClick={() => setActiveTab('individuals')}
               className={cn(
                 "px-8 py-2 rounded-lg text-sm font-bold transition-all",
@@ -147,7 +154,7 @@ export default function Services({ lang }: { lang: Language }) {
             >
               {lang === 'ar' ? 'للأفراد' : 'For Individuals'}
             </button>
-            <button 
+            <button
               onClick={() => setActiveTab('companies')}
               className={cn(
                 "px-8 py-2 rounded-lg text-sm font-bold transition-all",

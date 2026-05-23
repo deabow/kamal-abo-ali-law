@@ -27,10 +27,10 @@ const BRANCHES_DATA = {
     address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
     phone: '01505363698',
     image: '/zayed-office.jpeg',
-    mapUrl: 'https://maps.app.goo.gl/3ZwWDuuCa1muHipS9',
+    mapUrl: 'https://www.google.com/maps?q=30.027071,30.9740143&z=17&hl=en&output=embed',
     description: {
-      ar: 'فرع الشيخ زايد يقدم خدمات قانونية عالية المستوى في منطقة الشيخ زايد الراقية. متخصصون في القانون التجاري والعقاري.',
-      en: 'Sheikh Zayed Branch offers high-quality legal services in the upscale Sheikh Zayed area. Specialists in commercial and real estate law.'
+      ar: 'فرع الشيخ زايد جمهوريه مصر العربيه',
+      en: 'Sheikh Zayed Branch Arab Republic of Egypt'
     }
   }
 };
@@ -147,7 +147,11 @@ export default function BranchDetail({ lang }: { lang: Language }) {
                   </div>
                   <div>
                     <p className="font-bold text-primary mb-1">{lang === 'ar' ? 'البريد الإلكتروني' : 'Email'}</p>
-                    <p>info@aboalilawfirm.com</p>
+                    <p>
+                      <a href="mailto:ceo@aboalilawfirm.com" className="text-accent hover:underline">
+                        ceo@aboalilawfirm.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -156,21 +160,24 @@ export default function BranchDetail({ lang }: { lang: Language }) {
 
           {/* Map Section */}
           <motion.div
+            key={`map-${branch.id}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="mb-12"
           >
             <h2 className="text-2xl font-bold text-primary mb-6">{lang === 'ar' ? 'موقعنا على الخريطة' : 'Our Location on Map'}</h2>
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-96">
               <iframe
+                key={branch.id}
                 src={branch.mapUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={true}
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
+                title={`Map - ${branch.name.en}`}
               ></iframe>
             </div>
           </motion.div>
