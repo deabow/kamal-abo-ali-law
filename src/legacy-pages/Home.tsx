@@ -172,7 +172,7 @@ export default function Home({ lang }: { lang: Language }) {
             </div>
             <div className="relative">
               <Image
-                src="/3.jpg"
+                src="/sadat-office.jpeg"
                 alt="Branches"
                 width={1280}
                 height={853}

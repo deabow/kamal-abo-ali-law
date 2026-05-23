@@ -20,7 +20,7 @@ const BRANCHES = [
     name: { ar: 'فرع الشيخ زايد', en: 'Sheikh Zayed Branch' },
     address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
     phone: '01505363698',
-    image: '/22.jpg',
+    image: '/zayed-office.jpeg',
     mapUrl: 'https://maps.app.goo.gl/3ZwWDuuCa1muHipS9'
   }
 ];

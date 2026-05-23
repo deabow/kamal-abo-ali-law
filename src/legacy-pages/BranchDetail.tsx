@@ -14,7 +14,7 @@ const BRANCHES_DATA = {
     name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
     address: { ar: 'المنطقة الحادية عشر - حي ال 7 عمارات - مدينة السادات - المنوفية', en: '11th District - 7 Buildings Neighborhood - Sadat City - Menoufia' },
     phone: '01505363697',
-    image: '/22.jpg',
+    image: '/sadat-office.jpeg',
     mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed',
     description: {
       ar: 'فرع مدينة السادات يوفر خدمات قانونية متكاملة للعملاء في المنوفية والمناطق المجاورة. يضم فريق من الخبراء القانونيين المتخصصين في مختلف المجالات.',
@@ -26,7 +26,7 @@ const BRANCHES_DATA = {
     name: { ar: 'فرع الشيخ زايد', en: 'Sheikh Zayed Branch' },
     address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
     phone: '01505363698',
-    image: '/22.jpg',
+    image: '/zayed-office.jpeg',
     mapUrl: 'https://maps.app.goo.gl/3ZwWDuuCa1muHipS9',
     description: {
       ar: 'فرع الشيخ زايد يقدم خدمات قانونية عالية المستوى في منطقة الشيخ زايد الراقية. متخصصون في القانون التجاري والعقاري.',
@@ -110,14 +110,14 @@ export default function BranchDetail({ lang }: { lang: Language }) {
                 </div>
 
                 <div className="flex gap-4">
-                  <a 
-                    href={`tel:${branch.phone}`} 
+                  <a
+                    href={`tel:${branch.phone}`}
                     className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all"
                   >
                     {lang === 'ar' ? 'اتصل الآن' : 'Call Now'}
                   </a>
-                  <a 
-                    href={`https://wa.me/2${branch.phone}`} 
+                  <a
+                    href={`https://wa.me/2${branch.phone}`}
                     target="_blank"
                     rel="noreferrer"
                     className="bg-accent text-white px-8 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all"
@@ -163,13 +163,13 @@ export default function BranchDetail({ lang }: { lang: Language }) {
           >
             <h2 className="text-2xl font-bold text-primary mb-6">{lang === 'ar' ? 'موقعنا على الخريطة' : 'Our Location on Map'}</h2>
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-96">
-              <iframe 
+              <iframe
                 src={branch.mapUrl}
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
@@ -182,7 +182,7 @@ export default function BranchDetail({ lang }: { lang: Language }) {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-bold text-primary mb-6">{lang === 'ar' ? 'فروعنا الأخرى' : 'Our Other Branches'}</h2>
-            <Link 
+            <Link
               href="/branches"
               className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
             >
