@@ -12,7 +12,7 @@ const BRANCHES = [
     name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
     address: { ar: 'المنطقة الحادية عشر - حي ال 7 عمارات - مدينة السادات - المنوفية', en: '11th District - 7 Buildings Neighborhood - Sadat City - Menoufia' },
     phone: '01505363697',
-    image: '/22.jpg',
+    image: '/sadat-office.jpeg',
     mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed'
   },
   {
@@ -47,13 +47,14 @@ export default function Branches({ lang }: { lang: Language }) {
           </div>
 
           {/* Video Section */}
-          <div className="my-8 max-w-4xl mx-auto w-full h-[250px] md:h-[500px] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden relative">
-            <iframe
-              src="https://drive.google.com/file/d/1KBvzYQSNAgkfFPPEUm4ctZ0bd-KluqBd/preview"
-              className="w-full h-full border-none"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-              title="Promotional Video"
+          <div className="my-8 max-w-4xl mx-auto">
+            <video
+              src="/videos/promo-video.mp4"
+              autoPlay
+
+              loop
+              playsInline
+              className="w-full h-[300px] md:h-[500px] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 object-cover"
             />
           </div>
 

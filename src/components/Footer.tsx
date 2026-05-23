@@ -61,7 +61,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
             <div className="flex gap-3">
               {[
                 { Icon: Facebook, href: "https://www.facebook.com/kamal.aboali.law.firm" },
-                { Icon: Instagram, href: "#" },
+                { Icon: Instagram, href: "https://www.instagram.com/kamal.aboali.law.firm/" },
                 { Icon: Linkedin, href: "#" }
               ].map(({ Icon, href }, i) => (
                 <a

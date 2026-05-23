@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
-const SUN_SRC = '/certificate/new-sun.png';
+const SUN_SRC = '/certificate/sun.png';
 
 const certs = [
   { id: 1, src: '/certificate/1.png' },
@@ -20,10 +20,10 @@ const BASE_W = 220;
 const BASE_H = 162;
 
 const DISTANCE_SLOTS = [
-  { translateX: 0,   translateZ: 100, rotateY: 0,  bottomPx: 56,  scale: 1.0  },
-  { translateX: 152, translateZ: 72,  rotateY: 22, bottomPx: 96,  scale: 0.93 },
-  { translateX: 292, translateZ: 42,  rotateY: 40, bottomPx: 136, scale: 0.86 },
-  { translateX: 438, translateZ: 12,  rotateY: 54, bottomPx: 180, scale: 0.78 },
+  { translateX: 0, translateZ: 100, rotateY: 0, bottomPx: 56, scale: 1.0 },
+  { translateX: 152, translateZ: 72, rotateY: 22, bottomPx: 96, scale: 0.93 },
+  { translateX: 292, translateZ: 42, rotateY: 40, bottomPx: 136, scale: 0.86 },
+  { translateX: 438, translateZ: 12, rotateY: 54, bottomPx: 180, scale: 0.78 },
 ] as const;
 
 type CardConfig = {

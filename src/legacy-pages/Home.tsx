@@ -10,7 +10,7 @@ export default function Home({ lang }: { lang: Language }) {
   return (
     <div className="pt-20">
       <Hero lang={lang} />
-      
+
       {/* Quick Stats / Features */}
       <section className="py-20 bg-bg-soft">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
@@ -31,7 +31,7 @@ export default function Home({ lang }: { lang: Language }) {
               desc: { ar: 'نحافظ على خصوصية عملائنا وسرية بياناتهم.', en: 'We protect our clients privacy and data confidentiality.' }
             }
           ].map((item, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function Home({ lang }: { lang: Language }) {
             viewport={{ once: true }}
           >
             <Image
-              src="/2.png"
+              src="/home.png"
               alt="About Us"
               width={1280}
               height={853}
@@ -82,11 +82,11 @@ export default function Home({ lang }: { lang: Language }) {
               {lang === 'ar' ? 'مؤسسة كمال أبو علي للمحاماة' : 'Kamal Abu Ali Law Firm'}
             </h2>
             <p className="text-gray-600 mb-8 leading-relaxed max-w-2xl text-start">
-              {lang === 'ar' 
+              {lang === 'ar'
                 ? 'نحن مؤسسة قانونية رائدة تلتزم بتقديم حلول مبتكرة وفعالة لعملائنا. نجمع بين الخبرة العميقة والنزاهة المهنية لتحقيق العدالة.'
                 : 'We are a leading legal institution committed to providing innovative and effective solutions to our clients. We combine deep expertise and professional integrity to achieve justice.'}
             </p>
-            <Link 
+            <Link
               href="/about"
               className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
             >
@@ -132,7 +132,7 @@ export default function Home({ lang }: { lang: Language }) {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link 
+            <Link
               href="/services"
               className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all"
             >
@@ -163,7 +163,7 @@ export default function Home({ lang }: { lang: Language }) {
                   <span className="font-bold text-primary">{lang === 'ar' ? 'فرع الشيخ زايد - الجيزة' : 'Sheikh Zayed Branch - Giza'}</span>
                 </div>
               </div>
-              <Link 
+              <Link
                 href="/branches"
                 className="bg-accent text-white px-8 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all"
               >
@@ -195,11 +195,11 @@ export default function Home({ lang }: { lang: Language }) {
             {lang === 'ar' ? 'هل تحتاج إلى استشارة قانونية؟' : 'Do You Need Legal Consultation?'}
           </h2>
           <p className="text-white/90 mb-10 max-w-2xl mx-auto">
-            {lang === 'ar' 
+            {lang === 'ar'
               ? 'فريقنا من الخبراء القانونيين جاهز لمساعدتك في حل جميع قضاياك بكفاءة واحترافية.'
               : 'Our team of legal experts is ready to help you solve all your cases efficiently and professionally.'}
           </p>
-          <Link 
+          <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-accent/90 transition-all shadow-xl shadow-accent/20"
           >

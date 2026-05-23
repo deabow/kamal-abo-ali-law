@@ -243,8 +243,18 @@ export default function Contact({ lang }: { lang: Language }) {
             </div>
 
             <div className="flex justify-center gap-3">
-              {[Facebook, Instagram, Linkedin].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-accent transition-all">
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/kamal.aboali.law.firm" },
+                { Icon: Instagram, href: "https://www.instagram.com/kamal.aboali.law.firm/" },
+                { Icon: Linkedin, href: "#" }
+              ].map(({ Icon, href }, idx) => (
+                <a
+                  key={idx}
+                  href={href}
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
+                  className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-accent transition-all cursor-pointer"
+                >
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
