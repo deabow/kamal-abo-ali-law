@@ -29,8 +29,8 @@ const BRANCHES_DATA = {
     image: '/dipo.png',
     mapUrl: 'https://www.google.com/maps?q=30.027071,30.9740143&z=17&hl=en&output=embed',
     description: {
-      ar: 'فرع الشيخ زايد جمهوريه مصر العربيه',
-      en: 'Sheikh Zayed Branch Arab Republic of Egypt'
+      ar: 'فرع الشيخ زايد يوفر خدمه قانونيه متكامله للعملاء بجميع أنحاء جمهوريه مصر العربيه وخارجها ويضم فريق من المتخصصين في مختلف المجالات القانونيه',
+      en: 'Sheikh Zayed Branch provides comprehensive legal services to clients in the Arab Republic of Egypt and abroad, and has a team of specialists in various legal fields.'
     }
   }
 };
