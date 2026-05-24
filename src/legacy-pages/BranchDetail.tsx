@@ -14,7 +14,7 @@ const BRANCHES_DATA = {
     name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
     address: { ar: 'المنطقة الحادية عشر - حي ال 7 عمارات - مدينة السادات - المنوفية', en: '11th District - 7 Buildings Neighborhood - Sadat City - Menoufia' },
     phone: '01505363697',
-    image: '/sadat-office.jpeg',
+    image: '/sadat-offi.png',
     mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed',
     description: {
       ar: 'فرع مدينة السادات يوفر خدمات قانونية متكاملة للعملاء في المنوفية والمناطق المجاورة. يضم فريق من الخبراء القانونيين المتخصصين في مختلف المجالات.',
@@ -26,7 +26,7 @@ const BRANCHES_DATA = {
     name: { ar: 'فرع الشيخ زايد', en: 'Sheikh Zayed Branch' },
     address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
     phone: '01505363698',
-    image: '/zayed-office.jpeg',
+    image: '/dipo.png',
     mapUrl: 'https://www.google.com/maps?q=30.027071,30.9740143&z=17&hl=en&output=embed',
     description: {
       ar: 'فرع الشيخ زايد جمهوريه مصر العربيه',
@@ -74,7 +74,7 @@ export default function BranchDetail({ lang }: { lang: Language }) {
               fill
               priority
               sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover"
+              className="object-contain" // <-- غيرنا cover لـ contain
               placeholder="blur"
               blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"

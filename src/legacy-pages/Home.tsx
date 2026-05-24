@@ -60,7 +60,7 @@ export default function Home({ lang }: { lang: Language }) {
             <Image
               src="/home.png"
               alt="About Us"
-              width={1280}
+              width={1360}
               height={853}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-full max-w-full h-auto rounded-3xl shadow-2xl"
@@ -172,7 +172,7 @@ export default function Home({ lang }: { lang: Language }) {
             </div>
             <div className="relative">
               <Image
-                src="/sadat-office.jpeg"
+                src="/dipo.png"
                 alt="Branches"
                 width={1280}
                 height={853}

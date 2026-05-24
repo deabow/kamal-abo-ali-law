@@ -20,13 +20,7 @@ const SERVICES = [
     title: { ar: 'قانون الأسرة', en: 'Family Law' },
     desc: { ar: 'قضايا الأحوال الشخصية، النفقة، الحضانة، والطلاق والخلع والنزاعات الأسرية.', en: 'Personal status cases, alimony, custody, divorce, and family disputes.' }
   },
-  {
-    id: 3,
-    type: 'individuals',
-    icon: <Briefcase className="w-8 h-8" />,
-    title: { ar: 'قانون العمل', en: 'Labor Law' },
-    desc: { ar: 'قضايا العمال وأصحاب الأعمال، عقود العمل، والتعويضات عن الفصل التعسفي.', en: 'Labor cases, employment contracts, and compensation for unfair dismissal.' }
-  },
+
   {
     id: 7,
     type: 'individuals',
@@ -45,8 +39,8 @@ const SERVICES = [
     id: 9,
     type: 'individuals',
     icon: <Scale className="w-8 h-8" />,
-    title: { ar: 'المطالبات المدنية', en: 'Civil Claims' },
-    desc: { ar: ' دعاوى التعويضات والمطالبات المالية والقضايا العقارية والشخصية.', en: 'Filing compensation claims, financial disputes, and personal property cases.' }
+    title: { ar: 'القانون المدني ', en: 'Civil Claims' },
+    desc: { ar: '  كافة القضايا المدنية ودعاوى التعويضات والمطالبات المالية والقضايا العقارية والشخصية. ', en: 'Filing compensation claims, financial disputes, and personal property cases.' }
   },
   // خدمات الشركات
   {
@@ -75,7 +69,7 @@ const SERVICES = [
     type: 'companies',
     icon: <Briefcase className="w-8 h-8" />,
     title: { ar: 'قانون العمل المصري', en: 'Egyptian Labor Law' },
-    desc: { ar: 'الاستشارات القانونية للعاملين والنزاعات الجماعية والسياسات الإدارية.', en: 'Legal advice for employees, collective disputes, and HR policies.' }
+    desc: { ar: 'قضايا العمال واصحاب الاعمال وصياغه عقود العمل ودعاوي التعويضات عن حالات الفصل التعسفي والنزاعاتالعماليه', en: 'Labor and employer issues, drafting employment contracts, claims for compensation for unfair dismissal, and labor disputes..' }
   },
   {
     id: 13,
