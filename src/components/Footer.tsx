@@ -115,18 +115,21 @@ export const Footer = ({ lang }: { lang: Language }) => {
             </h4>
 
             <ul className="space-y-4 text-sm">
-              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
-                {isAr ? "القانون الجنائي" : "Criminal Law"}
-              </li>
-              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
-                {isAr ? "قانون الأسرة" : "Family Law"}
-              </li>
-              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
-                {isAr ? "قانون العمل" : "Labor Law"}
-              </li>
-              <li className="hover:text-white transition text-slate-300 dark:text-slate-400 cursor-pointer">
-                {isAr ? "القانون التجاري" : "Commercial Law"}
-              </li>
+              {[
+                { ar: "القانون الجنائي", en: "Criminal Law", href: "/services" },
+                { ar: "قانون الأسرة", en: "Family Law", href: "/services" },
+                { ar: "قانون العمل", en: "Labor Law", href: "/services" },
+                { ar: "القانون التجاري", en: "Commercial Law", href: "/services" },
+                { ar: "القانون المدني", en: "Civil Law", href: "/services" },
+                { ar: "قانون الشركات", en: "Corporate Law", href: "/services" },
+                { ar: "قانون الجرائم الاقتصادية", en: "Economic Crimes Law", href: "/services" }
+              ].map((item, idx) => (
+                <li key={idx} className="hover:text-white transition text-slate-300 dark:text-slate-400">
+                  <Link href={item.href} className="hover:text-accent cursor-pointer">
+                    {isAr ? item.ar : item.en}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -20,7 +20,6 @@ const SERVICES = [
     title: { ar: 'قانون الأسرة', en: 'Family Law' },
     desc: { ar: 'قضايا الأحوال الشخصية، النفقة، الحضانة، والطلاق والخلع والنزاعات الأسرية.', en: 'Personal status cases, alimony, custody, divorce, and family disputes.' }
   },
-
   {
     id: 7,
     type: 'individuals',
@@ -42,6 +41,20 @@ const SERVICES = [
     title: { ar: 'القانون المدني ', en: 'Civil Claims' },
     desc: { ar: '  كافة القضايا المدنية ودعاوى التعويضات والمطالبات المالية والقضايا العقارية والشخصية. ', en: 'Filing compensation claims, financial disputes, and personal property cases.' }
   },
+  {
+    id: 18,
+    type: 'individuals',
+    icon: <Scale className="w-8 h-8" />,
+    title: { ar: 'القانون المدني', en: 'Civil Law' },
+    desc: { ar: 'تقديم الدعم القانوني والتمثيل القضائي في النزاعات المدنية، العقود، التعويضات والالتزامات وحماية الحقوق.', en: 'Providing legal support and judicial representation in civil disputes, contracts, damages, obligations, and protection of rights.' }
+  },
+  {
+    id: 17,
+    type: 'individuals',
+    icon: <ShieldCheck className="w-8 h-8" />,
+    title: { ar: 'الجرائم الاقتصادية و غسل الاموال', en: 'Money Laundering Crimes' },
+    desc: { ar: 'نقدم حلولاً متكاملة في القضايا الماليه والمعقدة مثل منازعات الشركات وقضايا الافلاس وجرائم البنوك وغسل الاموال والاحتيال الالكتروني والاستثماري .', en: 'We provide integrated solutions in complex financial cases such as corporate disputes, bankruptcy, banking crimes, money laundering, and electronic/investment fraud.' }
+  },
   // خدمات الشركات
   {
     id: 4,
@@ -56,6 +69,13 @@ const SERVICES = [
     icon: <Building2 className="w-8 h-8" />,
     title: { ar: 'قانون الشركات', en: 'Corporate Law' },
     desc: { ar: 'تسجيل الشركات والمتطلبات التنظيمية والامتثال للقوانين الحكومية والنظامية.', en: 'Company registration, regulatory requirements, and compliance with government laws.' }
+  },
+  {
+    id: 19,
+    type: 'companies',
+    icon: <Building2 className="w-8 h-8" />,
+    title: { ar: 'قانون الشركات', en: 'Corporate Law' },
+    desc: { ar: 'الاستشارات القانونية المتخصصة في تأسيس الشركات وحوكمتها وإدارتها وحل نزاعاتها التجارية والتشغيلية.', en: 'Specialized legal consultations in company establishment, governance, management, and resolving commercial and operational disputes.' }
   },
   {
     id: 11,
@@ -100,11 +120,11 @@ const SERVICES = [
     desc: { ar: 'نقدم حلولاً متكاملة لضمان توافق أعمالكم مع القوانين واللوائح، مع صياغة أطر الحوكمة التي تضمن استدامة الشركات وحمايتها من المخاطر القانونية.', en: 'We provide integrated solutions to ensure your business complies with laws and regulations, while drafting governance frameworks that guarantee corporate sustainability and protection from legal risks.' }
   },
   {
-    id: 17,
-    type: 'individuals',
-    icon: <ShieldCheck className="w-8 h-8" />,
-    title: { ar: 'الجرائم الاقتصادية و غسل الاموال', en: 'Money Laundering Crimes' },
-    desc: { ar: 'نقدم حلولاً متكاملة في القضايا الماليه والمعقدة مثل منازعات الشركات وقضايا الافلاس وجرائم البنوك وغسل الاموال والاحتيال الالكتروني والاستثماري .', en: 'We provide integrated solutions to ensure your business complies with laws and regulations, while drafting governance frameworks that guarantee corporate sustainability and protection from legal risks.' }
+    id: 20,
+    type: 'companies',
+    icon: <DollarSign className="w-8 h-8" />,
+    title: { ar: 'قانون الجرائم الاقتصادية', en: 'Economic Crimes Law' },
+    desc: { ar: 'التمثيل والدفاع في قضايا الاحتيال المالي، والتهرب الضريبي، والرشوة، ومكافحة غسل الأموال والجرائم التجارية الاقتصادية.', en: 'Representation and defense in financial fraud cases, tax evasion, bribery, anti-money laundering, and commercial/economic crimes.' }
   }
 ];
 
