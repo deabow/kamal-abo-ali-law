@@ -39,14 +39,7 @@ const SERVICES = [
     type: 'individuals',
     icon: <Scale className="w-8 h-8" />,
     title: { ar: 'القانون المدني ', en: 'Civil Claims' },
-    desc: { ar: '  كافة القضايا المدنية ودعاوى التعويضات والمطالبات المالية والقضايا العقارية والشخصية. ', en: 'Filing compensation claims, financial disputes, and personal property cases.' }
-  },
-  {
-    id: 18,
-    type: 'individuals',
-    icon: <Scale className="w-8 h-8" />,
-    title: { ar: 'القانون المدني', en: 'Civil Law' },
-    desc: { ar: 'تقديم الدعم القانوني والتمثيل القضائي في النزاعات المدنية، العقود، التعويضات والالتزامات وحماية الحقوق.', en: 'Providing legal support and judicial representation in civil disputes, contracts, damages, obligations, and protection of rights.' }
+    desc: { ar: 'نقدم دعماً قانونياً وتمثيلاً قضائياً متكاملاً في النزاعات المدنية، التعويضات، والمطالبات المالية. نحمي حقوقكم في صياغة العقود والقضايا العقارية والشخصية، ملتزمين دائماً بتحقيق أفضل النتائج', en: 'We provide comprehensive legal support and representation in civil disputes, compensations, and financial claims. We protect your rights in drafting contracts and in real estate and personal cases, always committed to achieving the best results.' }
   },
   {
     id: 17,
