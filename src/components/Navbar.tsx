@@ -104,7 +104,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
             <Globe className="w-4 h-4" />
             {lang === 'ar' ? 'English' : 'العربية'}
           </button>
-          
+
           {mounted && (
             <button
               onClick={toggleTheme}
@@ -114,9 +114,9 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
               {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
           )}
-          
+
           <a
-            href="https://my-office.aboalilawfirm.com/login"
+            href="https://aboalilawfirm.mysuits.app"
             target="_blank"
             rel="noreferrer"
             className="border-2 border-primary text-primary dark:border-slate-100 dark:text-slate-100 px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-white transition-all"
@@ -169,7 +169,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
               >
                 {lang === 'ar' ? 'English' : 'العربية'}
               </button>
-              
+
               {mounted && (
                 <button
                   onClick={toggleTheme}
@@ -179,9 +179,9 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
                   {lang === 'ar' ? 'الوضع الداكن' : 'Dark Mode'}
                 </button>
               )}
-              
+
               <a
-                href="https://my-office.aboalilawfirm.com/login"
+                href="https://aboalilawfirm.mysuits.app"
                 target="_blank"
                 rel="noreferrer"
                 className="border-2 border-primary dark:border-slate-100 text-primary dark:text-slate-100 px-4 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-white transition-all w-full text-center"
