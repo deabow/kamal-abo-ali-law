@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { MapPin, Phone, ChevronLeft } from 'lucide-react';
+import { MapPin, Phone, ChevronLeft, ChevronRight, Mail, Clock, ShieldCheck, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
@@ -11,26 +11,26 @@ import { Language } from '../types';
 const BRANCHES_DATA = {
   'sadat': {
     id: 'sadat',
-    name: { ar: 'فرع مدينة السادات', en: 'Sadat City Branch' },
+    name: { ar: 'فرع مدينة السادات - المنوفية', en: 'Sadat City Branch - Menoufia' },
     address: { ar: 'المنطقة الحادية عشر - حي ال 7 عمارات - مدينة السادات - المنوفية', en: '11th District - 7 Buildings Neighborhood - Sadat City - Menoufia' },
     phone: '01505363697',
     image: '/sadat-offi.png',
     mapUrl: 'https://www.google.com/maps?q=30.360565185546875,30.529327392578125&z=17&hl=en&output=embed',
     description: {
-      ar: 'فرع مدينة السادات يوفر خدمات قانونية متكاملة للعملاء في المنوفية والمناطق المجاورة. يضم فريق من الخبراء القانونيين المتخصصين في مختلف المجالات.',
-      en: 'Sadat City Branch provides comprehensive legal services to clients in Menoufia and surrounding areas. It has a team of legal experts specialized in various fields.'
+      ar: 'يوفر فرع مدينة السادات خدمات قانونية واستشارية متكاملة لعملاء المؤسسة والشركات والمصانع الاستثمارية في محافظة المنوفية والمناطق الصناعية المجاورة، تحت إشراف نخبة من المستشارين المتخصصين.',
+      en: 'Sadat City Branch delivers comprehensive legal solutions to clients and major industrial enterprises across Menoufia and surrounding economic zones.'
     }
   },
   'sheikh-zayed': {
     id: 'sheikh-zayed',
-    name: { ar: 'فرع الشيخ زايد', en: 'Sheikh Zayed Branch' },
+    name: { ar: 'فرع الشيخ زايد - الجيزة', en: 'Sheikh Zayed Branch - Giza' },
     address: { ar: 'الحي الثامن - المجاورة 3 - شارع الحكمة - الشيخ زايد - الجيزة', en: '8th District - Neighborhood 3 - Al Hikma Street - Sheikh Zayed - Giza' },
     phone: '01505363698',
     image: '/dipo.png',
     mapUrl: 'https://www.google.com/maps?q=30.027071,30.9740143&z=17&hl=en&output=embed',
     description: {
-      ar: 'فرع الشيخ زايد يوفر خدمه قانونيه متكامله للعملاء بجميع أنحاء جمهوريه مصر العربيه وخارجها ويضم فريق من المتخصصين في مختلف المجالات القانونيه',
-      en: 'Sheikh Zayed Branch provides comprehensive legal services to clients in the Arab Republic of Egypt and abroad, and has a team of specialists in various legal fields.'
+      ar: 'يقدم فرع الشيخ زايد خدمات قانونية نوعية للشركات الاستثمارية ورجال الأعمال وكافة الموكلين في القاهرة الكبرى وكافة محافظات الجمهورية، مع تجهيزات استقبال استشارية رفيعة المستوى.',
+      en: 'Sheikh Zayed Branch provides high-end legal advisory for investment firms, executives, and clients across Greater Cairo and nationwide.'
     }
   }
 };
@@ -40,33 +40,44 @@ export default function BranchDetail({ lang }: { lang: Language }) {
   const branchIdParam = params?.branchId;
   const branchId = Array.isArray(branchIdParam) ? branchIdParam[0] : branchIdParam;
   const branch = branchId ? BRANCHES_DATA[branchId as keyof typeof BRANCHES_DATA] : null;
+  const isAr = lang === 'ar';
 
   if (!branch) {
     return (
-      <div className="pt-32 pb-20 text-center">
-        <h2 className="text-2xl font-bold text-primary">{lang === 'ar' ? 'الفرع غير موجود' : 'Branch not found'}</h2>
-        <Link href="/branches" className="text-accent mt-4 inline-block">{lang === 'ar' ? 'العودة للفروع' : 'Back to Branches'}</Link>
+      <div className="pt-40 pb-28 text-center bg-white dark:bg-[#0b0f17] min-h-screen">
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+          {isAr ? 'الفرع المطلوب غير موجود' : 'Branch not found'}
+        </h2>
+        <Link 
+          href="/branches" 
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#dfb76c] via-[#c5a880] to-[#b38f56] text-slate-950 px-6 py-2.5 rounded-full font-bold text-sm"
+        >
+          {isAr ? 'العودة لقائمة الفروع' : 'Back to Branches'}
+        </Link>
       </div>
     );
   }
 
   return (
-    <div className="pt-32 pb-20">
-      {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-6 mb-8">
-        <Link href="/branches" className="text-accent font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
-          {lang === 'ar' ? <ChevronLeft className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
-          {lang === 'ar' ? 'العودة للفروع' : 'Back to Branches'}
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 bg-white dark:bg-[#0b0f17] min-h-screen overflow-x-hidden w-full max-w-full">
+      {/* Breadcrumb Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-6 sm:mb-8">
+        <Link 
+          href="/branches" 
+          className="text-[#dfb76c] font-bold text-xs sm:text-sm inline-flex items-center gap-1.5 sm:gap-2 hover:gap-3 transition-all duration-300 min-h-[36px]"
+        >
+          {isAr ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+          <span>{isAr ? 'العودة لكافة فروع المؤسسة' : 'Back to All Branches'}</span>
         </Link>
       </div>
 
-      <section className="section-padding">
+      <section className="section-padding py-0">
         <div className="max-w-7xl mx-auto">
-          {/* Header Image */}
+          {/* Header Image with Luxury Bezel */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative rounded-3xl overflow-hidden shadow-xl mb-12 h-96 w-full"
+            className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl mb-8 sm:mb-12 h-64 sm:h-80 md:h-96 w-full border border-slate-200 dark:border-white/10 bg-slate-950"
           >
             <Image
               src={branch.image}
@@ -74,100 +85,121 @@ export default function BranchDetail({ lang }: { lang: Language }) {
               fill
               priority
               sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-contain" // <-- غيرنا cover لـ contain
+              className="object-contain p-2 sm:p-4 filter brightness-95"
               placeholder="blur"
               blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"
             />
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-gold/90 text-slate-950 rounded-full text-[10px] sm:text-xs font-black shadow-lg">
+              {branch.id === 'sadat' ? (isAr ? 'محافظة المنوفية' : 'Menoufia') : (isAr ? 'محافظة الجيزة' : 'Giza')}
+            </div>
           </motion.div>
 
-          {/* Content Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
+          {/* Content & Quick Info Grid */}
+          <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+            {/* Main Details */}
+            <div className="lg:col-span-2 text-start">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: isAr ? 20 : -20 }}
                 animate={{ opacity: 1, x: 0 }}
               >
-                <div className="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-bold mb-4">
-                  {branch.id === 'sadat' ? (lang === 'ar' ? 'المنوفية' : 'Menoufia') : (lang === 'ar' ? 'الجيزة' : 'Giza')}
-                </div>
-                <h1 className="text-4xl font-bold text-primary mb-6">{branch.name[lang]}</h1>
-                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                <h1 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 font-arabic leading-tight">
+                  {branch.name[lang]}
+                </h1>
+                
+                <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                   {branch.description[lang]}
                 </p>
 
-                <div className="space-y-4 mb-8">
-                  <h3 className="text-xl font-bold text-primary">{lang === 'ar' ? 'معلومات التواصل' : 'Contact Information'}</h3>
-                  <div className="flex items-center gap-3 text-gray-600">
-                    <MapPin className="w-5 h-5 text-accent" />
+                <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-[#111726]/80 border border-slate-200/80 dark:border-white/10 space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#dfb76c]" />
+                    <span>{isAr ? 'بيانات الاتصال بالمقر' : 'Office Contact Details'}</span>
+                  </h3>
+                  
+                  <div className="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-xs sm:text-sm">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#dfb76c] shrink-0 mt-0.5" />
                     <span>{branch.address[lang]}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-600">
-                    <Phone className="w-5 h-5 text-accent" />
-                    <span>{branch.phone}</span>
+
+                  <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-xs sm:text-sm">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#dfb76c] shrink-0" />
+                    <span className="font-sans font-bold text-slate-900 dark:text-white text-sm sm:text-base" dir="ltr">{branch.phone}</span>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <a
-                    href={`tel:${branch.phone}`}
-                    className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all"
-                  >
-                    {lang === 'ar' ? 'اتصل الآن' : 'Call Now'}
-                  </a>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a
                     href={`https://wa.me/2${branch.phone}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-accent text-white px-8 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all"
+                    className="bg-gradient-to-r from-[#dfb76c] via-[#c5a880] to-[#b38f56] text-slate-950 px-6 sm:px-8 py-3.5 rounded-xl font-black hover:shadow-gold-glow active:scale-95 transition-all duration-200 shadow-md text-sm sm:text-base flex items-center justify-center gap-2 min-h-[48px]"
                   >
-                    {lang === 'ar' ? 'واتساب' : 'WhatsApp'}
+                    <span>{isAr ? 'تواصل عبر واتساب فوراً' : 'Chat via WhatsApp'}</span>
+                  </a>
+
+                  <a
+                    href={`tel:${branch.phone}`}
+                    className="bg-slate-900 dark:bg-white/10 hover:bg-slate-800 dark:hover:bg-white/15 text-white border border-transparent dark:border-white/15 px-6 sm:px-8 py-3.5 rounded-xl font-bold transition-all duration-200 text-sm sm:text-base flex items-center justify-center gap-2 min-h-[48px]"
+                  >
+                    <Phone className="w-4 h-4 text-[#dfb76c]" />
+                    <span>{isAr ? 'اتصال هاتفي مباشر' : 'Call Directly'}</span>
                   </a>
                 </div>
               </motion.div>
             </div>
 
-            {/* Quick Info */}
+            {/* Quick Summary Card */}
             <div>
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: isAr ? -24 : 24 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-bg-soft p-8 rounded-3xl"
+                className="bg-slate-50 dark:bg-[#111726]/85 p-7 rounded-3xl border border-slate-200/80 dark:border-white/10 shadow-sm dark:shadow-luxury-card text-start"
               >
-                <h3 className="text-xl font-bold text-primary mb-6">{lang === 'ar' ? 'معلومات سريعة' : 'Quick Info'}</h3>
-                <div className="space-y-4 text-sm text-gray-600">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 pb-3 border-b border-slate-200/80 dark:border-white/10 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-[#dfb76c]" />
+                  <span>{isAr ? 'أوقات العمل والمعلومات' : 'Office Information'}</span>
+                </h3>
+
+                <div className="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                   <div>
-                    <p className="font-bold text-primary mb-1">{lang === 'ar' ? 'الموقع' : 'Location'}</p>
-                    <p>{branch.id === 'sadat' ? (lang === 'ar' ? 'مدينة السادات' : 'Sadat City') : (lang === 'ar' ? 'الشيخ زايد' : 'Sheikh Zayed')}</p>
+                    <p className="font-bold text-slate-900 dark:text-white mb-1">{isAr ? 'الموقع' : 'Location'}</p>
+                    <p>{branch.id === 'sadat' ? (isAr ? 'مدينة السادات - المنوفية' : 'Sadat City') : (isAr ? 'الشيخ زايد - الجيزة' : 'Sheikh Zayed')}</p>
                   </div>
+
                   <div>
-                    <p className="font-bold text-primary mb-1">{lang === 'ar' ? 'الهاتف' : 'Phone'}</p>
-                    <p>{branch.phone}</p>
+                    <p className="font-bold text-slate-900 dark:text-white mb-1">{isAr ? 'الهاتف المعتمد' : 'Telephone'}</p>
+                    <p className="font-sans font-semibold text-[#dfb76c]" dir="ltr">{branch.phone}</p>
                   </div>
+
                   <div>
-                    <p className="font-bold text-primary mb-1">{lang === 'ar' ? 'البريد الإلكتروني' : 'Email'}</p>
-                    <p>
-                      <a href="mailto:ceo@aboalilawfirm.com" className="text-accent hover:underline">
-                        ceo@aboalilawfirm.com
-                      </a>
-                    </p>
+                    <p className="font-bold text-slate-900 dark:text-white mb-1">{isAr ? 'البريد الإلكتروني' : 'Official Email'}</p>
+                    <a href="mailto:ceo@aboalilawfirm.com" className="text-[#dfb76c] hover:underline">
+                      ceo@aboalilawfirm.com
+                    </a>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center gap-2 text-emerald-500 font-semibold text-xs">
+                    <ShieldCheck className="w-4 h-4" />
+                    <span>{isAr ? 'استقبال الموكلين بموعد مسبق' : 'By Appointment Only'}</span>
                   </div>
                 </div>
               </motion.div>
             </div>
           </div>
 
-          {/* Map Section */}
+          {/* Interactive Map Section */}
           <motion.div
             key={`map-${branch.id}`}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            className="mb-12"
+            viewport={{ once: true }}
+            className="mb-14"
           >
-            <h2 className="text-2xl font-bold text-primary mb-6">{lang === 'ar' ? 'موقعنا على الخريطة' : 'Our Location on Map'}</h2>
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-96">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 font-arabic text-start">
+              {isAr ? 'موقع الفرع على الخريطة' : 'Office Location on Map'}
+            </h2>
+            <div className="bg-white dark:bg-[#111726]/85 rounded-3xl overflow-hidden shadow-sm dark:shadow-luxury-card border border-slate-200/80 dark:border-white/10 h-96 p-2">
               <iframe
                 key={branch.id}
                 src={branch.mapUrl}
@@ -178,24 +210,9 @@ export default function BranchDetail({ lang }: { lang: Language }) {
                 loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
                 title={`Map - ${branch.name.en}`}
-              ></iframe>
+                className="rounded-2xl"
+              />
             </div>
-          </motion.div>
-
-          {/* Other Branches */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-bold text-primary mb-6">{lang === 'ar' ? 'فروعنا الأخرى' : 'Our Other Branches'}</h2>
-            <Link
-              href="/branches"
-              className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
-            >
-              {lang === 'ar' ? 'عرض جميع الفروع' : 'View All Branches'}
-              {lang === 'ar' ? <ChevronLeft className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
-            </Link>
           </motion.div>
         </div>
       </section>

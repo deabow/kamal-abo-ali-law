@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Shield, Award, Building2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Language } from '../types';
@@ -10,49 +10,54 @@ import { BLUR_IMAGE_PLACEHOLDER } from '../lib/blur-placeholder';
 
 export const Hero = ({ lang }: { lang: Language }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const slides = [
     {
-      image: '/1.jpg', // Local image of Dar Al-Qada Al-Ali
-      badge: { ar: 'معاييرنا المهنية', en: 'Our Professional Standards' },
+      image: '/1.jpg',
+      icon: Shield,
+      badge: { ar: 'معاييرنا المهنية الرائدة', en: 'Our Leading Professional Standards' },
       title: { 
-        ar: <> الدقة والشفافية و  <span className="text-accent"> سرية البيانات </span> ليست شعارات</>, 
-        en: <>Precision, transparency, and <span className="text-accent italic"> data confidentiality </span> are not just slogans.</> 
+        ar: <> الدقة والشفافية و <span className="text-gradient-gold">سرية البيانات</span> ليست مجرد شعارات </>, 
+        en: <>Precision, Transparency, and <span className="text-gradient-gold">Data Confidentiality</span> are Not Just Slogans</> 
       },
       desc: {
-        ar: 'نقدم استشارات قانونية متخصصة ومُحكمة بسريه تامه ، مستندين إلى معرفة عميقة بالقوانين و بالتشريعات المصرية.',
-        en: `We provide specialized and well-structured legal consultations with complete confidentiality, grounded in deep knowledge of Egyptian laws and legislation.`
+        ar: 'نقدم استشارات قانونية متخصصة ومُحكمة بأعلى درجات السرية والاحترافية، مستندين إلى خبرة تتجاوز 20 عاماً في التشريعات والقوانين المصرية والدولية.',
+        en: 'We provide specialized, high-tier legal consultations with strict confidentiality, grounded in over 20 years of experience across Egyptian and international legislation.'
       },
-      primaryBtn: { ar: 'احجز استشارة الآن', en: 'Book Consultation Now' },
-      secondaryBtn: { ar: 'خدماتنا القانونية', en: 'Our Legal Services' }
+      primaryBtn: { ar: 'احجز استشارة سرية الآن', en: 'Book Confidential Consultation' },
+      secondaryBtn: { ar: 'استكشف خدماتنا القانونية', en: 'Explore Legal Services' }
     },
     {
-      image: '/1.jpg', // Local image for slide two
-      badge: { ar: 'نخبة من المستشارين', en: 'Elite Counselors' },
+      image: '/1.jpg',
+      icon: Award,
+      badge: { ar: 'نخبة من المستشارين والقضاة السابقين', en: 'Elite Legal Counselors' },
       title: { 
-        ar: <> فريق عمل <span className="text-accent">  قانوني </span> متعدد الخبرات </>, 
-        en: <>A Multidisciplinary <span className="text-accent italic"> Legal </span> Team </> 
+        ar: <> فريق عمل <span className="text-gradient-gold">قانوني رفيع</span> متعدد التخصصات </>, 
+        en: <>A Prestigious, Multidisciplinary <span className="text-gradient-gold">Legal Team</span></> 
       },
       desc: { 
-        ar: 'فريقنا يجمع بين الخبرة العميقة في القانون المصري والاحترافية الدولية لضمان أفضل تمثيل قانوني لقضاياكم.', 
-        en: 'Our team combines deep experience in Egyptian law and international professionalism to ensure the best legal representation.' 
+        ar: 'يجمع فريقنا نخبة من المحامين والمستشارين المعتمدين أمام محاكم النقض والدستورية العليا لضمان أقوى تمثيل قانوني وحماية مكتسباتكم.', 
+        en: 'Our firm brings together certified attorneys before the Court of Cassation and Constitutional Court to guarantee supreme legal defense.' 
       },
-      primaryBtn: { ar: 'تواصل معنا', en: 'Contact Us' },
+      primaryBtn: { ar: 'تواصل مع فريق المستشارين', en: 'Connect With Counselors' },
       secondaryBtn: { ar: 'فروعنا في مصر', en: 'Our Branches in Egypt' }
     },
     {
-      image: '/1.jpg', // Local image for slide three
-      badge: { ar: 'قطاع الأعمال والشركات', en: 'Corporate & Business Sector' },
+      image: '/1.jpg',
+      icon: Building2,
+      badge: { ar: 'قطاع الأعمال والشركات والمستثمرين', en: 'Corporate & Investment Sector' },
       title: { 
-        ar: <> مؤسسه قانونية  <span className="text-accent"> متكاملة </span>  تدعم الامتثال وحوكمة الشركات </>, 
-        en: <>A <span className="text-accent italic"> Comprehensive </span> Legal Institution Supporting Compliance & Corporate Governance</> 
+        ar: <> مؤسسة قانونية <span className="text-gradient-gold">شاملة</span> لحوكمة وامتثال الشركات </>, 
+        en: <>Comprehensive Legal Defense For <span className="text-gradient-gold">Corporate Governance</span></> 
       },
       desc: { 
-        ar: 'نواكب التطورات التشريعية المصرية لنقدم لعملائنا حلولاً تتناسب مع احتياجاتهم المتغيرة في عالم الأعمال والاستثمار.', 
-        en: 'We keep pace with Egyptian legislative developments to provide our clients with solutions that suit their changing needs.' 
+        ar: 'نقدم الدعم القانوني الاستراتيجي للشركات الاستثمارية والمؤسسات التجارية، من التأسيس وصياغة العقود وحتى حل النزاعات المعقدة والاندماج.', 
+        en: 'Delivering strategic counsel for commercial enterprises and investments, from incorporation and drafting to complex litigation.' 
       },
-      primaryBtn: { ar: 'اقرأ المزيد', en: 'Read More' },
-      secondaryBtn: { ar: 'الاستشارات التجارية', en: 'Commercial Consultations' }
+      primaryBtn: { ar: 'طلب استشارة تجارية', en: 'Request Corporate Advice' },
+      secondaryBtn: { ar: 'خدمات الشركات والامتثال', en: 'Corporate Compliance Services' }
     }
   ];
 
@@ -60,90 +65,124 @@ export const Hero = ({ lang }: { lang: Language }) => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 8000); // Increased time for better zoom effect
+    const timer = setInterval(nextSlide, 8000);
     return () => clearInterval(timer);
   }, []);
 
+  // Touch Swipe Handlers for Mobile Phones
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (diff > minSwipeDistance) {
+      // Swiped Left
+      nextSlide();
+    } else if (diff < -minSwipeDistance) {
+      // Swiped Right
+      prevSlide();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const SlideIcon = slides[currentSlide].icon;
+
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-primary">
+    <section 
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      className="relative min-h-[88vh] sm:min-h-[92vh] lg:min-h-screen w-full overflow-hidden bg-[#0b0f17] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-16 select-none"
+    >
+      {/* Background Slides */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+          className="absolute inset-0 pointer-events-none"
         >
-          {/* Background Image with Zoom Animation */}
+          {/* Subtle Zooming Cinematic Background */}
           <motion.div
             className="absolute inset-0"
-            initial={{ scale: 1.15 }}
+            initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
-            transition={{
-              duration: 8,
-              ease: 'easeOut',
-            }}
+            transition={{ duration: 8.5, ease: 'easeOut' }}
           >
             <Image
               src={slides[currentSlide].image}
-              alt="Hero Background"
+              alt="Dar Al-Qada Al-Ali Background"
               fill
               priority={currentSlide === 0}
               sizes="100vw"
-              className="object-cover opacity-60"
+              className="object-cover opacity-30 filter brightness-90"
               placeholder="blur"
               blurDataURL={BLUR_IMAGE_PLACEHOLDER}
               referrerPolicy="no-referrer"
             />
           </motion.div>
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/20 to-primary/70" />
+
+          {/* Luxury Executive Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f17] via-[#0b0f17]/70 to-[#0b0f17]/50" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,rgba(197,168,128,0.18),transparent_75%)]" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-5xl"
+            exit={{ opacity: 0, y: -24 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full flex flex-col items-center"
           >
-            {/* Badge */}
+            {/* Prestige Badge */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="inline-block px-5 py-1.5 bg-accent text-white rounded-full text-sm font-bold mb-8 shadow-lg shadow-accent/20"
+              transition={{ delay: 0.15, duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/15 dark:border-gold/30 text-[11px] sm:text-xs md:text-sm font-bold text-[#dfb76c] mb-4 sm:mb-6 shadow-gold-sm max-w-[92vw] truncate"
             >
-              {slides[currentSlide].badge[lang]}
+              <SlideIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#dfb76c] shrink-0" />
+              <span className="truncate">{slides[currentSlide].badge[lang]}</span>
             </motion.div>
 
-            {/* Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight font-serif tracking-tight">
+            {/* Main Luxury Headline */}
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-[1.3] sm:leading-[1.25] tracking-tight font-arabic max-w-5xl px-2">
               {slides[currentSlide].title[lang]}
             </h1>
 
-            {/* Description */}
-            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            {/* Reassuring Subtitle */}
+            <p className="text-xs sm:text-base md:text-xl text-slate-300 mb-8 sm:mb-10 max-w-3xl mx-auto leading-[1.8] sm:leading-[1.9] font-normal font-sans px-2">
               {slides[currentSlide].desc[lang]}
             </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            {/* Action Buttons: Full width on mobile, inline on tablet+ */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 w-full max-w-md sm:max-w-none">
               <Link 
                 href="/contact"
-                className="bg-accent text-white px-10 py-4 rounded-xl font-bold hover:bg-accent/90 transition-all min-w-[200px] text-lg shadow-xl shadow-accent/30 hover:-translate-y-1"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#dfb76c] via-[#c5a880] to-[#b38f56] text-slate-950 px-7 sm:px-10 py-3.5 sm:py-4 rounded-xl font-black hover:shadow-gold-glow hover:-translate-y-0.5 active:scale-95 transition-all duration-200 text-sm sm:text-base md:text-lg shadow-[0_10px_25px_-5px_rgba(197,168,128,0.35)] min-h-[48px] flex items-center justify-center"
               >
                 {slides[currentSlide].primaryBtn[lang]}
               </Link>
               <Link 
                 href="/services"
-                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition-all min-w-[200px] text-lg hover:-translate-y-1"
+                className="w-full sm:w-auto bg-white/10 hover:bg-white/15 backdrop-blur-xl text-white border border-white/20 hover:border-gold/50 px-7 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold hover:-translate-y-0.5 active:scale-95 transition-all duration-200 text-sm sm:text-base md:text-lg shadow-sm min-h-[48px] flex items-center justify-center"
               >
                 {slides[currentSlide].secondaryBtn[lang]}
               </Link>
@@ -152,28 +191,33 @@ export const Hero = ({ lang }: { lang: Language }) => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows for desktop */}
       <button 
         onClick={prevSlide}
-        className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/5 hover:bg-accent text-white transition-all border border-white/10 flex items-center justify-center group"
+        aria-label="Previous Slide"
+        className="hidden md:flex absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/5 hover:bg-gold/20 text-white hover:text-[#dfb76c] transition-all duration-300 border border-white/10 hover:border-gold/40 backdrop-blur-md items-center justify-center group focus:outline-none focus:ring-2 focus:ring-accent"
       >
-        <ChevronLeft className="w-7 h-7 group-hover:scale-110 transition-transform" />
+        <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
       </button>
       <button 
         onClick={nextSlide}
-        className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/5 hover:bg-accent text-white transition-all border border-white/10 flex items-center justify-center group"
+        aria-label="Next Slide"
+        className="hidden md:flex absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/5 hover:bg-gold/20 text-white hover:text-[#dfb76c] transition-all duration-300 border border-white/10 hover:border-gold/40 backdrop-blur-md items-center justify-center group focus:outline-none focus:ring-2 focus:ring-accent"
       >
-        <ChevronRight className="w-7 h-7 group-hover:scale-110 transition-transform" />
+        <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
       </button>
 
-      {/* Pagination Dots */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4">
+      {/* Progress Indicators */}
+      <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              currentSlide === idx ? 'w-12 bg-accent' : 'w-3 bg-white/30 hover:bg-white/50'
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-500 min-h-[6px] ${
+              currentSlide === idx 
+                ? 'w-8 sm:w-14 bg-gradient-to-r from-[#dfb76c] to-[#c5a880] shadow-[0_0_12px_rgba(197,168,128,0.6)]' 
+                : 'w-2.5 sm:w-3 bg-white/25 hover:bg-white/50'
             }`}
           />
         ))}

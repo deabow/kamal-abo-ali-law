@@ -1,4 +1,4 @@
-import { MapPin, Phone, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, ChevronLeft, ChevronRight, Video, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,78 +26,101 @@ const BRANCHES = [
 ];
 
 export default function Branches({ lang }: { lang: Language }) {
+  const isAr = lang === 'ar';
+
   return (
-    <div className="pt-32 pb-20">
-      <section className="section-padding bg-bg-soft overflow-hidden relative w-full max-w-full">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-          <svg className="w-full h-full" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100,100 L900,100 L900,900 L100,900 Z" fill="none" stroke="currentColor" strokeWidth="2" />
-            <circle cx="500" cy="500" r="400" fill="none" stroke="currentColor" strokeWidth="1" />
-            <line x1="100" y1="500" x2="900" y2="500" stroke="currentColor" strokeWidth="1" />
-            <line x1="500" y1="100" x2="500" y2="900" stroke="currentColor" strokeWidth="1" />
-          </svg>
-        </div>
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24 bg-white dark:bg-[#0b0f17] min-h-screen overflow-x-hidden w-full max-w-full">
+      <section className="section-padding py-0 overflow-hidden relative w-full max-w-full">
+        {/* Ambient Top Glow */}
+        <div 
+          aria-hidden="true"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(197,168,128,0.12),transparent_70%)] pointer-events-none" 
+        />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">
-              {lang === 'ar' ? 'فروعنا' : 'Our Branches'}
-            </h2>
-            <p className="text-gray-500">{lang === 'ar' ? 'نحن دائماً بالقرب منك لخدمتك في أي وقت.' : 'We are always near you to serve you anytime.'}</p>
+          <div className="text-center mb-8 sm:mb-14 px-2">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#dfb76c] mb-2 sm:mb-3 block">
+              {isAr ? 'شبكة مكاتبنا' : 'Our Office Network'}
+            </span>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 font-arabic leading-tight">
+              {isAr ? 'فروع المؤسسة في مصر' : 'Our Law Firm Branches in Egypt'}
+            </h1>
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+              {isAr 
+                ? 'نتواجد في أهم المراكز الحيوية والاستثمارية لنكون دوماً على مقربة منكم لتقديم المشورة والدفاع القانوني.' 
+                : 'Located in key economic centers to stay close and accessible whenever legal counsel is needed.'}
+            </p>
           </div>
 
-          {/* Video Section */}
-          <div className="my-8 max-w-4xl mx-auto">
-            <video
-              src="/videos/promo-video.mp4"
-              autoPlay
-
-              loop
-              playsInline
-              className="w-full h-[300px] md:h-[500px] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 object-cover"
-            />
+          {/* Video Showcase Section with Luxury Bezel */}
+          <div className="my-8 sm:my-12 max-w-4xl mx-auto">
+            <div className="relative rounded-2xl sm:rounded-3xl p-1.5 sm:p-3 bg-gradient-to-tr from-white/10 via-gold/15 to-transparent border border-slate-200 dark:border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+              <video
+                src="/videos/promo-video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-[220px] sm:h-[380px] md:h-[480px] rounded-xl sm:rounded-2xl object-cover filter brightness-95"
+              />
+              <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-slate-950/80 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-gold/30 text-[10px] sm:text-xs text-[#dfb76c] font-bold flex items-center gap-1.5 sm:gap-2">
+                <Video className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                <span>{isAr ? 'جولة في أروقة المؤسسة' : 'Tour Inside The Firm'}</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Branches Cards Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
             {BRANCHES.map((branch, index) => (
               <motion.div
                 key={branch.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all group cursor-pointer"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="bg-white dark:bg-[#111726]/85 rounded-3xl overflow-hidden shadow-sm dark:shadow-luxury-card border border-slate-200/80 dark:border-white/10 hover:border-gold/50 dark:hover:border-gold/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
               >
-                <Link href={`/branches/${branch.id}`} className="block h-full">
-                  <div className="relative h-48 overflow-hidden">
+                <Link href={`/branches/${branch.id}`} className="block">
+                  <div className="relative h-56 sm:h-64 overflow-hidden">
                     <Image
                       src={branch.image}
                       alt={branch.name[lang]}
                       fill
                       priority={index === 0}
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                       placeholder="blur"
                       blurDataURL={BLUR_IMAGE_PLACEHOLDER}
                       referrerPolicy="no-referrer"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 right-4 inline-block px-3.5 py-1 bg-gold/90 text-slate-950 rounded-full text-xs font-black shadow-md">
+                      {branch.id === 'sadat' ? (isAr ? 'محافظة المنوفية' : 'Menoufia') : (isAr ? 'محافظة الجيزة' : 'Giza')}
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-[10px] font-bold mb-2">
-                      {branch.id === 'sadat' ? (lang === 'ar' ? 'المنوفية' : 'Menoufia') : (lang === 'ar' ? 'الجيزة' : 'Giza')}
-                    </div>
-                    <h3 className="text-xl font-bold text-primary mb-3">{branch.name[lang]}</h3>
-                    <div className="space-y-2 text-sm text-gray-500 mb-6">
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-accent" />
-                        <span>{branch.address[lang]}</span>
+                  
+                  <div className="p-7">
+                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-accent dark:group-hover:text-[#dfb76c] transition-colors">
+                      {branch.name[lang]}
+                    </h2>
+                    
+                    <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-6">
+                      <div className="flex items-start gap-3">
+                        <MapPin className="w-4 h-4 text-[#dfb76c] shrink-0 mt-1" />
+                        <span className="leading-relaxed">{branch.address[lang]}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-accent" />
-                        <span>{branch.phone}</span>
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-4 h-4 text-[#dfb76c] shrink-0" />
+                        <span className="font-sans font-bold text-slate-900 dark:text-white" dir="ltr">{branch.phone}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-accent font-bold group-hover:gap-4 transition-all">
-                      {lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}
-                      {lang === 'ar' ? <ChevronRight className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
+
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-white/5">
+                      <span className="text-xs font-bold text-[#dfb76c] inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        <span>{isAr ? 'عرض بيانات الفرع والخريطة' : 'Branch Details & Directions'}</span>
+                        {isAr ? <ChevronLeft className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
+                      </span>
                     </div>
                   </div>
                 </Link>
