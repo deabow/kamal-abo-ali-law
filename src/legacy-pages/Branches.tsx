@@ -51,7 +51,7 @@ export default function Branches({ lang }: { lang: Language }) {
             <video
               src="/videos/promo-video.mp4"
               autoPlay
-
+              controls
               loop
               playsInline
               className="w-full h-[300px] md:h-[500px] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 object-cover"

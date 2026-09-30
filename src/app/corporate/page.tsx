@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import Link from 'next/link';
 import {
@@ -12,7 +12,6 @@ import {
   Handshake,
   RefreshCcw,
   Award,
-  Play,
   Phone,
   Mail,
   MapPin,
@@ -124,8 +123,6 @@ const bankingRisks = [
 ];
 
 export default function CorporatePage() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   return (
     <div className="min-h-screen overflow-x-hidden" dir="rtl">
       {/* SECTION 1 — HERO */}
@@ -150,33 +147,16 @@ export default function CorporatePage() {
             </p>
           </AnimatedSection>
 
-          {/* Cinema Video Container */}
-          <AnimatedSection className="max-w-5xl mx-auto mb-12 md:mb-16" delay={0.3}>
-            <div className="relative w-full aspect-video md:max-h-[75vh] rounded-2xl md:rounded-3xl overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10 group">
-              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-accent/50 rounded-tl-2xl md:rounded-tl-3xl pointer-events-none z-20" />
-              <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-accent/50 rounded-tr-2xl md:rounded-tr-3xl pointer-events-none z-20" />
-              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-accent/50 rounded-bl-2xl md:rounded-bl-3xl pointer-events-none z-20" />
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-accent/50 rounded-br-2xl md:rounded-br-3xl pointer-events-none z-20" />
-
-              <div className="absolute inset-0 bg-gradient-to-br from-primary via-slate-900 to-primary dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
-              <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(197,160,89,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(197,160,89,0.08) 0%, transparent 50%)' }} />
-
-              <button
-                onClick={() => setIsVideoPlaying(true)}
-                className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 cursor-pointer group/play"
-                aria-label="تشغيل الفيديو"
-              >
-                <div className="relative">
-                  <div className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-accent/20 animate-ping" />
-                  <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-accent/90 flex items-center justify-center shadow-xl shadow-accent/30 group-hover/play:bg-accent group-hover/play:scale-110 transition-all duration-300">
-                    <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white mr-[-3px]" />
-                  </div>
-                </div>
-                <span className="text-white/80 text-sm md:text-base font-medium text-center px-4 leading-relaxed max-w-md">
-                  شاهد كلمة المستشار كمال أبو علي لأصحاب الشركات والمستثمرين
-                </span>
-              </button>
-            </div>
+          {/* Video Section */}
+          <AnimatedSection className="my-8 max-w-4xl mx-auto mb-12 md:mb-16" delay={0.3}>
+            <video
+              src="/videos/promo-video.mp4"
+              autoPlay
+              controls
+              loop
+              playsInline
+              className="w-full h-[300px] md:h-[500px] rounded-2xl border border-white/10 shadow-2xl shadow-black/50 object-cover"
+            />
           </AnimatedSection>
 
           {/* CTA Buttons */}

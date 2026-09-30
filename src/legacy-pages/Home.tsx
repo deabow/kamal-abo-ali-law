@@ -158,10 +158,10 @@ export default function Home({ lang }: { lang: Language }) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Gavel />, title: { ar: 'القانون الجنائي', en: 'Criminal Law' } },
-              { icon: <Users />, title: { ar: 'قانون الأسرة', en: 'Family Law' } },
-              { icon: <Briefcase />, title: { ar: 'قانون العمل', en: 'Labor Law' } },
-              { icon: <Building2 />, title: { ar: 'القانون التجاري', en: 'Commercial Law' } },
+              { icon: <Gavel />, title: { ar: 'القانون الجنائي', en: 'Criminal Law' }, href: '/services' },
+              { icon: <Users />, title: { ar: 'قانون الأسرة', en: 'Family Law' }, href: '/services' },
+              { icon: <Briefcase />, title: { ar: 'قانون العمل', en: 'Labor Law' }, href: '/services' },
+              { icon: <Building2 />, title: { ar: 'القانون التجاري', en: 'Commercial Law' }, href: '/corporate' },
             ].map((service, idx) => (
               <motion.div
                 key={idx}
@@ -169,13 +169,15 @@ export default function Home({ lang }: { lang: Language }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group"
+                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group cursor-pointer"
               >
-                <div className="w-12 h-12 mx-auto bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all">
-                  {service.icon}
-                </div>
-                <h3 className="font-bold text-primary mb-2">{service.title[lang]}</h3>
-                <Link href="/services" className="text-xs text-accent font-bold">{lang === 'ar' ? 'التفاصيل' : 'Details'}</Link>
+                <Link href={service.href} className="block">
+                  <div className="w-12 h-12 mx-auto bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all">
+                    {service.icon}
+                  </div>
+                  <h3 className="font-bold text-primary mb-2 group-hover:text-accent transition-colors">{service.title[lang]}</h3>
+                  <span className="text-xs text-accent font-bold">{lang === 'ar' ? 'التفاصيل' : 'Details'}</span>
+                </Link>
               </motion.div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { Gavel, Users, Briefcase, Building2, Scale, FileText, BookOpen, TrendingUp, Shield, Handshake, DollarSign, Lock, ShieldCheck } from 'lucide-react';
+import { Gavel, Users, Briefcase, Building2, Scale, FileText, BookOpen, TrendingUp, Shield, Handshake, DollarSign, Lock, ShieldCheck, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Language } from '../types';
 import { cn } from '../lib/utils';
 
@@ -174,8 +174,60 @@ export default function Services({ lang }: { lang: Language }) {
           </div>
         </div>
 
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredServices.map((service, idx) => {
+            const isCompanyService = service.type === 'companies';
+            const CardInner = (
+              <div className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group h-full flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-16 h-16 bg-bg-soft text-accent rounded-2xl flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all">
+                      {service.icon}
+                    </div>
+                    {isCompanyService && (
+                      <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">
+                        {lang === 'ar' ? 'خدمات الشركات' : 'Corporate'}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
+                    {service.title[lang]}
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed text-sm">
+                    {service.desc[lang]}
+                  </p>
+                </div>
+                {isCompanyService && (
+                  <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-accent font-bold text-sm group-hover:gap-3 transition-all">
+                    <span>{lang === 'ar' ? 'عرض تفاصيل الخدمة في صفحة الشركات' : 'View Service in Corporate Portal'}</span>
+                    {lang === 'ar' ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+                  </div>
+                )}
+              </div>
+            );
+
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.05 }}
+                className="h-full"
+              >
+                {isCompanyService ? (
+                  <Link href="/corporate" className="block h-full cursor-pointer">
+                    {CardInner}
+                  </Link>
+                ) : (
+                  CardInner
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
+
         {/* Corporate VIP Portal Banner */}
-        <div className="max-w-7xl mx-auto mb-12 px-6">
+        <div className="max-w-7xl mx-auto mt-16 px-6">
           <Link
             href="/corporate"
             className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 md:p-8 rounded-3xl bg-gradient-to-r from-primary via-slate-900 to-primary text-white border-2 border-accent/40 shadow-xl hover:border-accent transition group"
@@ -204,26 +256,6 @@ export default function Services({ lang }: { lang: Language }) {
               </span>
             </div>
           </Link>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredServices.map((service, idx) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group"
-            >
-              <div className="w-16 h-16 bg-bg-soft text-accent rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-4">{service.title[lang]}</h3>
-              <p className="text-gray-500 leading-relaxed">
-                {service.desc[lang]}
-              </p>
-            </motion.div>
-          ))}
         </div>
       </section>
     </div>
