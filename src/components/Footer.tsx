@@ -2,7 +2,8 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Phone
+  Phone,
+  Building2
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,6 +92,12 @@ export const Footer = ({ lang }: { lang: Language }) => {
                 </Link>
               </li>
               <li className="hover:text-white transition">
+                <Link href="/corporate" className="text-slate-300 dark:text-slate-400 hover:text-accent flex items-center gap-1.5">
+                  <span>{isAr ? "خدمات الشركات والمستثمرين" : "Corporate & Investors"}</span>
+                  <span className="px-1.5 py-0.5 text-[10px] font-bold rounded bg-accent/20 text-accent">VIP</span>
+                </Link>
+              </li>
+              <li className="hover:text-white transition">
                 <Link href="/services" className="text-slate-300 dark:text-slate-400 hover:text-accent">
                   {isAr ? "تخصصاتنا القانونية" : "Legal Specialties"}
                 </Link>
@@ -116,17 +123,20 @@ export const Footer = ({ lang }: { lang: Language }) => {
 
             <ul className="space-y-4 text-sm">
               {[
-                { ar: "القانون الجنائي", en: "Criminal Law", href: "/services" },
-                { ar: "قانون الأسرة", en: "Family Law", href: "/services" },
-                { ar: "قانون العمل", en: "Labor Law", href: "/services" },
-                { ar: "القانون التجاري", en: "Commercial Law", href: "/services" },
-                { ar: "القانون المدني", en: "Civil Law", href: "/services" },
-                { ar: "قانون الشركات", en: "Corporate Law", href: "/services" },
-                { ar: "قانون الجرائم الاقتصادية", en: "Economic Crimes Law", href: "/services" }
+                { ar: "خدمات الشركات والمستثمرين", en: "Corporate & Investor Services", href: "/corporate", isVip: true },
+                { ar: "القانون التجاري وتأسيس الشركات", en: "Commercial & Corporate Law", href: "/corporate", isVip: false },
+                { ar: "القانون الجنائي", en: "Criminal Law", href: "/services", isVip: false },
+                { ar: "قانون الأسرة", en: "Family Law", href: "/services", isVip: false },
+                { ar: "قانون العمل", en: "Labor Law", href: "/services", isVip: false },
+                { ar: "القانون المدني", en: "Civil Law", href: "/services", isVip: false },
+                { ar: "قانون الجرائم الاقتصادية", en: "Economic Crimes Law", href: "/services", isVip: false }
               ].map((item, idx) => (
                 <li key={idx} className="hover:text-white transition text-slate-300 dark:text-slate-400">
-                  <Link href={item.href} className="hover:text-accent cursor-pointer">
-                    {isAr ? item.ar : item.en}
+                  <Link href={item.href} className="hover:text-accent cursor-pointer flex items-center justify-between">
+                    <span>{isAr ? item.ar : item.en}</span>
+                    {item.isVip && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/20 text-accent font-bold">VIP</span>
+                    )}
                   </Link>
                 </li>
               ))}
@@ -140,12 +150,33 @@ export const Footer = ({ lang }: { lang: Language }) => {
               {isAr ? "تواصل معنا" : "Contact Us"}
             </h4>
 
-            <div className="space-y-5" dir="rtl">
+            <div className="space-y-4" dir="rtl">
+
+              {/* Business Desk / Corporate Inquiries */}
+              <Link
+                href="/corporate"
+                className="flex items-center gap-3 bg-accent/15 hover:bg-accent/25 rounded-xl p-3.5 border border-accent/30 transition text-accent group cursor-pointer"
+              >
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent text-white shadow-sm">
+                  <Building2 size={18} />
+                </div>
+                <div className="text-right flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <p className="text-white font-bold text-xs truncate">
+                      {isAr ? "قطاع الشركات والمؤسسات" : "Corporate & Business Desk"}
+                    </p>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent text-white font-bold">VIP</span>
+                  </div>
+                  <p className="text-accent text-[11px] font-medium mt-0.5 group-hover:underline">
+                    {isAr ? "منظومة الحماية والاستشارات ←" : "Explore Corporate Protection →"}
+                  </p>
+                </div>
+              </Link>
 
               {/* فرع السادات */}
-              <a href="tel:01505363697" className="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+              <a href="tel:01505363697" className="flex items-start gap-3 bg-white/5 rounded-xl p-3.5 border border-white/5 cursor-pointer hover:bg-white/10 transition">
 
-                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mt-1">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mt-0.5">
                   <Phone size={18} className="text-accent" />
                 </div>
 
@@ -161,9 +192,9 @@ export const Footer = ({ lang }: { lang: Language }) => {
               </a>
 
               {/* فرع زايد */}
-              <a href="tel:01505363698" className="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5 cursor-pointer hover:bg-white/10 transition">
+              <a href="tel:01505363698" className="flex items-start gap-3 bg-white/5 rounded-xl p-3.5 border border-white/5 cursor-pointer hover:bg-white/10 transition">
 
-                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mt-1">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-accent/10 mt-0.5">
                   <Phone size={18} className="text-accent" />
                 </div>
 

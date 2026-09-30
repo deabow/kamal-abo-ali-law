@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Gavel, Users, Briefcase, Building2, Scale, FileText, BookOpen, TrendingUp, Shield, Handshake, DollarSign, Lock, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';
@@ -171,6 +172,38 @@ export default function Services({ lang }: { lang: Language }) {
               {lang === 'ar' ? 'للشركات' : 'For Companies'}
             </button>
           </div>
+        </div>
+
+        {/* Corporate VIP Portal Banner */}
+        <div className="max-w-7xl mx-auto mb-12 px-6">
+          <Link
+            href="/corporate"
+            className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 md:p-8 rounded-3xl bg-gradient-to-r from-primary via-slate-900 to-primary text-white border-2 border-accent/40 shadow-xl hover:border-accent transition group"
+          >
+            <div className="flex items-center gap-4 text-start">
+              <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
+                <Building2 className="w-7 h-7" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="text-xl font-bold text-white font-arabic">
+                    {lang === 'ar' ? 'منظومة الحماية والاستشارات القانونية للشركات' : 'Corporate Legal Protection Ecosystem'}
+                  </h4>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-accent text-white font-bold">VIP</span>
+                </div>
+                <p className="text-white/70 text-sm mt-1">
+                  {lang === 'ar'
+                    ? 'تأسيس، حوكمة، إدارة عقود، وفض منازعات بنكية واستثمارية بدرع قانوني استباقي.'
+                    : 'Company formation, governance, contract management, and resolving banking disputes.'}
+                </p>
+              </div>
+            </div>
+            <div className="shrink-0 w-full md:w-auto">
+              <span className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md group-hover:bg-accent/90 transition">
+                {lang === 'ar' ? 'استكشف خدمات الشركات ←' : 'Explore Corporate Services →'}
+              </span>
+            </div>
+          </Link>
         </div>
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">

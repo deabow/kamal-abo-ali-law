@@ -4,4 +4,5 @@ export interface NavItem {
   id: string;
   path: string;
   label: { ar: string; en: string };
+  isCorporate?: boolean;
 }

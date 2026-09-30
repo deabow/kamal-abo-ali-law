@@ -108,6 +108,54 @@ export default function Home({ lang }: { lang: Language }) {
               {lang === 'ar' ? 'مجالات التخصص القانوني' : 'Legal Specialization Areas'}
             </h2>
           </div>
+
+          {/* Elite Corporate Pillar Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-slate-900 to-primary text-white p-8 md:p-10 border-2 border-accent/40 shadow-2xl shadow-accent/15 group"
+          >
+            {/* Background Ambience */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(197,160,89,0.08)_0%,transparent_70%)] pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="space-y-4 max-w-3xl text-start">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-bold backdrop-blur-sm">
+                  <Building2 className="w-4 h-4 text-accent shrink-0" />
+                  <span>
+                    {lang === 'ar' ? 'قطاع الشركات والمؤسسات' : 'Corporate & Institutions Sector'}
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-serif leading-tight">
+                  {lang === 'ar'
+                    ? 'منظومة الحماية والاستشارات القانونية للشركات'
+                    : 'Legal Protection & Advisory Ecosystem for Corporations'}
+                </h3>
+
+                <p className="text-white/75 text-base md:text-lg leading-relaxed font-light">
+                  {lang === 'ar'
+                    ? 'تأسيس، حوكمة، إدارة عقود، وفض منازعات بنكية واستثمارية بدرع قانوني استباقي.'
+                    : 'Company formation, governance, contract management, and resolving banking & investment disputes with a proactive legal shield.'}
+                </p>
+              </div>
+
+              <div className="shrink-0 w-full sm:w-auto">
+                <Link
+                  href="/corporate"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent text-white px-8 py-4 rounded-xl font-bold hover:bg-accent/90 transition-all text-base shadow-xl shadow-accent/25 hover:-translate-y-0.5 group/btn"
+                >
+                  <span>
+                    {lang === 'ar' ? 'استكشف خدمات الشركات ←' : 'Explore Corporate Services →'}
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: <Gavel />, title: { ar: 'القانون الجنائي', en: 'Criminal Law' } },
