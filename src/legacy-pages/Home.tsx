@@ -222,12 +222,12 @@ export default function Home({ lang }: { lang: Language }) {
             </div>
             <div className="relative">
               <Image
-                src="/dipo.png"
-                alt="Branches"
+                src="/home-bottom.jpeg"
+                alt={lang === 'ar' ? 'المستشار كمال أبو علي' : 'Counselor Kamal Abu Ali'}
                 width={1280}
                 height={853}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="w-full max-w-full h-auto rounded-3xl shadow-xl"
+                className="w-full max-w-full h-auto rounded-3xl shadow-xl object-cover"
                 style={{ width: '100%', height: 'auto' }}
                 placeholder="blur"
                 blurDataURL={BLUR_IMAGE_PLACEHOLDER}
