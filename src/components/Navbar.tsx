@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Scale, Globe, X, Menu, Sun, Moon, Building2 } from 'lucide-react';
+import { Scale, Globe, X, Menu, Sun, Moon } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Language, NavItem } from '../types';
 import { useTheme } from 'next-themes';
@@ -15,12 +15,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'home', path: '/', label: { ar: 'الرئيسية', en: 'Home' } },
   { id: 'about', path: '/about', label: { ar: 'من نحن', en: 'About Us' } },
   { id: 'services', path: '/services', label: { ar: 'الخدمات', en: 'Services' } },
-  {
-    id: 'corporate',
-    path: '/corporate',
-    label: { ar: 'خدمات الشركات والمستثمرين', en: 'Corporate & Investors' },
-    isCorporate: true,
-  },
+  { id: 'corporate', path: '/corporate', label: { ar: 'الشركات', en: 'Corporate' } },
   { id: 'branches', path: '/branches', label: { ar: 'الفروع', en: 'Branches' } },
   { id: 'articles', path: '/articles', label: { ar: 'المقالات', en: 'Articles' } },
   { id: 'contact', path: '/contact', label: { ar: 'تواصل معنا', en: 'Contact Us' } },
@@ -85,27 +80,19 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <div className="hidden lg:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.id}
               href={item.path}
               className={cn(
-                "relative text-sm font-medium transition-colors hover:text-accent flex items-center gap-1.5 whitespace-nowrap",
+                "text-sm font-medium transition-colors hover:text-accent",
                 pathname === item.path
                   ? "text-accent font-bold"
-                  : item.isCorporate
-                    ? "text-primary dark:text-slate-100 font-semibold hover:text-accent"
-                    : "text-gray-600 dark:text-slate-400"
+                  : "text-gray-600 dark:text-slate-400"
               )}
             >
-              <span>{item.label[lang]}</span>
-              {item.isCorporate && (
-                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-accent/15 text-accent border border-accent/30 tracking-tight">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  {lang === 'ar' ? 'أعمال' : 'VIP'}
-                </span>
-              )}
+              {item.label[lang]}
             </Link>
           ))}
         </div>
@@ -159,7 +146,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-xl p-6 flex flex-col gap-3 lg:hidden"
+            className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-xl p-6 flex flex-col gap-4 lg:hidden"
           >
             {NAV_ITEMS.map((item) => (
               <Link
@@ -167,23 +154,13 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
                 href={item.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "text-lg font-medium border-b border-gray-100 dark:border-slate-800 pb-2 flex items-center justify-between",
-                  item.isCorporate
-                    ? "bg-accent/10 dark:bg-accent/15 border-accent/30 rounded-xl px-4 py-3 my-1 text-accent font-bold border-b-0"
-                    : pathname === item.path
-                      ? "text-accent font-bold"
-                      : "text-gray-900 dark:text-slate-100"
+                  "text-lg font-medium border-b border-gray-100 dark:border-slate-800 pb-2",
+                  pathname === item.path
+                    ? "text-accent font-bold"
+                    : "text-gray-900 dark:text-slate-100"
                 )}
               >
-                <span className="flex items-center gap-2.5">
-                  {item.isCorporate && <Building2 className="w-5 h-5 text-accent shrink-0" />}
-                  {item.label[lang]}
-                </span>
-                {item.isCorporate && (
-                  <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-accent text-white shadow-sm">
-                    {lang === 'ar' ? 'VIP / أعمال' : 'VIP'}
-                  </span>
-                )}
+                {item.label[lang]}
               </Link>
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-gray-100 dark:border-slate-800">

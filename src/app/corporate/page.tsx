@@ -141,12 +141,6 @@ export default function CorporatePage() {
             </span>
           </AnimatedSection>
 
-          <AnimatedSection className="text-center mb-6" delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif leading-tight">
-              معظم الشركات تكتشف أزماتها القانونية <br className="hidden sm:block" />
-              <span className="text-accent">بعد أن تقع في الفخ.. لا قبله!</span>
-            </h1>
-          </AnimatedSection>
 
           <AnimatedSection className="text-center mb-10 md:mb-14" delay={0.2}>
             <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
