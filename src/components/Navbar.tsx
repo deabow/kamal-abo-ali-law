@@ -15,6 +15,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'home', path: '/', label: { ar: 'الرئيسية', en: 'Home' } },
   { id: 'about', path: '/about', label: { ar: 'من نحن', en: 'About Us' } },
   { id: 'services', path: '/services', label: { ar: 'الخدمات', en: 'Services' } },
+  { id: 'corporate', path: '/corporate', label: { ar: 'الشركات', en: 'Corporate' } },
   { id: 'branches', path: '/branches', label: { ar: 'الفروع', en: 'Branches' } },
   { id: 'articles', path: '/articles', label: { ar: 'المقالات', en: 'Articles' } },
   { id: 'contact', path: '/contact', label: { ar: 'تواصل معنا', en: 'Contact Us' } },
