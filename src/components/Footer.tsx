@@ -96,6 +96,11 @@ export const Footer = ({ lang }: { lang: Language }) => {
                 </Link>
               </li>
               <li className="hover:text-white transition">
+                <Link href="/corporate" className="text-slate-300 dark:text-slate-400 hover:text-accent">
+                  {isAr ? "محامي الشركات" : "Corporate Law"}
+                </Link>
+              </li>
+              <li className="hover:text-white transition">
                 <Link href="/branches" className="text-slate-300 dark:text-slate-400 hover:text-accent">
                   {isAr ? "فروعنا" : "Branches"}
                 </Link>
@@ -121,7 +126,7 @@ export const Footer = ({ lang }: { lang: Language }) => {
                 { ar: "قانون العمل", en: "Labor Law", href: "/services" },
                 { ar: "القانون التجاري", en: "Commercial Law", href: "/services" },
                 { ar: "القانون المدني", en: "Civil Law", href: "/services" },
-                { ar: "قانون الشركات", en: "Corporate Law", href: "/services" },
+                { ar: "قانون الشركات", en: "Corporate Law", href: "/corporate" },
                 { ar: "قانون الجرائم الاقتصادية", en: "Economic Crimes Law", href: "/services" }
               ].map((item, idx) => (
                 <li key={idx} className="hover:text-white transition text-slate-300 dark:text-slate-400">

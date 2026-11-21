@@ -44,6 +44,7 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
+      lang === 'ar' ? 'font-arabic' : 'font-sans',
       scrolled
         ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-md py-2"
         : "bg-transparent"
@@ -80,16 +81,16 @@ export const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Languag
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.id}
               href={item.path}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-accent",
+                "text-[15px] font-medium transition-colors hover:text-accent whitespace-nowrap",
                 pathname === item.path
                   ? "text-accent font-bold"
-                  : "text-gray-600 dark:text-slate-400"
+                  : "text-gray-700 dark:text-slate-300"
               )}
             >
               {item.label[lang]}
