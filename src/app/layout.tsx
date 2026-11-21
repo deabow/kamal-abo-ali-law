@@ -1,8 +1,31 @@
 import type { Metadata } from "next";
+import { Cairo, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
 import { AppShell } from "./app-shell";
+
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-cairo",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   title: "مؤسسة كمال أبوعلي للمحاماة والاستشارات القانونية",
@@ -12,7 +35,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html
+      lang="ar"
+      dir="rtl"
+      suppressHydrationWarning
+      className={`${cairo.variable} ${inter.variable} ${playfair.variable}`}
+    >
       <body className="overflow-x-hidden max-w-full">
         <noscript>
           <iframe
@@ -24,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -38,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppShell>{children}</AppShell>
         <Script
           id="meta-pixel"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -58,6 +86,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <img
             height="1"
             width="1"
+            loading="lazy"
+            decoding="async"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1019650937138795&ev=PageView&noscript=1"
             alt="Meta Pixel"

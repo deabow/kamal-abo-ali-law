@@ -1,13 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { ThemeProvider } from 'next-themes';
 
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
-import { WhatsAppButton } from '../components/WhatsAppButton';
 import { Language } from '../types';
 import { LangProvider } from './lang-context';
+
+const WhatsAppButton = dynamic(
+  () => import('../components/WhatsAppButton').then((mod) => mod.WhatsAppButton),
+  { ssr: false }
+);
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Language>('ar');

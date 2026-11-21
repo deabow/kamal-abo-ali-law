@@ -12,9 +12,9 @@ const config: Config = {
         'bg-soft': '#f8f9fa',
       },
       fontFamily: {
-        sans: ['Inter', 'Cairo', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        arabic: ['Cairo', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ['var(--font-inter)', 'var(--font-cairo)', 'Inter', 'Cairo', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        arabic: ['var(--font-cairo)', 'Cairo', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Playfair Display', 'serif'],
       },
     }
   },
